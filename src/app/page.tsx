@@ -1,11 +1,12 @@
 "use client";
 
-import { useState, useMemo, useCallback } from "react";
+import { useState, useMemo, useCallback, useEffect } from "react";
 import {
   type DetailRow,
   type LeagueOption,
   INDICATOR_FIELD,
   parseDetailCsv,
+  fetchDefaultDetailCsv,
 } from "@/lib/data";
 import {
   type FilterState,
@@ -28,27 +29,54 @@ export default function DashboardPage() {
   const [filter, setFilter] = useState<FilterState>(DEFAULT_FILTER);
   const [fileName, setFileName] = useState<string>("");
   const [parseError, setParseError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true);
 
-  // Parse uploaded CSV
+  const applyParsedRows = useCallback((parsed: DetailRow[], name: string) => {
+    if (parsed.length === 0) {
+      setParseError("CSV 解析结果为空，请检查文件格式");
+      return;
+    }
+    setParseError(null);
+    setRows(parsed);
+    setFileName(name);
+    const leagueIds = [...new Set(parsed.map((r) => r.league_id))];
+    setFilter(filterAfterUpload(leagueIds));
+  }, []);
+
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      setLoading(true);
+      try {
+        const text = await fetchDefaultDetailCsv();
+        if (cancelled) return;
+        applyParsedRows(parseDetailCsv(text), "DreamLeague S29 默认数据");
+      } catch (err) {
+        if (!cancelled) {
+          setParseError(
+            err instanceof Error ? err.message : "默认数据加载失败，请手动上传 CSV"
+          );
+        }
+      } finally {
+        if (!cancelled) setLoading(false);
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [applyParsedRows]);
+
   const handleFileUpload = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
       const file = e.target.files?.[0];
       if (!file) return;
-      setFileName(file.name);
       setParseError(null);
       const reader = new FileReader();
       reader.onload = (evt) => {
         const text = evt.target?.result;
         if (typeof text === "string") {
           try {
-            const parsed = parseDetailCsv(text);
-            if (parsed.length === 0) {
-              setParseError("CSV 解析结果为空，请检查文件格式");
-              return;
-            }
-            setRows(parsed);
-            const leagueIds = [...new Set(parsed.map((r) => r.league_id))];
-            setFilter(filterAfterUpload(leagueIds));
+            applyParsedRows(parseDetailCsv(text), file.name);
           } catch (err) {
             setParseError(`解析失败: ${err instanceof Error ? err.message : String(err)}`);
           }
@@ -57,7 +85,7 @@ export default function DashboardPage() {
       reader.onerror = () => setParseError("文件读取失败");
       reader.readAsText(file, "utf-8");
     },
-    []
+    [applyParsedRows]
   );
 
   // Derived data
@@ -126,7 +154,14 @@ export default function DashboardPage() {
     .map((l) => l.name)
     .join(" + ");
 
-  // No data state
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-[#0f1117] flex items-center justify-center p-4">
+        <p className="text-sm text-[#94a3b8]">正在加载数据…</p>
+      </div>
+    );
+  }
+
   if (rows.length === 0) {
     return (
       <div className="min-h-screen bg-[#0f1117] flex items-center justify-center p-4">
@@ -158,7 +193,7 @@ export default function DashboardPage() {
                 <span className="font-semibold text-[#22d3ee]">点击上传</span> CSV 文件
               </p>
               <p className="text-xs text-[#4a5568]">
-                仅需上传明细表 (detail CSV)，汇总数据将自动计算
+                默认数据加载失败时可手动上传明细 CSV
               </p>
               {fileName && (
                 <p className="mt-2 text-xs text-[#10b981]">

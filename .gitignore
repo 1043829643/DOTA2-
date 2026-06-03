@@ -86,6 +86,8 @@ logs/
 *.pptx
 *.xlsx
 *.csv
+!public/data/
+!public/data/*.csv
 # Dependencies
 node_modules/
 .pnp

@@ -106,6 +106,17 @@ export function parseDetailCsv(text: string): DetailRow[] {
   }));
 }
 
+/** 内置明细表路径（对应 public/data/detail.csv） */
+export const DEFAULT_DETAIL_CSV_PATH = "/data/detail.csv";
+
+export async function fetchDefaultDetailCsv(): Promise<string> {
+  const res = await fetch(DEFAULT_DETAIL_CSV_PATH);
+  if (!res.ok) {
+    throw new Error(`无法加载默认数据 (${res.status})`);
+  }
+  return res.text();
+}
+
 export function getLeagues(rows: DetailRow[]): LeagueOption[] {
   const map = new Map<string, string>();
   for (const r of rows) {
