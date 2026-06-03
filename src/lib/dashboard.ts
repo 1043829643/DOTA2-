@@ -1,11 +1,18 @@
 "use client";
 
-import { type DetailRow, type SummaryRow, type EconomyIndicator, INDICATOR_FIELD } from "@/lib/data";
+import {
+  type DetailRow,
+  type SummaryRow,
+  type EconomyIndicator,
+  type GameMinute,
+  INDICATOR_FIELD,
+} from "@/lib/data";
 
 /* ------------------------------------------------------------------ */
 /*  Filter state                                                       */
 /* ------------------------------------------------------------------ */
 export interface FilterState {
+  gameMinute: GameMinute;
   leagues: string[];         // selected league_ids
   team: string;
   hero: string;
@@ -16,6 +23,7 @@ export interface FilterState {
 }
 
 export const DEFAULT_FILTER: FilterState = {
+  gameMinute: 10,
   leagues: [],   // empty = all
   team: "all",
   hero: "all",
@@ -90,8 +98,23 @@ export function computeTeamWinRate(rows: DetailRow[], team: string): number | nu
 }
 
 /** 上传新 CSV 后的默认筛选：重置队伍/英雄等，并选中全部联赛 */
-export function filterAfterUpload(leagueIds: string[]): FilterState {
-  return { ...DEFAULT_FILTER, leagues: leagueIds };
+export function filterAfterUpload(leagueIds: string[], minute: GameMinute = 10): FilterState {
+  return { ...DEFAULT_FILTER, gameMinute: minute, leagues: leagueIds };
+}
+
+/** 切换 6/10 分钟：保留指标与阈值，重置队伍/英雄并选中该数据集全部联赛 */
+export function filterAfterMinuteSwitch(
+  leagueIds: string[],
+  minute: GameMinute,
+  prev: FilterState
+): FilterState {
+  return {
+    ...prev,
+    gameMinute: minute,
+    leagues: leagueIds,
+    team: "all",
+    hero: "all",
+  };
 }
 
 /** Assign a value to a bucket label and sort key based on bucket size */

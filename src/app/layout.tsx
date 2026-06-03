@@ -4,7 +4,7 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: 'BLAST Slam VII - Economy vs Win Rate',
-  description: 'Dota 2 BLAST Slam VII 10分钟1号位经济差与胜率关系分析看板',
+  description: 'Dota 2 1号位 6/10 分钟经济差与胜率关系分析看板',
 };
 
 export default function RootLayout({

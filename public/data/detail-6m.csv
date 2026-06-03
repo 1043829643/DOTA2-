@@ -1,0 +1,521 @@
+﻿league_id,league_name,match_id,team,opponent,side,result,win,pos1_player,pos1_hero,pos1_lh_5m,pos1_networth_6m,enemy_pos1_player,enemy_pos1_hero,enemy_pos1_networth_6m,pos1_vs_enemy_pos1_diff_6m,enemy_pos3_player,enemy_pos3_hero,enemy_pos3_networth_6m,pos1_vs_enemy_pos3_diff_6m,team_networth_6m,enemy_team_networth_6m,team_networth_diff_6m,pos1_kda_6m,pos1_role_source,enemy_pos1_role_source,enemy_pos3_role_source
+19696,DreamLeague Season 29,8809159511,VG,TSpirit,Radiant,负,0,pUx,kez,20,2165,兜圈。,alchemist,2680,-515,pos3jungler,primal_beast,2510,-345,10186,9788,398,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809159511,TSpirit,VG,Dire,胜,1,兜圈。,alchemist,23,2680,pUx,kez,2165,515,`#t.,bristleback,2646,34,9788,10186,-398,1/1/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809166456,Aurora,Liquid,Radiant,胜,1,`!,tiny,28,2637,uǍ,nevermore,2717,-80,50centaur,pangolier,2466,171,9179,9799,-620,0/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809166456,Liquid,Aurora,Dire,负,0,uǍ,nevermore,32,2717,`!,tiny,2637,80,Щa,magnataur,2113,604,9799,9179,620,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809158835,VP,FLCN,Radiant,胜,1,nokia,lone_druid,23,2357,,alchemist,2612,-255,,dawnbreaker,2219,138,9039,10017,-978,0/1/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809158835,FLCN,VP,Dire,负,0,,alchemist,23,2612,nokia,lone_druid,2357,255,saberlight,axe,2529,83,10017,9039,978,1/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809158915,GL,EX-ROIC,Radiant,负,0,鬼,tiny,22,2149,.tv/yumadota2,kez,2645,-496,GAMBOT-PARIS,shredder,2164,-15,8380,8977,-597,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809158915,EX-ROIC,GL,Dire,胜,1,.tv/yumadota2,kez,23,2645,鬼,tiny,2149,496,помойка,slardar,1976,669,8977,8380,597,1/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809227928,Liquid,Aurora,Radiant,胜,1,`,luna,24,2273,зݵ,windrunner,2538,-265,Ǎ,largo,2488,-215,9680,9596,84,0/1/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809227928,Aurora,Liquid,Dire,负,0,зݵ,windrunner,27,2538,`,luna,2273,265,`^8,slardar,2342,196,9596,9680,-84,0/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809246462,EX-HERO,GL,Radiant,胜,1,.tv/yumadota2,alchemist,21,3354,鬼,chaos_knight,2356,998,помойка,lycan,2431,923,10453,8813,1640,2/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809246462,GL,EX-HERO,Dire,负,0,鬼,chaos_knight,23,2356,.tv/yumadota2,alchemist,3354,-998,GAMBOT-PARIS,tidehunter,2144,212,8813,10453,-1640,0/0/2,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809244962,TSpirit,VG,Radiant,胜,1,兜圈。,alchemist,30,2621,D9,windrunner,2422,199,,shredder,2474,147,9182,9701,-519,0/1/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809244962,VG,TSpirit,Dire,负,0,D9,windrunner,25,2422,兜圈。,alchemist,2621,-199,pos3jungler,legion_commander,2204,218,9701,9182,519,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809303579,Aurora,Liquid,Radiant,负,0,0̯H,windrunner,28,3414,@,luna,2300,1114,s͠,slardar,2089,1325,10815,9197,1618,2/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809303579,Liquid,Aurora,Dire,胜,1,@,luna,24,2300,0̯H,windrunner,3414,-1114,ڳH,abyssal_underlord,2523,-223,9197,10815,-1618,0/1/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809242493,FLCN,VP,Radiant,胜,1,v:,life_stealer,24,2433,nokia,windrunner,2594,-161,saberlight,abyssal_underlord,2222,211,9373,9589,-216,0/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809242493,VP,FLCN,Dire,负,0,nokia,windrunner,24,2594,v:,life_stealer,2433,161,,tidehunter,2565,29,9589,9373,216,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809373469,RKX,BetBoom,Radiant,负,0,`ND,kez,22,2495,P.,tiny,2553,-58,Р!R,tidehunter,2036,459,9156,9573,-417,0/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809373469,BetBoom,RKX,Dire,胜,1,P.,tiny,29,2553,`ND,kez,2495,58,underrated,shredder,2287,266,9573,9156,417,0/1/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809385333,NGX,NAVI,Radiant,负,0,jL,kez,19,2258,winter,ursa,1923,335,ƬψƬ ☢ Sιrιus-妥,axe,2319,-61,9941,8420,1521,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809385333,NAVI,NGX,Dire,胜,1,winter,ursa,13,1923,jL,kez,2258,-335,Ͼ,viper,2460,-537,8420,9941,-1521,1/1/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809412954,PV,Tundra,Radiant,胜,1,destroy,tiny,24,2201,Preacher Man,lone_druid,2834,-633,not human (животное),batrider,2653,-452,8774,9383,-609,0/1/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809412954,Tundra,PV,Dire,负,0,Preacher Man,lone_druid,31,2834,destroy,tiny,2201,633,strafe instructor,abyssal_underlord,1807,1027,9383,8774,609,1/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809425113,FLCN,VP,Radiant,胜,1,pT,alchemist,25,2291,nokia,furion,2599,-308,saberlight,tidehunter,2402,-111,9602,9621,-19,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809425113,VP,FLCN,Dire,负,0,nokia,furion,30,2599,pT,alchemist,2291,308,fG>,shredder,2821,-222,9621,9602,19,0/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809470214,RKX,BetBoom,Radiant,负,0,yR,terrorblade,20,2519,07,life_stealer,2379,140,W,lycan,2256,263,9315,9256,59,1/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809470214,BetBoom,RKX,Dire,胜,1,07,life_stealer,24,2379,yR,terrorblade,2519,-140,underrated,largo,2311,68,9256,9315,-59,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809490207,NGX,NAVI,Radiant,负,0,rin,tiny,26,2509,winter,necrolyte,2490,19,ƬψƬ ☢ Sιrιus-妥,axe,2540,-31,9944,8807,1137,0/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809490207,NAVI,NGX,Dire,胜,1,winter,necrolyte,26,2490,rin,tiny,2509,-19,malrincyq,bristleback,2914,-424,8807,9944,-1137,0/1/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809504168,PV,Tundra,Radiant,负,0,destroy,tiny,26,2446,Preacher Man,doom_bringer,2559,-113,not human (животное),tidehunter,2290,156,8494,9243,-749,0/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809504168,Tundra,PV,Dire,胜,1,Preacher Man,doom_bringer,25,2559,destroy,tiny,2446,113,strafe instructor,largo,1835,724,9243,8494,749,1/0/2,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809536007,PlayTime,XG,Radiant,负,0,{C,nevermore,30,2760,P,drow_ranger,2561,199,0A,axe,2010,750,9901,8994,907,1/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809536007,XG,PlayTime,Dire,胜,1,P,drow_ranger,26,2561,{C,nevermore,2760,-199,^,primal_beast,1779,782,8994,9901,-907,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809600367,PV,Tundra,Radiant,胜,1,destroy,phantom_lancer,23,2713,Preacher Man,doom_bringer,2323,390,not human (животное),tidehunter,1762,951,9009,8395,614,1/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809600367,Tundra,PV,Dire,负,0,Preacher Man,doom_bringer,18,2323,destroy,phantom_lancer,2713,-390,strafe instructor,dawnbreaker,1689,634,8395,9009,-614,1/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809634682,XG,PlayTime,Radiant,胜,1,@+,drow_ranger,30,2948,Y>,monkey_king,2190,758,P#,slardar,1630,1318,11223,7963,3260,1/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809634682,PlayTime,XG,Dire,负,0,Y>,monkey_king,20,2190,@+,drow_ranger,2948,-758,,abyssal_underlord,2952,-762,7963,11223,-3260,0/1/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809655926,VG,GL,Radiant,胜,1,I,ursa,28,2798,鬼,drow_ranger,2551,247,помойка,slardar,2101,697,11076,8438,2638,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809655926,GL,VG,Dire,负,0,鬼,drow_ranger,28,2551,I,ursa,2798,-247,|I,beastmaster,2564,-13,8438,11076,-2638,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809656567,Aurora,FLCN,Radiant,负,0,tragic,ursa,23,2277,,alchemist,2269,8,0Є,razor,2455,-178,9018,9614,-596,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809656567,FLCN,Aurora,Dire,胜,1,,alchemist,22,2269,tragic,ursa,2277,-8,gD,dawnbreaker,2686,-417,9614,9018,596,0/1/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809696561,Liquid,TSpirit,Radiant,负,0,0&,kez,24,2594,兜圈。,terrorblade,2511,83,pos3jungler,axe,2375,219,9881,9865,16,1/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809696561,TSpirit,Liquid,Dire,胜,1,兜圈。,terrorblade,25,2511,0&,kez,2594,-83,,tidehunter,2148,363,9865,9881,-16,0/1/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809710774,VP,EX-HERO,Radiant,胜,1,nokia,terrorblade,26,2682,.tv/yumadota2,tiny,2238,444,GAMBOT-PARIS,lycan,2479,203,9314,10380,-1066,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809710774,EX-HERO,VP,Dire,负,0,.tv/yumadota2,tiny,15,2238,nokia,terrorblade,2682,-444,saberlight,tidehunter,1961,277,10380,9314,1066,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809726019,GL,VG,Radiant,负,0,鬼,faceless_void,24,2519,`,muerta,2390,129,@v,batrider,1626,893,10193,9090,1103,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809726019,VG,GL,Dire,胜,1,`,muerta,23,2390,鬼,faceless_void,2519,-129,помойка,axe,2489,-99,9090,10193,-1103,0/1/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809747666,FLCN,Aurora,Radiant,胜,1,ֺS,luna,27,2422,@S,furion,2556,-134,@HS,mars,2119,303,9715,8760,955,0/1/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809747666,Aurora,FLCN,Dire,负,0,@S,furion,33,2556,ֺS,luna,2422,134,pS,doom_bringer,2909,-353,8760,9715,-955,0/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809797141,VP,EX-HERO,Radiant,胜,1,nokia,tiny,25,2938,.tv/yumadota2,ursa,3363,-425,GAMBOT-PARIS,doom_bringer,1708,1230,9283,9456,-173,2/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809797141,EX-HERO,VP,Dire,负,0,.tv/yumadota2,ursa,20,3363,nokia,tiny,2938,425,saberlight,beastmaster,1869,1494,9456,9283,173,4/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809802771,TSpirit,Liquid,Radiant,负,0,兜圈。,phantom_lancer,22,2377,0;@,kez,2490,-113,p3,doom_bringer,2175,202,8685,9237,-552,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809802771,Liquid,TSpirit,Dire,胜,1,0;@,kez,28,2490,兜圈。,phantom_lancer,2377,113,pos3jungler,tidehunter,2297,193,9237,8685,552,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809888784,Liquid,TSpirit,Radiant,负,0,4,muerta,25,2442,兜圈。,faceless_void,2585,-143,pos3jungler,death_prophet,2248,194,8537,9492,-955,1/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8809888784,TSpirit,Liquid,Dire,胜,1,兜圈。,faceless_void,25,2585,4,muerta,2442,143,Wb[,abyssal_underlord,2004,581,9492,8537,955,0/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8810373967,PV,BetBoom,Radiant,胜,1,destroy,necrolyte,21,2554,",",alchemist,2156,398,@,axe,2083,471,10196,9166,1030,1/1/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8810373967,BetBoom,PV,Dire,负,0,",",alchemist,22,2156,destroy,necrolyte,2554,-398,strafe instructor,dawnbreaker,2679,-523,9166,10196,-1030,1/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8810373970,RKX,NAVI,Radiant,胜,1,,naga_siren,25,2554,winter,monkey_king,2436,118,ƬψƬ ☢ Sιrιus-妥,bristleback,2922,-368,9839,9228,611,0/1/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8810373970,NAVI,RKX,Dire,负,0,winter,monkey_king,23,2436,,naga_siren,2554,-118,underrated,abyssal_underlord,2350,86,9228,9839,-611,1/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8810373959,XG,Tundra,Radiant,胜,1,U>,drow_ranger,22,2537,Last Call,kez,2300,237,not human (животное),brewmaster,1399,1138,9336,8517,819,1/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8810373959,Tundra,XG,Dire,负,0,Last Call,kez,24,2300,U>,drow_ranger,2537,-237,@h,doom_bringer,2065,235,8517,9336,-819,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8810373935,PlayTime,NGX,Radiant,胜,1,@T,kez,21,2057,=,muerta,2568,-511,`8M,axe,2849,-792,9229,9856,-627,0/1/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8810373935,NGX,PlayTime,Dire,负,0,=,muerta,27,2568,@T,kez,2057,511,d,doom_bringer,2252,316,9856,9229,627,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8810429061,PV,BetBoom,Radiant,负,0,destroy,storm_spirit,31,2663,p,monkey_king,2536,127,0K,pangolier,1664,999,9110,9875,-765,1/1/2,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8810429061,BetBoom,PV,Dire,胜,1,p,monkey_king,27,2536,destroy,storm_spirit,2663,-127,strafe instructor,dawnbreaker,1961,575,9875,9110,765,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8810441572,RKX,NAVI,Radiant,负,0,pW,faceless_void,17,2218,winter,windrunner,3085,-867,ƬψƬ ☢ Sιrιus-妥,abyssal_underlord,2900,-682,8663,10988,-2325,1/0/3,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8810441572,NAVI,RKX,Dire,胜,1,winter,windrunner,24,3085,pW,faceless_void,2218,867,underrated,centaur,2025,1060,10988,8663,2325,3/0/3,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8810453731,NGX,PlayTime,Radiant,负,0,rin,terrorblade,28,3052,pxA,necrolyte,3378,-326,Qo,tidehunter,2184,868,9997,10537,-540,2/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8810453731,PlayTime,NGX,Dire,胜,1,pxA,necrolyte,35,3378,rin,terrorblade,3052,326,҉,axe,1985,1393,10537,9997,540,1/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8810506148,PV,BetBoom,Radiant,胜,1,destroy,terrorblade,26,2344,`;,alchemist,2317,27,L,tidehunter,1928,416,9676,8015,1661,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8810506148,BetBoom,PV,Dire,负,0,`;,alchemist,19,2317,destroy,terrorblade,2344,-27,strafe instructor,largo,2601,-284,8015,9676,-1661,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8810508497,RKX,NAVI,Radiant,负,0,,tiny,27,2625,winter,windrunner,2086,539,ƬψƬ ☢ Sιrιus-妥,axe,2960,-335,10381,10043,338,0/0/3,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8810508497,NAVI,RKX,Dire,胜,1,winter,windrunner,17,2086,,tiny,2625,-539,underrated,slardar,2553,-467,10043,10381,-338,0/1/2,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8810452708,Tundra,XG,Radiant,负,0,Last Call,muerta,29,2576,`ҹ,kez,2734,-158,@p,brewmaster,1985,591,8976,9428,-452,0/0/3,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8810452708,XG,Tundra,Dire,胜,1,`ҹ,kez,26,2734,Last Call,muerta,2576,158,not human (животное),largo,1984,750,9428,8976,452,0/1/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8810600432,TSpirit,Aurora,Radiant,胜,1,兜圈。,kez,32,3202,Pĩ,doom_bringer,2066,1136,pP,magnataur,1718,1484,10045,8022,2023,1/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8810600432,Aurora,TSpirit,Dire,负,0,Pĩ,doom_bringer,19,2066,兜圈。,kez,3202,-1136,pos3jungler,largo,2163,-97,8022,10045,-2023,0/1/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8810636217,VP,VG,Radiant,胜,1,nokia,life_stealer,24,2908,>,juggernaut,2210,698,=,pangolier,2337,571,9381,8991,390,2/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8810636217,VG,VP,Dire,负,0,>,juggernaut,21,2210,nokia,life_stealer,2908,-698,saberlight,tidehunter,2362,-152,8991,9381,-390,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8810614945,EX-HERO,FLCN,Radiant,负,0,.tv/yumadota2,ursa,21,2117,1,windrunner,2592,-475,YeS signature player,razor,2780,-663,7963,10322,-2359,0/1/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8810614945,FLCN,EX-HERO,Dire,胜,1,1,windrunner,28,2592,.tv/yumadota2,ursa,2117,475,GAMBOT-PARIS,shredder,1989,603,10322,7963,2359,0/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8810642364,GL,Liquid,Radiant,负,0,鬼,luna,18,2041,yondaime,kez,2446,-405,,centaur,2369,-328,8410,9252,-842,0/1/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8810642364,Liquid,GL,Dire,胜,1,yondaime,kez,23,2446,鬼,luna,2041,405,помойка,doom_bringer,2093,353,9252,8410,842,0/1/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8810706519,Aurora,TSpirit,Radiant,负,0,,faceless_void,16,1860,兜圈。,alchemist,2394,-534,pos3jungler,doom_bringer,2304,-444,8682,8804,-122,0/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8810706519,TSpirit,Aurora,Dire,胜,1,兜圈。,alchemist,22,2394,,faceless_void,1860,534,pf,centaur,2097,297,8804,8682,122,0/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8810741766,VP,VG,Radiant,胜,1,nokia,tiny,28,2642,,faceless_void,2068,574,T,dawnbreaker,2332,310,10130,8435,1695,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8810741766,VG,VP,Dire,负,0,,faceless_void,21,2068,nokia,tiny,2642,-574,saberlight,magnataur,2540,-472,8435,10130,-1695,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8810753165,EX-HERO,FLCN,Radiant,负,0,.tv/yumadota2,terrorblade,19,2133,D,life_stealer,2193,-60,PZe,abyssal_underlord,2562,-429,9272,10032,-760,0/1/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8810753165,FLCN,EX-HERO,Dire,胜,1,D,life_stealer,26,2193,.tv/yumadota2,terrorblade,2133,60,GAMBOT-PARIS,kunkka,2795,-602,10032,9272,760,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8810792178,Liquid,GL,Radiant,胜,1,*,troll_warlord,28,2915,鬼,faceless_void,2261,654,помойка,lycan,1864,1051,11350,8282,3068,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8810792178,GL,Liquid,Dire,负,0,鬼,faceless_void,19,2261,*,troll_warlord,2915,-654,,dawnbreaker,2886,-625,8282,11350,-3068,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8810894235,PV,XG,Radiant,负,0,destroy,monkey_king,29,3099,!gD,lone_druid,2589,510,J,shredder,2203,896,9672,8533,1139,1/1/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8810894235,XG,PV,Dire,胜,1,!gD,lone_druid,25,2589,destroy,monkey_king,3099,-510,strafe instructor,beastmaster,2555,34,8533,9672,-1139,0/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8810894092,NAVI,BetBoom,Radiant,胜,1,winter,ursa,15,1994,P(<,life_stealer,2706,-712,B,mars,2550,-556,8708,10003,-1295,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8810894092,BetBoom,NAVI,Dire,负,0,P(<,life_stealer,26,2706,winter,ursa,1994,712,ƬψƬ ☢ Sιrιus-妥,axe,2782,-76,10003,8708,1295,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8810895940,NGX,Tundra,Radiant,负,0,P6,templar_assassin,13,1771,Last Call,kez,2533,-762,not human (животное),doom_bringer,2641,-870,8790,9917,-1127,0/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8810895940,Tundra,NGX,Dire,胜,1,Last Call,kez,25,2533,P6,templar_assassin,1771,762,GA,slardar,2296,237,9917,8790,1127,1/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8810894132,RKX,PlayTime,Radiant,负,0,!?,necrolyte,29,3399,(<,tiny,2709,690,`m¼,axe,1393,2006,11671,8937,2734,2/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8810894132,PlayTime,RKX,Dire,胜,1,(<,tiny,24,2709,!?,necrolyte,3399,-690,underrated,pangolier,2753,-44,8937,11671,-2734,1/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8810990695,BetBoom,NAVI,Radiant,负,0,0K<,necrolyte,29,3092,winter,faceless_void,2083,1009,ƬψƬ ☢ Sιrιus-妥,axe,2272,820,10627,8505,2122,1/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8810990695,NAVI,BetBoom,Dire,胜,1,winter,faceless_void,18,2083,0K<,necrolyte,3092,-1009,17 mind,dawnbreaker,2716,-633,8505,10627,-2122,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8810991986,NGX,Tundra,Radiant,胜,1,97,tiny,24,2434,Last Call,kez,2831,-397,not human (животное),largo,2508,-74,9487,9646,-159,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8810991986,Tundra,NGX,Dire,负,0,Last Call,kez,25,2831,97,tiny,2434,397,@,tidehunter,2378,453,9646,9487,159,1/0/2,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8811000876,RKX,PlayTime,Radiant,负,0,'MC,terrorblade,20,2456,`b,monkey_king,2336,120,,doom_bringer,2070,386,9586,10314,-728,1/1/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8811000876,PlayTime,RKX,Dire,胜,1,`b,monkey_king,21,2336,'MC,terrorblade,2456,-120,underrated,slardar,2376,-40,10314,9586,728,0/0/3,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8810989536,PV,XG,Radiant,胜,1,destroy,tiny,23,2311,区,lone_druid,2265,46,pՌ,bristleback,2179,132,8806,8276,530,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8810989536,XG,PV,Dire,负,0,区,lone_druid,17,2265,destroy,tiny,2311,-46,strafe instructor,dawnbreaker,1952,313,8276,8806,-530,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8811075585,Tundra,NGX,Radiant,胜,1,Last Call,windrunner,20,2331,8,tiny,2957,-626,@zW,magnataur,2169,162,9834,9127,707,1/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8811075585,NGX,Tundra,Dire,负,0,8,tiny,27,2957,Last Call,windrunner,2331,626,not human (животное),largo,2179,778,9127,9834,-707,1/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8811095968,PV,XG,Radiant,胜,1,destroy,muerta,30,2751,慖,phantom_assassin,2817,-66,0V,slardar,1770,981,9554,9187,367,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8811095968,XG,PV,Dire,负,0,慖,phantom_assassin,31,2817,destroy,muerta,2751,66,strafe instructor,beastmaster,2145,672,9187,9554,-367,0/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8811620119,Aurora,EX-HERO,Radiant,胜,1,6,tiny,19,2326,.tv/yumadota2,alchemist,2242,84,GAMBOT-PARIS,viper,1988,338,9716,7970,1746,1/0/2,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8811620119,EX-HERO,Aurora,Dire,负,0,.tv/yumadota2,alchemist,19,2242,6,tiny,2326,-84,Shenorita`,doom_bringer,2377,-135,7970,9716,-1746,1/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8811618959,Liquid,VP,Radiant,胜,1,yondaime,bristleback,34,3012,nokia,terrorblade,2201,811,saberlight,dawnbreaker,2279,733,11053,9010,2043,1/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8811618959,VP,Liquid,Dire,负,0,nokia,terrorblade,23,2201,yondaime,bristleback,3012,-811,50centaur,abyssal_underlord,2537,-336,9010,11053,-2043,0/3/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8811618995,VG,FLCN,Radiant,负,0,],drow_ranger,23,2457,I m Going To Be The Best Carry,lone_druid,2728,-271,YeS signature player,shredder,1983,474,10304,9626,678,0/1/3,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8811618995,FLCN,VG,Dire,胜,1,I m Going To Be The Best Carry,lone_druid,28,2728,],drow_ranger,2457,271,,beastmaster,2409,319,9626,10304,-678,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8811618989,TSpirit,GL,Radiant,胜,1,w_,tiny,24,2681,鬼,kez,2540,141,помойка,doom_bringer,2586,95,9059,8955,104,1/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8811618989,GL,TSpirit,Dire,负,0,鬼,kez,20,2540,w_,tiny,2681,-141,,largo,2059,481,8955,9059,-104,1/1/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8811683230,VP,Liquid,Radiant,负,0,nokia,kez,25,2408,yondaime,muerta,2883,-475,50centaur,bristleback,2450,-42,8624,10184,-1560,0/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8811683230,Liquid,VP,Dire,胜,1,yondaime,muerta,32,2883,nokia,kez,2408,475,saberlight,kunkka,1662,1221,10184,8624,1560,1/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8811680490,EX-HERO,Aurora,Radiant,负,0,.tv/yumadota2,alchemist,16,3094,P,windrunner,2806,288,Shenorita`,tidehunter,2272,822,9359,10007,-648,3/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8811680490,Aurora,EX-HERO,Dire,胜,1,P,windrunner,29,2806,.tv/yumadota2,alchemist,3094,-288,GAMBOT-PARIS,primal_beast,1894,912,10007,9359,648,0/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8811706161,GL,TSpirit,Radiant,负,0,鬼,luna,27,2450,Pv,furion,2670,-220,pos3jungler,largo,2371,79,9304,9733,-429,0/2/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8811706161,TSpirit,GL,Dire,胜,1,Pv,furion,28,2670,鬼,luna,2450,220,помойка,dawnbreaker,1931,739,9733,9304,429,0/1/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8811687114,FLCN,VG,Radiant,胜,1,I m Going To Be The Best Carry,tiny,25,2357,Roselia,kez,2529,-172,F',mars,2378,-21,9022,9792,-770,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8811687114,VG,FLCN,Dire,负,0,Roselia,kez,24,2529,I m Going To Be The Best Carry,tiny,2357,172,YeS signature player,doom_bringer,2388,141,9792,9022,770,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8811838021,NGX,XG,Radiant,胜,1,`^@,lone_druid,23,2500,区,kez,2968,-468,¿,abyssal_underlord,2569,-69,10102,11161,-1059,1/1/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8811838021,XG,NGX,Dire,负,0,区,kez,36,2968,`^@,lone_druid,2500,468,malrincyq,largo,2552,416,11161,10102,1059,0/0/2,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8811838048,PV,NAVI,Radiant,胜,1,destroy,lone_druid,41,3250,winter,terrorblade,2691,559,ƬψƬ ☢ Sιrιus-妥,axe,1566,1684,10743,8979,1764,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8811838048,NAVI,PV,Dire,负,0,winter,terrorblade,25,2691,destroy,lone_druid,3250,-559,strafe instructor,brewmaster,2180,511,8979,10743,-1764,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8811845697,BetBoom,PlayTime,Radiant,负,0,Naruto~,tiny,22,2229,VE,doom_bringer,2080,149,^,abyssal_underlord,2449,-220,9859,9660,199,0/1/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8811845697,PlayTime,BetBoom,Dire,胜,1,VE,doom_bringer,18,2080,Naruto~,tiny,2229,-149,Badwater,magnataur,2520,-440,9660,9859,-199,0/1/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8811839782,Tundra,RKX,Radiant,负,0,Last Call,beastmaster,32,2711,abi eja,luna,2912,-201,underrated,kunkka,2564,147,9204,9823,-619,1/1/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8811839782,RKX,Tundra,Dire,胜,1,abi eja,luna,25,2912,Last Call,beastmaster,2711,201,not human (животное),shredder,2345,567,9823,9204,619,2/1/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8811941658,PV,NAVI,Radiant,胜,1,destroy,muerta,28,2725,winter,ursa,2500,225,ƬψƬ ☢ Sιrιus-妥,slardar,2059,666,9823,9077,746,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8811941658,NAVI,PV,Dire,负,0,winter,ursa,26,2500,destroy,muerta,2725,-225,strafe instructor,axe,2839,-339,9077,9823,-746,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8811958377,PlayTime,BetBoom,Radiant,负,0,VE,tiny,23,2358,Naruto~,kez,2841,-483,>ݒ,pangolier,2604,-246,8865,10103,-1238,0/1/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8811958377,BetBoom,PlayTime,Dire,胜,1,Naruto~,kez,31,2841,VE,tiny,2358,483,^,abyssal_underlord,2070,771,10103,8865,1238,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8811930872,NGX,XG,Radiant,胜,1,rin,nevermore,28,2995,@,clinkz,2600,395,¿,shredder,1700,1295,9687,8756,931,3/1/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8811930872,XG,NGX,Dire,负,0,@,clinkz,30,2600,rin,nevermore,2995,-395,malrincyq,doom_bringer,2130,470,8756,9687,-931,1/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8811974004,RKX,Tundra,Radiant,胜,1,"""w",naga_siren,20,2142,Last Call,monkey_king,2357,-215,not human (животное),beastmaster,2072,70,9606,8750,856,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8811974004,Tundra,RKX,Dire,负,0,Last Call,monkey_king,27,2357,"""w",naga_siren,2142,215,underrated,kunkka,2430,-73,8750,9606,-856,0/2/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8812041728,BetBoom,PlayTime,Radiant,胜,1,Naruto~,kez,23,1969,VE,doom_bringer,2629,-660,^,axe,3034,-1065,8198,9907,-1709,0/3/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8812041728,PlayTime,BetBoom,Dire,负,0,VE,doom_bringer,24,2629,Naruto~,kez,1969,660,Badwater,largo,2420,209,9907,8198,1709,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8812138585,TSpirit,VP,Radiant,胜,1,兜圈。,kez,30,2640,nokia,life_stealer,1788,852,saberlight,axe,2386,254,9822,8306,1516,0/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8812138585,VP,TSpirit,Dire,负,0,nokia,life_stealer,17,1788,兜圈。,kez,2640,-852,pos3jungler,death_prophet,2366,-578,8306,9822,-1516,0/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8812138635,FLCN,Liquid,Radiant,胜,1,`7y,ursa,28,2977,yondaime,nevermore,2285,692,50centaur,centaur,2113,864,10293,8681,1612,2/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8812138635,Liquid,FLCN,Dire,负,0,yondaime,nevermore,27,2285,`7y,ursa,2977,-692,YeS signature player,mars,2459,-174,8681,10293,-1612,0/1/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8812155277,Aurora,GL,Radiant,胜,1,tragic,doom_bringer,21,2143,鬼,drow_ranger,2886,-743,помойка,night_stalker,2063,80,7960,9501,-1541,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8812155277,GL,Aurora,Dire,负,0,鬼,drow_ranger,24,2886,tragic,doom_bringer,2143,743,Shenorita`,shredder,1424,1462,9501,7960,1541,1/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8812138607,VG,EX-HERO,Radiant,胜,1,,tiny,22,2211,.tv/yumadota2,muerta,2244,-33,GAMBOT-PARIS,tidehunter,2433,-222,9803,10047,-244,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8812138607,EX-HERO,VG,Dire,负,0,.tv/yumadota2,muerta,25,2244,,tiny,2211,33,Bach,beastmaster,2370,-126,10047,9803,244,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8812233361,VP,TSpirit,Radiant,负,0,nokia,muerta,24,2233,pJf,alchemist,3014,-781,pos3jungler,slardar,1954,279,8423,10442,-2019,0/1/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8812233361,TSpirit,VP,Dire,胜,1,pJf,alchemist,26,3014,nokia,muerta,2233,781,saberlight,beastmaster,2387,627,10442,8423,2019,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8812263063,Aurora,GL,Radiant,胜,1,tragic,windrunner,25,3038,鬼,drow_ranger,2470,568,помойка,doom_bringer,1858,1180,10096,8106,1990,2/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8812263063,GL,Aurora,Dire,负,0,鬼,drow_ranger,18,2470,tragic,windrunner,3038,-568,Shenorita`,largo,2016,454,8106,10096,-1990,1/2/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8812258249,FLCN,Liquid,Radiant,胜,1,m$,tiny,30,2465,yondaime,muerta,2426,39,50centaur,dawnbreaker,2673,-208,9803,10049,-246,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8812258249,Liquid,FLCN,Dire,负,0,yondaime,muerta,23,2426,m$,tiny,2465,-39,YeS signature player,viper,2771,-345,10049,9803,246,0/2/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8812274718,EX-HERO,VG,Radiant,负,0,.tv/yumadota2,life_stealer,22,2149,Roselia,drow_ranger,2862,-713,Bach,axe,2450,-301,7663,10083,-2420,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8812274718,VG,EX-HERO,Dire,胜,1,Roselia,drow_ranger,22,2862,.tv/yumadota2,life_stealer,2149,713,GAMBOT-PARIS,shredder,1897,965,10083,7663,2420,2/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8812989097,NAVI,PlayTime,Radiant,胜,1,winter,terrorblade,32,2885,VE,alchemist,2516,369,^,largo,2172,713,10612,8805,1807,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8812989097,PlayTime,NAVI,Dire,负,0,VE,alchemist,19,2516,winter,terrorblade,2885,-369,ƬψƬ ☢ Sιrιus-妥,abyssal_underlord,2385,131,8805,10612,-1807,0/1/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8812989027,NGX,PV,Radiant,负,0,rin,luna,24,2506,destroy,kez,2271,235,strafe instructor,axe,2233,273,7702,9739,-2037,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8812989027,PV,NGX,Dire,胜,1,destroy,kez,25,2271,rin,luna,2506,-235,malrincyq,largo,2027,244,9739,7702,2037,1/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8812990272,XG,RKX,Radiant,胜,1,区,faceless_void,25,2659,abi eja,sven,2323,336,underrated,axe,2667,-8,9387,8725,662,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8812990272,RKX,XG,Dire,负,0,abi eja,sven,22,2323,区,faceless_void,2659,-336,¿,dawnbreaker,2326,-3,8725,9387,-662,1/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8812989544,Tundra,BetBoom,Radiant,胜,1,Last Call,kez,25,2184,Naruto~,luna,2396,-212,Rs,tidehunter,1761,423,9235,8614,621,1/1/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8812989544,BetBoom,Tundra,Dire,负,0,Naruto~,luna,26,2396,Last Call,kez,2184,212,not human (животное),shredder,2185,211,8614,9235,-621,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8813059358,RKX,XG,Radiant,负,0,abi eja,tiny,12,1948,区,alchemist,3127,-1179,¿,dawnbreaker,2187,-239,9072,9854,-782,0/2/2,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8813059358,XG,RKX,Dire,胜,1,区,alchemist,37,3127,abi eja,tiny,1948,1179,underrated,abyssal_underlord,2518,609,9854,9072,782,0/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8813051930,PlayTime,NAVI,Radiant,负,0,VE,beastmaster,27,2903,winter,windrunner,2650,253,ƬψƬ ☢ Sιrιus-妥,axe,2211,692,9294,10081,-787,0/0/2,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8813051930,NAVI,PlayTime,Dire,胜,1,winter,windrunner,24,2650,VE,beastmaster,2903,-253,Ps,slardar,1724,926,10081,9294,787,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8813055101,PV,NGX,Radiant,胜,1,destroy,kez,28,2641,rin,gyrocopter,2497,144,malrincyq,largo,2109,532,9177,9364,-187,1/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8813055101,NGX,PV,Dire,负,0,rin,gyrocopter,27,2497,destroy,kez,2641,-144,strafe instructor,axe,1876,621,9364,9177,187,1/1/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8813075789,BetBoom,Tundra,Radiant,胜,1,u,muerta,26,2592,Last Call,kez,2701,-109,not human (животное),doom_bringer,2450,142,10516,10285,231,1/1/2,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8813075789,Tundra,BetBoom,Dire,负,0,Last Call,kez,27,2701,u,muerta,2592,109,Badwater,tidehunter,2240,461,10285,10516,-231,1/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8813156153,Tundra,BetBoom,Radiant,胜,1,Last Call,windrunner,23,2371,Naruto~,dawnbreaker,1838,533,Badwater,largo,2058,313,9528,8453,1075,0/0/2,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8813156153,BetBoom,Tundra,Dire,负,0,Naruto~,dawnbreaker,18,1838,Last Call,windrunner,2371,-533,not human (животное),lycan,2750,-912,8453,9528,-1075,0/1/2,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8813239365,EX-HERO,Liquid,Radiant,负,0,.tv/yumadota2,faceless_void,26,2487,ᄔ,kez,2708,-221,50centaur,doom_bringer,2651,-164,8173,10209,-2036,1/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8813239365,Liquid,EX-HERO,Dire,胜,1,ᄔ,kez,27,2708,.tv/yumadota2,faceless_void,2487,221,GAMBOT-PARIS,tidehunter,1661,1047,10209,8173,2036,0/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8813239180,GL,VP,Radiant,负,0,鬼,ursa,24,2822,nokia,alchemist,2665,157,saberlight,tidehunter,2089,733,9153,8932,221,2/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8813239180,VP,GL,Dire,胜,1,nokia,alchemist,23,2665,鬼,ursa,2822,-157,помойка,largo,2209,456,8932,9153,-221,1/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8813240600,Aurora,VG,Radiant,胜,1,tragic,ursa,27,2536,ԓ,drow_ranger,2876,-340,Bach,death_prophet,2432,104,9887,9554,333,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8813240600,VG,Aurora,Dire,负,0,ԓ,drow_ranger,32,2876,tragic,ursa,2536,340,:,doom_bringer,2390,486,9554,9887,-333,0/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8813287573,TSpirit,FLCN,Radiant,胜,1,兜圈。,alchemist,16,1829,I m Going To Be The Best Carry,weaver,2402,-573,YeS signature player,doom_bringer,2238,-409,8546,9690,-1144,1/1/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8813287573,FLCN,TSpirit,Dire,负,0,I m Going To Be The Best Carry,weaver,28,2402,兜圈。,alchemist,1829,573,pos3jungler,largo,2972,-570,9690,8546,1144,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8813352678,Liquid,EX-HERO,Radiant,胜,1,yondaime,tiny,26,2678,.tv/yumadota2,monkey_king,2173,505,GAMBOT-PARIS,shredder,2513,165,9900,9004,896,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8813352678,EX-HERO,Liquid,Dire,负,0,.tv/yumadota2,monkey_king,18,2173,yondaime,tiny,2678,-505,50centaur,doom_bringer,2512,-339,9004,9900,-896,0/2/2,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8813352696,VP,GL,Radiant,负,0,nokia,windrunner,27,2494,鬼,life_stealer,2649,-155,помойка,slardar,2331,163,8586,9760,-1174,0/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8813352696,GL,VP,Dire,胜,1,鬼,life_stealer,24,2649,nokia,windrunner,2494,155,saberlight,abyssal_underlord,2210,439,9760,8586,1174,0/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8813355676,VG,Aurora,Radiant,胜,1,Roselia,muerta,28,2503,tragic,ursa,2507,-4,`,slardar,2308,195,9825,9114,711,0/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8813355676,Aurora,VG,Dire,负,0,tragic,ursa,26,2507,Roselia,muerta,2503,4,Bach,axe,2491,16,9114,9825,-711,0/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8813398413,FLCN,TSpirit,Radiant,胜,1,I m Going To Be The Best Carry,windrunner,31,3044,兜圈。,terrorblade,2444,600,pos3jungler,axe,2038,1006,10237,9188,1049,0/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8813398413,TSpirit,FLCN,Dire,负,0,兜圈。,terrorblade,21,2444,I m Going To Be The Best Carry,windrunner,3044,-600,YeS signature player,shredder,2549,-105,9188,10237,-1049,1/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8813441620,VP,GL,Radiant,负,0,nokia,tiny,25,2772,鬼,luna,2353,419,помойка,abyssal_underlord,2446,326,9215,9834,-619,1/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8813441620,GL,VP,Dire,胜,1,鬼,luna,18,2353,nokia,tiny,2772,-419,saberlight,primal_beast,2077,276,9834,9215,619,1/1/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8813453376,VG,Aurora,Radiant,负,0,Roselia,medusa,22,2712,tragic,ursa,2716,-4,Shenorita`,doom_bringer,2613,99,9639,9655,-16,1/1/2,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8813453376,Aurora,VG,Dire,胜,1,tragic,ursa,31,2716,Roselia,medusa,2712,4,Bach,bristleback,2061,655,9655,9639,16,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8813536582,TSpirit,FLCN,Radiant,负,0,兜圈。,kez,31,2953,I m Going To Be The Best Carry,tiny,2983,-30,YeS signature player,shredder,2400,553,9830,10321,-491,1/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8813536582,FLCN,TSpirit,Dire,胜,1,I m Going To Be The Best Carry,tiny,26,2983,兜圈。,kez,2953,30,R,primal_beast,2380,603,10321,9830,491,1/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8813551147,NAVI,Tundra,Radiant,胜,1,winter,ursa,27,2567,Last Call,windrunner,2307,260,not human (животное),shredder,1813,754,8759,8927,-168,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8813551147,Tundra,NAVI,Dire,负,0,Last Call,windrunner,27,2307,winter,ursa,2567,-260,ƬψƬ ☢ Sιrιus-妥,centaur,2500,-193,8927,8759,168,0/1/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8813556518,RKX,NGX,Radiant,负,0,abi eja,kez,23,2493,0,monkey_king,2609,-116,malrincyq,axe,2250,243,9223,9275,-52,2/1/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8813556518,NGX,RKX,Dire,胜,1,0,monkey_king,23,2609,abi eja,kez,2493,116,underrated,dawnbreaker,2120,489,9275,9223,52,1/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8813604844,PV,PlayTime,Radiant,负,0,destroy,drow_ranger,29,2369,@:UЕ,doom_bringer,2776,-407,WZ,axe,2163,206,9416,10674,-1258,0/1/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8813604844,PlayTime,PV,Dire,胜,1,@:UЕ,doom_bringer,28,2776,destroy,drow_ranger,2369,407,strafe instructor,slardar,1975,801,10674,9416,1258,1/1/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8813650766,Tundra,NAVI,Radiant,胜,1,Last Call,templar_assassin,26,2520,winter,broodmother,1919,601,ƬψƬ ☢ Sιrιus-妥,axe,2499,21,9023,8899,124,0/1/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8813650766,NAVI,Tundra,Dire,负,0,winter,broodmother,20,1919,Last Call,templar_assassin,2520,-601,not human (животное),largo,2561,-642,8899,9023,-124,0/1/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8813657190,NGX,RKX,Radiant,胜,1,rin,muerta,32,3142,P,mirana,2879,263,underrated,slardar,1686,1456,10707,9013,1694,2/0/3,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8813657190,RKX,NGX,Dire,负,0,P,mirana,26,2879,rin,muerta,3142,-263,malrincyq,tidehunter,2524,355,9013,10707,-1694,2/1/3,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8813653439,BetBoom,XG,Radiant,胜,1,ܔ,kez,25,2286,区,tiny,2015,271,¿,doom_bringer,2552,-266,9528,8424,1104,0/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8813653439,XG,BetBoom,Dire,负,0,区,tiny,17,2015,ܔ,kez,2286,-271,,abyssal_underlord,2636,-621,8424,9528,-1104,0/1/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8813707883,PlayTime,PV,Radiant,负,0,J,alchemist,13,2095,destroy,tiny,3064,-969,strafe instructor,dawnbreaker,2571,-476,10150,10062,88,0/1/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8813707883,PV,PlayTime,Dire,胜,1,destroy,tiny,39,3064,J,alchemist,2095,969,`Kt,axe,2941,123,10062,10150,-88,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8813745846,Tundra,NAVI,Radiant,负,0,Last Call,templar_assassin,26,1907,winter,monkey_king,2743,-836,ƬψƬ ☢ Sιrιus-妥,magnataur,2586,-679,8777,10515,-1738,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8813745846,NAVI,Tundra,Dire,胜,1,winter,monkey_king,24,2743,Last Call,templar_assassin,1907,836,not human (животное),brewmaster,2347,396,10515,8777,1738,1/1/2,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8813775647,XG,BetBoom,Radiant,负,0,区,phantom_lancer,31,2618,Naruto~,kez,2718,-100,Badwater,primal_beast,2463,155,8347,10085,-1738,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8813775647,BetBoom,XG,Dire,胜,1,Naruto~,kez,29,2718,区,phantom_lancer,2618,100,¿,shredder,2419,299,10085,8347,1738,0/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8813802531,PlayTime,PV,Radiant,胜,1,VE,necrolyte,27,2719,destroy,lone_druid,3331,-612,strafe instructor,dawnbreaker,2211,508,9869,9686,183,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8813802531,PV,PlayTime,Dire,负,0,destroy,lone_druid,34,3331,VE,necrolyte,2719,612,p6l,beastmaster,1783,1548,9686,9869,-183,1/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8814473986,TSpirit,EX-HERO,Radiant,胜,1,兜圈。,juggernaut,28,2791,Yuma,ursa,1935,856,GAMBOT-PARIS,pangolier,2104,687,10824,8511,2313,0/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8814473986,EX-HERO,TSpirit,Dire,负,0,Yuma,ursa,17,1935,兜圈。,juggernaut,2791,-856,hV,slardar,2672,-737,8511,10824,-2313,1/1/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8814473655,VG,Liquid,Radiant,胜,1,Roselia,terrorblade,26,2887,yondaime,furion,2469,418,),slardar,2339,548,9984,9309,675,1/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8814473655,Liquid,VG,Dire,负,0,yondaime,furion,24,2469,Roselia,terrorblade,2887,-418,Bach,doom_bringer,2400,69,9309,9984,-675,0/1/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8814473618,VP,Aurora,Radiant,负,0,nokia,life_stealer,25,2618,tragic,phantom_lancer,2498,120,@f#,axe,2396,222,9599,9448,151,0/0/3,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8814473618,Aurora,VP,Dire,胜,1,tragic,phantom_lancer,22,2498,nokia,life_stealer,2618,-120,saberlight,slardar,2036,462,9448,9599,-151,0/1/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8814475396,GL,FLCN,Radiant,胜,1,鬼,lone_druid,26,2567,*~h,ursa,2711,-144,YeS signature player,shredder,1801,766,9941,9149,792,0/0/2,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8814475396,FLCN,GL,Dire,负,0,*~h,ursa,31,2711,鬼,lone_druid,2567,144,помойка,largo,2350,361,9149,9941,-792,0/1/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8814549253,EX-HERO,TSpirit,Radiant,负,0,Yuma,meepo,27,2324,N,tiny,1947,377,#y,pangolier,2937,-613,9304,8904,400,1/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8814549253,TSpirit,EX-HERO,Dire,胜,1,N,tiny,23,1947,Yuma,meepo,2324,-377,GAMBOT-PARIS,bristleback,2297,-350,8904,9304,-400,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8814554021,VG,Liquid,Radiant,负,0,Roselia,windrunner,24,2991,yondaime,tiny,2100,891,50centaur,doom_bringer,2341,650,10343,8418,1925,2/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8814554021,Liquid,VG,Dire,胜,1,yondaime,tiny,22,2100,Roselia,windrunner,2991,-891,Bach,batrider,2527,-427,8418,10343,-1925,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8814558995,Aurora,VP,Radiant,负,0,tragic,windrunner,24,2288,nokia,luna,1904,384,saberlight,centaur,1912,376,8831,7941,890,0/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8814558995,VP,Aurora,Dire,胜,1,nokia,luna,22,1904,tragic,windrunner,2288,-384,p6n,beastmaster,2641,-737,7941,8831,-890,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8814561483,FLCN,GL,Radiant,胜,1,I m Going To Be The Best Carry,luna,46,3300,鬼,clinkz,2429,871,помойка,lycan,2179,1121,10928,8852,2076,2/0/2,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8814561483,GL,FLCN,Dire,负,0,鬼,clinkz,24,2429,I m Going To Be The Best Carry,luna,3300,-871,YeS signature player,shredder,2391,38,8852,10928,-2076,1/1/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8814642533,VG,Liquid,Radiant,负,0,Roselia,alchemist,24,2284,A,luna,2795,-511,50centaur,pangolier,2527,-243,7829,10116,-2287,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8814642533,Liquid,VG,Dire,胜,1,A,luna,33,2795,Roselia,alchemist,2284,511,Bach,primal_beast,1826,969,10116,7829,2287,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8814645393,VP,Aurora,Radiant,负,0,nokia,kez,14,2212,tragic,tiny,2782,-570,Shenorita`,dawnbreaker,2667,-455,8736,9978,-1242,2/1/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8814645393,Aurora,VP,Dire,胜,1,tragic,tiny,26,2782,nokia,kez,2212,570,saberlight,tidehunter,2140,642,9978,8736,1242,1/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8814673909,FLCN,GL,Radiant,胜,1,I m Going To Be The Best Carry,luna,28,2436,鬼,muerta,2477,-41,помойка,lycan,2663,-227,9924,9141,783,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8814673909,GL,FLCN,Dire,负,0,鬼,muerta,27,2477,I m Going To Be The Best Carry,luna,2436,41,YeS signature player,mars,2619,-142,9141,9924,-783,1/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8814748706,PV,RKX,Radiant,胜,1,destroy,tiny,19,2146,abi eja,lone_druid,2137,9,underrated,dawnbreaker,2318,-172,10024,8784,1240,1/1/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8814748706,RKX,PV,Dire,负,0,abi eja,lone_druid,20,2137,destroy,tiny,2146,-9,strafe instructor,abyssal_underlord,2288,-151,8784,10024,-1240,0/1/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8814775838,PlayTime,Tundra,Radiant,胜,1,VE,windrunner,28,2340,Damn,ursa,2128,212,not human (животное),batrider,2144,196,9658,9007,651,0/1/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8814775838,Tundra,PlayTime,Dire,负,0,Damn,ursa,20,2128,VE,windrunner,2340,-212,^,doom_bringer,2406,-278,9007,9658,-651,0/1/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8814800807,XG,NAVI,Radiant,负,0,区,drow_ranger,27,2774,winter,doom_bringer,2249,525,ƬψƬ ☢ Sιrιus-妥,centaur,2197,577,10559,9034,1525,1/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8814800807,NAVI,XG,Dire,胜,1,winter,doom_bringer,26,2249,区,drow_ranger,2774,-525,¿,dawnbreaker,2747,-498,9034,10559,-1525,0/1/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8814771003,NGX,BetBoom,Radiant,负,0,S,terrorblade,23,2391,Naruto~,kez,2129,262,Badwater,beastmaster,2353,38,10085,9244,841,2/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8814771003,BetBoom,NGX,Dire,胜,1,Naruto~,kez,23,2129,S,terrorblade,2391,-262,malrincyq,axe,2986,-857,9244,10085,-841,0/2/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8814858474,RKX,PV,Radiant,胜,1,abi eja,kez,20,2360,destroy,muerta,3472,-1112,strafe instructor,slardar,1903,457,8835,10606,-1771,1/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8814858474,PV,RKX,Dire,负,0,destroy,muerta,35,3472,abi eja,kez,2360,1112,underrated,primal_beast,2136,1336,10606,8835,1771,2/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8814932055,XG,NAVI,Radiant,负,0,,kez,26,2144,winter,faceless_void,2397,-253,ƬψƬ ☢ Sιrιus-妥,abyssal_underlord,2680,-536,10311,9749,562,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8814932055,NAVI,XG,Dire,胜,1,winter,faceless_void,24,2397,,kez,2144,253,%y,largo,3040,-643,9749,10311,-562,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8814885502,Tundra,PlayTime,Radiant,胜,1,Damn,windrunner,29,2847,VE,muerta,2664,183,^,abyssal_underlord,1837,1010,9173,9698,-525,2/1/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8814885502,PlayTime,Tundra,Dire,负,0,VE,muerta,24,2664,Damn,windrunner,2847,-183,not human (животное),tidehunter,1862,802,9698,9173,525,0/0/2,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8814944245,NGX,BetBoom,Radiant,负,0,rin,medusa,21,2164,Naruto~,muerta,2144,20,Badwater,beastmaster,2993,-829,8540,10102,-1562,0/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8814944245,BetBoom,NGX,Dire,胜,1,Naruto~,muerta,26,2144,rin,medusa,2164,-20,cQR,centaur,2406,-262,10102,8540,1562,0/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8814994202,RKX,PV,Radiant,负,0,kj,necrolyte,28,2687,destroy,kez,2975,-288,strafe instructor,axe,3435,-748,9900,11722,-1822,0/2/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8814994202,PV,RKX,Dire,胜,1,destroy,kez,30,2975,kj,necrolyte,2687,288,underrated,death_prophet,2366,609,11722,9900,1822,2/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8815026096,PlayTime,Tundra,Radiant,负,0,VE,windrunner,29,2609,Damn,kez,2533,76,not human (животное),shredder,2779,-170,9830,9765,65,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8815026096,Tundra,PlayTime,Dire,胜,1,Damn,kez,22,2533,VE,windrunner,2609,-76,^,tidehunter,2365,168,9765,9830,-65,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8815801127,PlayTime,XG,Radiant,胜,1,VE,necrolyte,33,3083,区,terrorblade,2308,775,¿,axe,2225,858,10451,8755,1696,1/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8815801127,XG,PlayTime,Dire,负,0,区,terrorblade,25,2308,VE,necrolyte,3083,-775,o,brewmaster,2075,233,8755,10451,-1696,0/1/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8815854223,PlayTime,Tundra,Radiant,负,0,VE,nevermore,26,2760,Damn,phantom_assassin,2193,567,not human (животное),largo,2573,187,9302,8683,619,1/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8815854223,Tundra,PlayTime,Dire,胜,1,Damn,phantom_assassin,23,2193,VE,nevermore,2760,-567,^,beastmaster,1508,685,8683,9302,-619,0/1/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8815912139,Tundra,XG,Radiant,胜,1,Damn,muerta,23,2335,区,luna,1993,342,¿,abyssal_underlord,1948,387,9388,8101,1287,1/1/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8815912139,XG,Tundra,Dire,负,0,区,luna,21,1993,Damn,muerta,2335,-342,not human (животное),doom_bringer,2604,-611,8101,9388,-1287,0/1/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8817062805,FLCN,Tundra,Radiant,胜,1,,windrunner,32,2324,Damn,phantom_assassin,2696,-372,not human (животное),doom_bringer,2594,-270,8948,9513,-565,0/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8817062805,Tundra,FLCN,Dire,负,0,Damn,phantom_assassin,32,2696,,windrunner,2324,372,YeS signature player,tidehunter,2709,-13,9513,8948,565,0/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8817145578,Tundra,FLCN,Radiant,负,0,Damn,windrunner,24,2344,I m Going To Be The Best Carry,life_stealer,2613,-269,YeS signature player,shredder,2289,55,8619,9311,-692,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8817145578,FLCN,Tundra,Dire,胜,1,I m Going To Be The Best Carry,life_stealer,33,2613,Damn,windrunner,2344,269,not human (животное),sand_king,2647,-34,9311,8619,692,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8817248835,Liquid,PV,Radiant,负,0,[(,windrunner,33,3219,destroy,kez,2843,376,strafe instructor,beastmaster,2165,1054,9920,10328,-408,0/0/2,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8817248835,PV,Liquid,Dire,胜,1,destroy,kez,27,2843,[(,windrunner,3219,-376,50centaur,tidehunter,2146,697,10328,9920,408,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8817309538,TSpirit,BB,Radiant,胜,1,兜圈。,drow_ranger,30,3137,e,monkey_king,2430,707,Badwater,axe,1921,1216,9393,9028,365,3/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8817309538,BB,TSpirit,Dire,负,0,e,monkey_king,29,2430,兜圈。,drow_ranger,3137,-707,n<,pangolier,1971,459,9028,9393,-365,0/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8817364827,PV,Liquid,Radiant,负,0,destroy,necrolyte,31,3463,yondaime,kez,2352,1111,50centaur,night_stalker,1696,1767,10527,8034,2493,3/0/2,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8817364827,Liquid,PV,Dire,胜,1,yondaime,kez,26,2352,destroy,necrolyte,3463,-1111,strafe instructor,shredder,2263,89,8034,10527,-2493,0/1/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8817437213,TSpirit,BB,Radiant,胜,1,Pѵ,nevermore,27,2544,Naruto~,monkey_king,2113,431,Badwater,largo,2473,71,8981,8836,145,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8817437213,BB,TSpirit,Dire,负,0,Naruto~,monkey_king,21,2113,Pѵ,nevermore,2544,-431,!/,pangolier,2234,-121,8836,8981,-145,0/1/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8817480844,PV,Liquid,Radiant,胜,1,destroy,terrorblade,30,2729,,nevermore,2856,-127,50centaur,abyssal_underlord,1939,790,9380,9598,-218,1/0/2,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8817480844,Liquid,PV,Dire,负,0,,nevermore,31,2856,destroy,terrorblade,2729,127,strafe instructor,shredder,1861,995,9598,9380,218,1/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8817588541,NAVI,Aurora,Radiant,胜,1,PC+,templar_assassin,24,2837,C+,ursa,2623,214,C+,phoenix,2336,501,9791,9759,32,2/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8817588541,Aurora,NAVI,Dire,负,0,C+,ursa,24,2623,PC+,templar_assassin,2837,-214,C+,axe,2490,133,9759,9791,-32,0/0/2,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8817670980,Aurora,NAVI,Radiant,胜,1,tragic,ursa,24,2506,winter,faceless_void,1576,930,ƬψƬ ☢ Sιrιus-妥,magnataur,2018,488,9429,8103,1326,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8817670980,NAVI,Aurora,Dire,负,0,winter,faceless_void,14,1576,tragic,ursa,2506,-930,Shenorita`,dawnbreaker,2538,-962,8103,9429,-1326,0/1/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8817760291,Aurora,NAVI,Radiant,胜,1,tragic,tiny,19,2246,winter,monkey_king,2194,52,N,shredder,2055,191,10197,8681,1516,0/0/2,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8817760291,NAVI,Aurora,Dire,负,0,winter,monkey_king,26,2194,tragic,tiny,2246,-52,Shenorita`,dawnbreaker,2947,-753,8681,10197,-1516,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8818236072,Tundra,VP,Radiant,负,0,l\,alchemist,27,2650,nokia,muerta,2876,-226,saberlight,axe,2113,537,9028,9389,-361,0/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8818236072,VP,Tundra,Dire,胜,1,nokia,muerta,30,2876,l\,alchemist,2650,226,not human (животное),shredder,2342,534,9389,9028,361,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8818298714,VP,Tundra,Radiant,负,0,nokia,luna,22,2200,Damn,muerta,2195,5,not human (животное),lycan,2811,-611,8324,8441,-117,0/1/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8818298714,Tundra,VP,Dire,胜,1,Damn,muerta,19,2195,nokia,luna,2200,-5,saberlight,centaur,1879,316,8441,8324,117,0/1/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8818365999,VP,Tundra,Radiant,负,0,nokia,windrunner,31,2920,g\,muerta,2320,600,Z,tidehunter,1964,956,9572,8835,737,0/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8818365999,Tundra,VP,Dire,胜,1,g\,muerta,22,2320,nokia,windrunner,2920,-600,saberlight,axe,2311,9,8835,9572,-737,0/0/4,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8818469042,VG,BB,Radiant,负,0,\,lone_druid,28,2885,`\,drow_ranger,2727,158,Badwater,dawnbreaker,2103,782,9193,9455,-262,1/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8818469042,BB,VG,Dire,胜,1,`\,drow_ranger,28,2727,\,lone_druid,2885,-158,\,doom_bringer,1756,971,9455,9193,262,0/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8818592824,BB,VG,Radiant,负,0,Naruto~,muerta,26,2628,Roselia,tiny,1916,712,Bach,pangolier,2413,215,9199,8510,689,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8818592824,VG,BB,Dire,胜,1,Roselia,tiny,18,1916,Naruto~,muerta,2628,-712,p\,dawnbreaker,2372,-456,8510,9199,-689,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8818701153,VG,BB,Radiant,负,0,Roselia,terrorblade,25,2279,Naruto~,monkey_king,2736,-457,Badwater,brewmaster,2010,269,8574,9316,-742,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8818701153,BB,VG,Dire,胜,1,Naruto~,monkey_king,28,2736,Roselia,terrorblade,2279,457,Bach,shredder,1865,871,9316,8574,742,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8818801707,Liquid,XG,Radiant,负,0,yondaime,tiny,19,2105,区,drow_ranger,2348,-243,¿,dawnbreaker,2667,-562,7888,10030,-2142,1/1/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8818801707,XG,Liquid,Dire,胜,1,区,drow_ranger,23,2348,yondaime,tiny,2105,243,50centaur,slardar,1824,524,10030,7888,2142,0/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8818882603,XG,Liquid,Radiant,负,0,区,faceless_void,20,2282,yondaime,tiny,2318,-36,50centaur,tidehunter,1757,525,9955,8266,1689,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8818882603,Liquid,XG,Dire,胜,1,yondaime,tiny,20,2318,区,faceless_void,2282,36,¿,dawnbreaker,2633,-315,8266,9955,-1689,1/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8818947976,XG,Liquid,Radiant,胜,1,区,drow_ranger,22,2671,yondaime,windrunner,2763,-92,50centaur,doom_bringer,1810,861,10421,9333,1088,3/1/2,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8818947976,Liquid,XG,Dire,负,0,yondaime,windrunner,27,2763,区,drow_ranger,2671,92,¿,centaur,2593,170,9333,10421,-1088,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8819416362,NAVI,PlayTime,Radiant,胜,1,obsession,muerta,26,2689,VE,necrolyte,2976,-287,^,largo,2222,467,10137,11038,-901,1/1/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8819416362,PlayTime,NAVI,Dire,负,0,VE,necrolyte,35,2976,obsession,muerta,2689,287,,axe,2389,587,11038,10137,901,0/1/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8819488294,PlayTime,NAVI,Radiant,胜,1,VE,nevermore,21,2400,obsession,terrorblade,2108,292,ƬψƬ ☢ Sιrιus-妥,abyssal_underlord,2265,135,11964,8875,3089,0/2/2,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8819488294,NAVI,PlayTime,Dire,负,0,obsession,terrorblade,23,2108,VE,nevermore,2400,-292,ڎ,dark_seer,3034,-926,8875,11964,-3089,0/1/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8819559937,PlayTime,NAVI,Radiant,胜,1,VE,nevermore,24,2082,E,windrunner,2055,27,kp,abyssal_underlord,2202,-120,10556,8570,1986,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8819559937,NAVI,PlayTime,Dire,负,0,E,windrunner,17,2055,VE,nevermore,2082,-27,^,enigma,3209,-1154,8570,10556,-1986,0/1/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8819659855,FLCN,PV,Radiant,胜,1,I m Going To Be The Best Carry,tiny,26,2464,destroy,viper,2769,-305,strafe instructor,dawnbreaker,2496,-32,9991,9011,980,1/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8819659855,PV,FLCN,Dire,负,0,destroy,viper,31,2769,I m Going To Be The Best Carry,tiny,2464,305,YeS signature player,shredder,1593,1176,9011,9991,-980,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8819762321,PV,FLCN,Radiant,胜,1,destroy,tiny,28,2954,I m Going To Be The Best Carry,lone_druid,2943,11,YeS signature player,mars,1777,1177,8664,8496,168,2/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8819762321,FLCN,PV,Dire,负,0,I m Going To Be The Best Carry,lone_druid,27,2943,destroy,tiny,2954,-11,J6,shredder,1400,1543,8496,8664,-168,1/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8819831686,FLCN,PV,Radiant,负,0,0,luna,29,2395,destroy,tiny,2412,-17,strafe instructor,shredder,1977,418,9276,8855,421,0/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8819831686,PV,FLCN,Dire,胜,1,destroy,tiny,21,2412,0,luna,2395,17,@Ѷ,doom_bringer,2322,90,8855,9276,-421,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8819933287,Aurora,TSpirit,Radiant,负,0,tragic,life_stealer,19,1918,兜圈。,nevermore,3041,-1123,pos3jungler,snapfire,2415,-497,8002,9701,-1699,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8819933287,TSpirit,Aurora,Dire,胜,1,兜圈。,nevermore,32,3041,tragic,life_stealer,1918,1123,-,doom_bringer,1921,1120,9701,8002,1699,1/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8820011939,TSpirit,Aurora,Radiant,负,0,兜圈。,furion,22,2329,tragic,doom_bringer,2615,-286,HD,axe,2980,-651,8660,9848,-1188,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8820011939,Aurora,TSpirit,Dire,胜,1,tragic,doom_bringer,27,2615,兜圈。,furion,2329,286,pos3jungler,mars,2487,128,9848,8660,1188,1/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8820090629,TSpirit,Aurora,Radiant,胜,1,p9,alchemist,28,2846,z,windrunner,2853,-7,Shenorita`,dawnbreaker,2904,-58,9377,10637,-1260,0/0/2,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8820090629,Aurora,TSpirit,Dire,负,0,z,windrunner,28,2853,p9,alchemist,2846,7,`3,primal_beast,1985,868,10637,9377,1260,1/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8820614299,XG,Tundra,Radiant,负,0,,terrorblade,22,2315,lA,kez,1943,372,PE,shredder,2000,315,9409,7920,1489,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8820614299,Tundra,XG,Dire,胜,1,lA,kez,18,1943,,terrorblade,2315,-372,r,beastmaster,2842,-899,7920,9409,-1489,0/1/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8820696424,Tundra,XG,Radiant,负,0,0,muerta,27,2228,,furion,2560,-332,x$,shredder,2101,127,8787,8933,-146,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8820696424,XG,Tundra,Dire,胜,1,,furion,19,2560,0,muerta,2228,332,%,necrolyte,2384,176,8933,8787,146,1/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8820791846,XG,Tundra,Radiant,负,0,"""7",terrorblade,15,1736,Pr+,doom_bringer,2510,-774,not human (животное),necrolyte,2805,-1069,8878,9810,-932,0/1/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8820791846,Tundra,XG,Dire,胜,1,Pr+,doom_bringer,21,2510,"""7",terrorblade,1736,774,+,axe,2647,-137,9810,8878,932,0/0/2,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8820939983,PlayTime,BB,Radiant,负,0,p5/,tiny,19,2455,07,alchemist,2588,-133,0g7,beastmaster,2062,393,9521,9371,150,0/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8820939983,BB,PlayTime,Dire,胜,1,07,alchemist,20,2588,p5/,tiny,2455,133,k,dawnbreaker,2531,57,9371,9521,-150,2/1/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8821039753,PlayTime,BB,Radiant,胜,1,0o,monkey_king,26,2578,,tiny,2649,-71,+)܎,beastmaster,2548,30,9443,10404,-961,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8821039753,BB,PlayTime,Dire,负,0,,tiny,26,2649,0o,monkey_king,2578,71,8)܎,abyssal_underlord,2476,173,10404,9443,961,1/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8821169334,PlayTime,BB,Radiant,胜,1,p؎,necrolyte,22,2321,,monkey_king,2117,204,I6a,abyssal_underlord,2394,-73,9971,10102,-131,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8821169334,BB,PlayTime,Dire,负,0,,monkey_king,20,2117,p؎,necrolyte,2321,-204,O,lycan,2687,-570,10102,9971,131,0/1/2,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8821255705,Aurora,Tundra,Radiant,胜,1,`r,windrunner,26,2572,Damn,ursa,2612,-40,@,largo,2206,366,8887,8851,36,0/0/3,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8821255705,Tundra,Aurora,Dire,负,0,Damn,ursa,27,2612,`r,windrunner,2572,40,_n,shredder,2032,580,8851,8887,-36,0/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8821342421,Tundra,Aurora,Radiant,负,0,@,nevermore,25,3031,@Ò,tiny,2799,232,?,shredder,2062,969,9395,9527,-132,3/1/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8821342421,Aurora,Tundra,Dire,胜,1,@Ò,tiny,27,2799,@,nevermore,3031,-232,`@,lycan,2085,714,9527,9395,132,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8821954344,PlayTime,FLCN,Radiant,负,0,@+S,nevermore,24,2658,@arR,life_stealer,2637,21,YeS signature player,doom_bringer,1836,822,10069,9744,325,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8821954344,FLCN,PlayTime,Dire,胜,1,@arR,life_stealer,30,2637,@+S,nevermore,2658,-21,^,largo,2056,581,9744,10069,-325,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8822088303,PlayTime,FLCN,Radiant,负,0,P2S,nevermore,27,2889,I m Going To Be The Best Carry,tiny,2024,865,YeS signature player,tidehunter,1499,1390,10097,8092,2005,1/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8822088303,FLCN,PlayTime,Dire,胜,1,I m Going To Be The Best Carry,tiny,24,2024,P2S,nevermore,2889,-865,^,viper,2630,-606,8092,10097,-2005,0/1/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8822238357,TSpirit,PV,Radiant,胜,1,V,faceless_void,18,2180,destroy,kez,2696,-516,strafe instructor,dawnbreaker,2195,-15,8931,8912,19,0/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8822238357,PV,TSpirit,Dire,负,0,destroy,kez,28,2696,V,faceless_void,2180,516,pos3jungler,doom_bringer,2021,675,8912,8931,-19,1/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8822330030,PV,TSpirit,Radiant,胜,1,destroy,kez,32,2823,兜圈。,alchemist,1668,1155,pos3jungler,largo,1923,900,10407,7507,2900,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8822330030,TSpirit,PV,Dire,负,0,兜圈。,alchemist,16,1668,destroy,kez,2823,-1155,strafe instructor,beastmaster,2395,-727,7507,10407,-2900,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8822412074,PV,TSpirit,Radiant,胜,1,destroy,kez,27,2772,兜圈。,doom_bringer,2503,269,pos3jungler,slardar,1991,781,10085,8602,1483,1/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8822412074,TSpirit,PV,Dire,负,0,兜圈。,doom_bringer,18,2503,destroy,kez,2772,-269,strafe instructor,viper,2443,60,8602,10085,-1483,1/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8822520406,Aurora,FLCN,Radiant,胜,1,CV,lone_druid,27,3107,I m Going To Be The Best Carry,windrunner,2772,335,YeS signature player,shredder,2040,1067,10255,8591,1664,1/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8822520406,FLCN,Aurora,Dire,负,0,I m Going To Be The Best Carry,windrunner,35,2772,CV,lone_druid,3107,-335,Shenorita`,slardar,1996,776,8591,10255,-1664,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8822593932,FLCN,Aurora,Radiant,负,0,I m Going To Be The Best Carry,life_stealer,26,2428,tragic,ursa,2615,-187,`eV,axe,2844,-416,8937,10090,-1153,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8822593932,Aurora,FLCN,Dire,胜,1,tragic,ursa,26,2615,I m Going To Be The Best Carry,life_stealer,2428,187,\V,tidehunter,1961,654,10090,8937,1153,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8823502263,Aurora,TSpirit,Radiant,胜,1,A Narrow Escape,faceless_void,25,2754,WV,alchemist,2761,-7,V,primal_beast,1615,1139,9890,8571,1319,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8823502263,TSpirit,Aurora,Dire,负,0,WV,alchemist,23,2761,A Narrow Escape,faceless_void,2754,7,=S,doom_bringer,2443,318,8571,9890,-1319,1/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8823581121,TSpirit,Aurora,Radiant,负,0,V,faceless_void,22,1908,V,naga_siren,2079,-171,R>S,shredder,3070,-1162,8668,9687,-1019,0/1/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8823581121,Aurora,TSpirit,Dire,胜,1,V,naga_siren,19,2079,V,faceless_void,1908,171,ĆV,legion_commander,2486,-407,9687,8668,1019,0/1/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8823789680,PV,Aurora,Radiant,胜,1,4T,nevermore,28,2606,БV,tiny,2652,-46,V,shredder,1243,1363,8684,8759,-75,1/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8823789680,Aurora,PV,Dire,负,0,БV,tiny,24,2652,4T,nevermore,2606,46,D4T,slardar,1981,671,8759,8684,75,1/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8823904596,PV,Aurora,Radiant,负,0,4U,nevermore,28,2990,;S,tiny,2273,717,Shenorita`,shredder,1279,1711,9528,8441,1087,1/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8823904596,Aurora,PV,Dire,胜,1,;S,tiny,19,2273,4U,nevermore,2990,-717,64U,slardar,2549,-276,8441,9528,-1087,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8824011004,PV,Aurora,Radiant,胜,1,ٌU,muerta,29,2553,*S,tiny,2667,-114,9S,largo,2239,314,10171,10047,124,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8824011004,Aurora,PV,Dire,负,0,*S,tiny,28,2667,ٌU,muerta,2553,114,UT,dawnbreaker,2263,404,10047,10171,-124,0/0/1,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8824123966,PV,Aurora,Radiant,负,0,HV,faceless_void,24,2402,0HV,alchemist,2956,-554,`{T,largo,2411,-9,8516,9907,-1391,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8824123966,Aurora,PV,Dire,胜,1,0HV,alchemist,27,2956,HV,faceless_void,2402,554,# V,axe,2145,811,9907,8516,1391,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8824218541,PV,Aurora,Radiant,胜,1,rV,gyrocopter,30,2592,A Narrow Escape,necrolyte,2933,-341,pSV,dawnbreaker,2477,115,9889,10681,-792,0/0/0,league_roster,league_roster,league_roster
+19696,DreamLeague Season 29,8824218541,Aurora,PV,Dire,负,0,A Narrow Escape,necrolyte,30,2933,rV,gyrocopter,2592,341,vV,axe,2625,308,10681,9889,792,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8825996999,PARI,OG,Radiant,胜,1,`eY,terrorblade,38,3040,СW,windrunner,2895,145,∩ (◣_◢) ∩,phoenix,1859,1181,9706,9511,195,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8825996999,OG,PARI,Dire,负,0,СW,windrunner,24,2895,`eY,terrorblade,3040,-145,strafe instructor,beastmaster,2015,880,9511,9706,-195,1/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8825993964,FLCN,GLYPH,Radiant,负,0,[X,tiny,23,2419,TOXIC,windrunner,2878,-459,wsm,brewmaster,2170,249,9096,9283,-187,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8825993964,GLYPH,FLCN,Dire,胜,1,TOXIC,windrunner,29,2878,[X,tiny,2419,459,6U,mars,2005,873,9283,9096,187,1/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8826042346,BB,LGD,Radiant,负,0,Naruto~,necrolyte,19,2211,Yuma,naga_siren,2498,-287,Wisper,snapfire,2412,-201,8666,10158,-1492,0/0/1,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8826042346,LGD,BB,Dire,胜,1,Yuma,naga_siren,24,2498,Naruto~,necrolyte,2211,287,Badwater,lycan,2268,230,10158,8666,1492,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8826052816,XG,Liquid,Radiant,负,0,区,faceless_void,26,2539,yondaime,tiny,2649,-110,50centaur,night_stalker,2406,133,9743,9114,629,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8826052816,Liquid,XG,Dire,胜,1,yondaime,tiny,25,2649,区,faceless_void,2539,110,¿,abyssal_underlord,2191,458,9114,9743,-629,1/0/1,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8826110206,TY,TSpirit,Radiant,胜,1,arima-,nevermore,26,2524,0#Y,lone_druid,2426,98,pos3jungler,axe,2322,202,9922,8927,995,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8826110206,TSpirit,TY,Dire,负,0,0#Y,lone_druid,26,2426,arima-,nevermore,2524,-98,bangkok,enigma,2584,-158,8927,9922,-995,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8826099852,Aurora,Tundra,Radiant,胜,1,Ъ>PS,tiny,33,2815,Damn,nevermore,2032,783,not human (животное),tidehunter,2089,726,9360,8320,1040,0/0/1,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8826099852,Tundra,Aurora,Dire,负,0,Damn,nevermore,23,2032,Ъ>PS,tiny,2815,-783,Shenorita`,axe,1872,160,8320,9360,-1040,0/0/2,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8826168772,FLCN,OG,Radiant,胜,1,I m Going To Be The Best Carry,necrolyte,31,2898,>>>>>>>><<<<<<<<<,muerta,2693,205,S,shredder,1768,1130,10318,8223,2095,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8826168772,OG,FLCN,Dire,负,0,>>>>>>>><<<<<<<<<,muerta,29,2693,I m Going To Be The Best Carry,necrolyte,2898,-205,YeS signature player,pangolier,2673,20,8223,10318,-2095,1/1/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8826189006,LGD,GLYPH,Radiant,胜,1,Yuma,necrolyte,40,3265,TOXIC,terrorblade,2609,656,wsm,bristleback,2425,840,11244,9359,1885,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8826189006,GLYPH,LGD,Dire,负,0,TOXIC,terrorblade,24,2609,Yuma,necrolyte,3265,-656,Wisper,snapfire,3063,-454,9359,11244,-1885,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8826258112,PARI,XG,Radiant,胜,1,destroy,juggernaut,18,2302,区,muerta,2101,201,¿,mars,2517,-215,10468,8007,2461,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8826258112,XG,PARI,Dire,负,0,区,muerta,20,2101,destroy,juggernaut,2302,-201,strafe instructor,slardar,2521,-420,8007,10468,-2461,0/1/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8826268112,Aurora,BB,Radiant,负,0,mode: m0NESY,tiny,28,2275,Naruto~,windrunner,2469,-194,Badwater,largo,2655,-380,9318,9147,171,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8826268112,BB,Aurora,Dire,胜,1,Naruto~,windrunner,21,2469,mode: m0NESY,tiny,2275,194,Shenorita`,centaur,2561,-92,9147,9318,-171,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8826347921,TY,Liquid,Radiant,胜,1,arima-,nevermore,25,2619,@RV,windrunner,2432,187,50centaur,doom_bringer,1790,829,9254,8278,976,1/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8826347921,Liquid,TY,Dire,负,0,@RV,windrunner,29,2432,arima-,nevermore,2619,-187,bangkok,beastmaster,2089,343,8278,9254,-976,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8826341985,TSpirit,Tundra,Radiant,胜,1,yatoro,nevermore,32,3253,cinderella,drow_ranger,2284,969,not human (животное),shredder,1985,1268,9314,9438,-124,1/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8826341985,Tundra,TSpirit,Dire,负,0,cinderella,drow_ranger,22,2284,yatoro,nevermore,3253,-969,pos3jungler,doom_bringer,2255,29,9438,9314,124,0/2/4,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8826437838,XG,OG,Radiant,胜,1,区,tiny,25,2389,>>>>>>>><<<<<<<<<,luna,2720,-331,∩ (◣_◢) ∩,dawnbreaker,2294,95,8728,9069,-341,1/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8826437838,OG,XG,Dire,负,0,>>>>>>>><<<<<<<<<,luna,31,2720,区,tiny,2389,331,¿,beastmaster,2252,468,9069,8728,341,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8826468180,LGD,FLCN,Radiant,负,0,Yuma,night_stalker,26,2339,I m Going To Be The Best Carry,tiny,2634,-295,Darkness,doom_bringer,2450,-111,9319,9840,-521,0/1/1,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8826468180,FLCN,LGD,Dire,胜,1,I m Going To Be The Best Carry,tiny,28,2634,Yuma,night_stalker,2339,295,S,axe,2341,293,9840,9319,521,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8826537048,Aurora,GLYPH,Radiant,负,0,mode: m0NESY,tiny,20,2187,TOXIC,nevermore,2497,-310,wsm,omniknight,2459,-272,9294,9207,87,0/1/1,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8826537048,GLYPH,Aurora,Dire,胜,1,TOXIC,nevermore,25,2497,mode: m0NESY,tiny,2187,310,Shenorita`,tidehunter,2076,421,9207,9294,-87,1/0/1,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8826591758,PARI,TY,Radiant,负,0,destroy,necrolyte,31,2870,arima-,lone_druid,3221,-351,bangkok,phoenix,2329,541,9178,10415,-1237,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8826591758,TY,PARI,Dire,胜,1,arima-,lone_druid,27,3221,destroy,necrolyte,2870,351,strafe instructor,shredder,1841,1380,10415,9178,1237,1/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8826631538,Tundra,Liquid,Radiant,胜,1,cinderella,doom_bringer,13,1837,yondaime,drow_ranger,2868,-1031,50centaur,centaur,2792,-955,7639,10532,-2893,0/2/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8826631538,Liquid,Tundra,Dire,负,0,yondaime,drow_ranger,29,2868,cinderella,doom_bringer,1837,1031,not human (животное),largo,2099,769,10532,7639,2893,1/0/1,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8826691962,TSpirit,BB,Radiant,负,0,yatoro,terrorblade,35,2730,Naruto~,life_stealer,2620,110,Badwater,lycan,2232,498,9285,9721,-436,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8826691962,BB,TSpirit,Dire,胜,1,Naruto~,life_stealer,28,2620,yatoro,terrorblade,2730,-110,pos3jungler,largo,2450,170,9721,9285,436,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8827282767,XG,FLCN,Radiant,负,0,o,kez,24,2575,`b,alchemist,2934,-359,Darkness,pangolier,2272,303,10346,10256,90,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8827282767,FLCN,XG,Dire,胜,1,`b,alchemist,33,2934,o,kez,2575,359,,night_stalker,2444,490,10256,10346,-90,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8827289834,LGD,Aurora,Radiant,胜,1,C,nevermore,29,2969,mode: m0NESY,alchemist,2977,-8,Shenorita`,shredder,1454,1515,10090,8200,1890,1/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8827289834,Aurora,LGD,Dire,负,0,mode: m0NESY,alchemist,31,2977,C,nevermore,2969,8,Wisper,batrider,2317,660,8200,10090,-1890,0/1/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8827351366,OG,TY,Radiant,负,0,>>>>>>>><<<<<<<<<,tiny,26,2671,arima-,kez,3040,-369,bangkok,pangolier,2061,610,9189,10337,-1148,1/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8827351366,TY,OG,Dire,胜,1,arima-,kez,26,3040,>>>>>>>><<<<<<<<<,tiny,2671,369,∩ (◣_◢) ∩,doom_bringer,1944,1096,10337,9189,1148,2/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8827339763,TSpirit,GLYPH,Radiant,胜,1,yatoro,drow_ranger,28,3368,@Yx,nevermore,2719,649,wsm,batrider,1611,1757,9967,8936,1031,2/0/1,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8827339763,GLYPH,TSpirit,Dire,负,0,@Yx,nevermore,27,2719,yatoro,drow_ranger,3368,-649,PO,mars,2224,495,8936,9967,-1031,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8827394170,PARI,Tundra,Radiant,胜,1,destroy,faceless_void,24,2461,MdS,windrunner,2795,-334,not human (животное),lycan,2433,28,10247,8940,1307,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8827394170,Tundra,PARI,Dire,负,0,MdS,windrunner,24,2795,destroy,faceless_void,2461,334,strafe instructor,pangolier,2195,600,8940,10247,-1307,2/1/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8827398120,Liquid,BB,Radiant,胜,1,@*T,tiny,27,2566,,alchemist,1953,613,,lycan,2341,225,10887,8465,2422,1/0/1,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8827398120,BB,Liquid,Dire,负,0,,alchemist,22,1953,@*T,tiny,2566,-613,50centaur,night_stalker,3393,-1440,8465,10887,-2422,0/3/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8827464470,FLCN,Aurora,Radiant,胜,1,I m Going To Be The Best Carry,vengefulspirit,28,2107,mode: m0NESY,windrunner,2246,-139,Shenorita`,doom_bringer,2407,-300,8633,8862,-229,0/0/1,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8827464470,Aurora,FLCN,Dire,负,0,mode: m0NESY,windrunner,27,2246,I m Going To Be The Best Carry,vengefulspirit,2107,139,Darkness,razor,2247,-1,8862,8633,229,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8827492535,XG,TY,Radiant,负,0,区,kez,23,2111,s,windrunner,2737,-626,bangkok,slardar,3022,-911,8144,10136,-1992,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8827492535,TY,XG,Dire,胜,1,s,windrunner,25,2737,区,kez,2111,626,¿,magnataur,2482,255,10136,8144,1992,1/0/3,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8827534616,TSpirit,LGD,Radiant,负,0,PAMd,juggernaut,23,2733,Yuma,vengefulspirit,2624,109,Wisper,batrider,2375,358,10096,10123,-27,1/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8827534616,LGD,TSpirit,Dire,胜,1,Yuma,vengefulspirit,30,2624,PAMd,juggernaut,2733,-109,pos3jungler,doom_bringer,2752,-128,10123,10096,27,0/0/1,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8827591403,OG,Tundra,Radiant,胜,1,I,necrolyte,36,3423,cinderella,phantom_assassin,2089,1334,not human (животное),shredder,1697,1726,9677,7906,1771,1/0/1,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8827591403,Tundra,OG,Dire,负,0,cinderella,phantom_assassin,18,2089,I,necrolyte,3423,-1334,∩ (◣_◢) ∩,beastmaster,1956,133,7906,9677,-1771,0/1/1,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8827680462,Liquid,GLYPH,Radiant,胜,1,PF,bristleback,36,3014,TOXIC,faceless_void,2302,712,wsm,beastmaster,2541,473,9929,9274,655,0/1/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8827680462,GLYPH,Liquid,Dire,负,0,TOXIC,faceless_void,21,2302,PF,bristleback,3014,-712,50centaur,axe,2557,-255,9274,9929,-655,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8827613435,BB,PARI,Radiant,负,0,P7%,nevermore,28,2781,destroy,kez,3012,-231,strafe instructor,dawnbreaker,1906,875,10223,10161,62,0/2/1,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8827613435,PARI,BB,Dire,胜,1,destroy,kez,31,3012,P7%,nevermore,2781,231,Badwater,tidehunter,2526,486,10161,10223,-62,0/0/1,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8827769920,Aurora,TSpirit,Radiant,胜,1,mode: m0NESY,tiny,15,1607,yatoro,kez,3145,-1538,pos3jungler,omniknight,2907,-1300,8997,10660,-1663,0/2/1,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8827769920,TSpirit,Aurora,Dire,负,0,yatoro,kez,29,3145,mode: m0NESY,tiny,1607,1538,Shenorita`,largo,2275,870,10660,8997,1663,3/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8827784459,TY,FLCN,Radiant,负,0,*S,kez,23,2871,I m Going To Be The Best Carry,tiny,2670,201,Darkness,legion_commander,1780,1091,10030,9046,984,3/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8827784459,FLCN,TY,Dire,胜,1,I m Going To Be The Best Carry,tiny,33,2670,*S,kez,2871,-201,bangkok,pangolier,2181,489,9046,10030,-984,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8827888041,XG,Tundra,Radiant,负,0,)T,furion,30,2435,pT,doom_bringer,2466,-31,not human (животное),beastmaster,2525,-90,9208,9803,-595,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8827888041,Tundra,XG,Dire,胜,1,pT,doom_bringer,25,2466,)T,furion,2435,31,¿,tidehunter,2368,98,9803,9208,595,2/0/1,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8827875225,LGD,Liquid,Radiant,负,0,Yuma,necrolyte,32,2963,yondaime,nevermore,2611,352,50centaur,axe,3045,-82,9893,9891,2,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8827875225,Liquid,LGD,Dire,胜,1,yondaime,nevermore,28,2611,Yuma,necrolyte,2963,-352,Wisper,batrider,2137,474,9891,9893,-2,1/2/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8828562631,PARI,GLYPH,Radiant,胜,1,destroy,nevermore,31,2783,`cG,kez,2812,-29,wsm,lycan,1841,942,11234,8974,2260,0/0/1,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8828562631,GLYPH,PARI,Dire,负,0,`cG,kez,27,2812,destroy,nevermore,2783,29,strafe instructor,axe,3170,-358,8974,11234,-2260,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8828557643,OG,BB,Radiant,负,0,>>>>>>>><<<<<<<<<,kez,18,2005,@R%,terrorblade,2670,-665,p9,axe,2557,-552,7787,9681,-1894,0/1/1,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8828557643,BB,OG,Dire,胜,1,@R%,terrorblade,25,2670,>>>>>>>><<<<<<<<<,kez,2005,665,@O,night_stalker,1888,782,9681,7787,1894,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8828602222,FLCN,TSpirit,Radiant,胜,1,I m Going To Be The Best Carry,alchemist,25,2650,yatoro,windrunner,2342,308,pos3jungler,death_prophet,2775,-125,10691,9821,870,0/0/1,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8828602222,TSpirit,FLCN,Dire,负,0,yatoro,windrunner,24,2342,I m Going To Be The Best Carry,alchemist,2650,-308,Darkness,razor,2650,-308,9821,10691,-870,0/0/1,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8828608241,TY,Tundra,Radiant,胜,1,arima-,nevermore,29,2805,lost in the world,windrunner,1680,1125,not human (животное),largo,2122,683,10267,7460,2807,0/1/1,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8828608241,Tundra,TY,Dire,负,0,lost in the world,windrunner,22,1680,arima-,nevermore,2805,-1125,6,undying,2528,-848,7460,10267,-2807,0/1/1,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8828662524,Aurora,Liquid,Radiant,胜,1,mode: m0NESY,tiny,21,2332,yondaime,dragon_knight,2619,-287,50centaur,abyssal_underlord,2187,145,8607,9298,-691,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8828662524,Liquid,Aurora,Dire,负,0,yondaime,dragon_knight,28,2619,mode: m0NESY,tiny,2332,287,,dawnbreaker,2000,619,9298,8607,691,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8828679235,BB,XG,Radiant,胜,1,Naruto~,kez,28,2498,区,alchemist,2779,-281,¿,shredder,2249,249,8452,9590,-1138,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8828679235,XG,BB,Dire,负,0,区,alchemist,23,2779,Naruto~,kez,2498,281,Badwater,slardar,2113,666,9590,8452,1138,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8828733774,GLYPH,OG,Radiant,负,0,TOXIC,monkey_king,31,2772,>>>>>>>><<<<<<<<<,terrorblade,2802,-30,@e,axe,2683,89,10245,9283,962,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8828733774,OG,GLYPH,Dire,胜,1,>>>>>>>><<<<<<<<<,terrorblade,30,2802,TOXIC,monkey_king,2772,30,wsm,dark_seer,3086,-284,9283,10245,-962,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8828731237,PARI,LGD,Radiant,负,0,;,muerta,23,2268,Yuma,necrolyte,3682,-1414,Wisper,enigma,2560,-292,8457,10745,-2288,0/1/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8828731237,LGD,PARI,Dire,胜,1,Yuma,necrolyte,30,3682,;,muerta,2268,1414,strafe instructor,axe,2171,1511,10745,8457,2288,3/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8828810013,XG,TSpirit,Radiant,胜,1,区,kez,28,2538,@m,tiny,1950,588,pos3jungler,slardar,1925,613,9788,7598,2190,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8828810013,TSpirit,XG,Dire,负,0,@m,tiny,24,1950,区,kez,2538,-588,¿,beastmaster,2775,-825,7598,9788,-2190,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8828847743,TY,Aurora,Radiant,负,0,arima-,luna,24,2048,P,gyrocopter,3380,-1332,Shenorita`,axe,2557,-509,8599,10843,-2244,0/1/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8828847743,Aurora,TY,Dire,胜,1,P,gyrocopter,37,3380,arima-,luna,2048,1332,bangkok,enigma,1991,1389,10843,8599,2244,1/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8828912690,Tundra,FLCN,Radiant,负,0,lost in the world,nevermore,22,2190,I m Going To Be The Best Carry,tiny,2650,-460,Darkness,doom_bringer,2200,-10,8305,9906,-1601,1/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8828912690,FLCN,Tundra,Dire,胜,1,I m Going To Be The Best Carry,tiny,27,2650,lost in the world,nevermore,2190,460,not human (животное),centaur,2215,435,9906,8305,1601,0/0/1,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8828964848,LGD,OG,Radiant,负,0,Yuma,nevermore,27,2689,>>>>>>>><<<<<<<<<,abaddon,2506,183,∩ (◣_◢) ∩,shredder,1851,838,9548,8619,929,1/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8828964848,OG,LGD,Dire,胜,1,>>>>>>>><<<<<<<<<,abaddon,24,2506,Yuma,nevermore,2689,-183,FC,axe,2186,320,8619,9548,-929,0/1/2,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8828993295,TY,BB,Radiant,负,0,`˽,tiny,24,2585,Naruto~,windrunner,2960,-375,w,shredder,2373,212,8767,10838,-2071,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8828993295,BB,TY,Dire,胜,1,Naruto~,windrunner,25,2960,`˽,tiny,2585,375,@,phoenix,1807,1153,10838,8767,2071,1/0/3,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8829074990,PARI,Aurora,Radiant,胜,1,destroy,nevermore,24,2552,mode: m0NESY,tiny,2157,395,Shenorita`,dawnbreaker,2349,203,9917,8676,1241,0/1/2,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8829074990,Aurora,PARI,Dire,负,0,mode: m0NESY,tiny,20,2157,destroy,nevermore,2552,-395,strafe instructor,axe,2522,-365,8676,9917,-1241,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8829095250,TSpirit,Liquid,Radiant,胜,1,yatoro,drow_ranger,27,3162,yondaime,nevermore,2563,599,50centaur,axe,1825,1337,9126,9037,89,4/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8829095250,Liquid,TSpirit,Dire,负,0,yondaime,nevermore,24,2563,yatoro,drow_ranger,3162,-599,pos3jungler,batrider,1764,799,9037,9126,-89,0/0/1,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8829158433,GLYPH,XG,Radiant,负,0,TOXIC,terrorblade,29,2451,],muerta,2353,98,¿,doom_bringer,2804,-353,9507,10068,-561,0/2/1,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8829158433,XG,GLYPH,Dire,胜,1,],muerta,24,2353,TOXIC,terrorblade,2451,-98,0A,largo,2156,197,10068,9507,561,0/2/2,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8829839467,FLCN,Liquid,Radiant,负,0,I m Going To Be The Best Carry,tiny,14,1760,y,drow_ranger,3069,-1309,50centaur,dawnbreaker,2186,-426,7758,9300,-1542,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8829839467,Liquid,FLCN,Dire,胜,1,y,drow_ranger,25,3069,I m Going To Be The Best Carry,tiny,1760,1309,Darkness,pangolier,1530,1539,9300,7758,1542,2/0/1,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8829839456,Tundra,BB,Radiant,负,0,lost in the world,kez,20,1846,(,tiny,2253,-407,T,largo,2312,-466,8796,8880,-84,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8829839456,BB,Tundra,Dire,胜,1,(,tiny,25,2253,lost in the world,kez,1846,407,?Z,necrolyte,2781,-528,8880,8796,84,0/1/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8829882210,PARI,TSpirit,Radiant,负,0,destroy,nevermore,26,2472,1.1,drow_ranger,2199,273,f,batrider,1869,603,9254,7736,1518,0/1/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8829882210,TSpirit,PARI,Dire,胜,1,1.1,drow_ranger,20,2199,destroy,nevermore,2472,-273,strafe instructor,axe,2221,-22,7736,9254,-1518,0/0/1,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8829902323,TY,GLYPH,Radiant,胜,1,arima-,clinkz,33,2937,TOXIC,windrunner,2845,92,8,beastmaster,1810,1127,10394,9168,1226,0/0/1,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8829902323,GLYPH,TY,Dire,负,0,TOXIC,windrunner,28,2845,arima-,clinkz,2937,-92,bangkok,lycan,2040,805,9168,10394,-1226,1/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8829947467,LGD,XG,Radiant,胜,1,9N,tiny,21,2275,`f,lone_druid,3213,-938,J,axe,2901,-626,8351,10703,-2352,0/0/2,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8829947467,XG,LGD,Dire,负,0,`f,lone_druid,28,3213,9N,tiny,2275,938,@z@,shredder,1542,1671,10703,8351,2352,1/0/2,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8829947329,Aurora,OG,Radiant,胜,1,̟,phantom_lancer,26,2539,),drow_ranger,3071,-532,∩ (◣_◢) ∩,doom_bringer,2472,67,8787,9299,-512,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8829947329,OG,Aurora,Dire,负,0,),drow_ranger,31,3071,̟,phantom_lancer,2539,532,^,axe,2261,810,9299,8787,512,1/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8830011623,FLCN,BB,Radiant,负,0,I m Going To Be The Best Carry,windrunner,28,2488,Naruto~,kez,2545,-57,N,centaur,2361,127,9500,9238,262,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8830011623,BB,FLCN,Dire,胜,1,Naruto~,kez,26,2545,I m Going To Be The Best Carry,windrunner,2488,57,Darkness,viper,2513,32,9238,9500,-262,1/0/2,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8830022703,PARI,Liquid,Radiant,胜,1,"@""",kez,25,2067,"G,",drow_ranger,2695,-628,50centaur,doom_bringer,2444,-377,8878,9253,-375,0/1/1,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8830022703,Liquid,PARI,Dire,负,0,"G,",drow_ranger,33,2695,"@""",kez,2067,628,,beastmaster,2081,614,9253,8878,375,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8830092075,TSpirit,OG,Radiant,胜,1,1.1,necrolyte,27,2491,>>>>>>>><<<<<<<<<,vengefulspirit,2311,180,∩ (◣_◢) ∩,axe,2308,183,8705,9004,-299,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8830092075,OG,TSpirit,Dire,负,0,>>>>>>>><<<<<<<<<,vengefulspirit,21,2311,1.1,necrolyte,2491,-180,pos3jungler,doom_bringer,2254,57,9004,8705,299,0/1/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8830097448,GLYPH,Tundra,Radiant,负,0,#V,nevermore,22,2558,lost in the world,templar_assassin,2730,-172,not human (животное),doom_bringer,2310,248,8269,8956,-687,1/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8830097448,Tundra,GLYPH,Dire,胜,1,lost in the world,templar_assassin,30,2730,#V,nevermore,2558,172,wsm,snapfire,2051,679,8956,8269,687,1/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8830175194,XG,Aurora,Radiant,负,0,SY,tiny,19,1898,,furion,2575,-677,Shenorita`,axe,2467,-569,8883,10125,-1242,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8830175194,Aurora,XG,Dire,胜,1,,furion,28,2575,SY,tiny,1898,677,¿,dawnbreaker,2026,549,10125,8883,1242,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8830280454,PARI,FLCN,Radiant,胜,1,PjJY,nevermore,26,2462,I m Going To Be The Best Carry,vengefulspirit,1572,890,Darkness,mars,2071,391,9703,8358,1345,0/2/1,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8830280454,FLCN,PARI,Dire,负,0,I m Going To Be The Best Carry,vengefulspirit,21,1572,PjJY,nevermore,2462,-890,,axe,2666,-1094,8358,9703,-1345,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8830206341,LGD,TY,Radiant,胜,1,E1,gyrocopter,35,2990,arima-,nevermore,2780,210,bangkok,beastmaster,1845,1145,10734,8241,2493,0/0/1,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8830206341,TY,LGD,Dire,负,0,arima-,nevermore,33,2780,E1,gyrocopter,2990,-210,Wisper,snapfire,2314,466,8241,10734,-2493,1/1/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8830423116,BB,GLYPH,Radiant,胜,1,0,monkey_king,32,2925,TOXIC,windrunner,2544,381,wsm,omniknight,1728,1197,9279,8346,933,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8830423116,GLYPH,BB,Dire,负,0,TOXIC,windrunner,28,2544,0,monkey_king,2925,-381,Badwater,largo,2406,138,8346,9279,-933,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8830442388,LGD,Tundra,Radiant,胜,1,Yuma,drow_ranger,30,3077,ׂ,nevermore,2169,908,not human (животное),tidehunter,1610,1467,9676,8315,1361,1/0/2,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8830442388,Tundra,LGD,Dire,负,0,ׂ,nevermore,18,2169,Yuma,drow_ranger,3077,-908,,largo,2033,136,8315,9676,-1361,2/2/2,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8830529631,Liquid,OG,Radiant,胜,1,yondaime,drow_ranger,24,3157,>>>>>>>><<<<<<<<<,phantom_lancer,2414,743,∩ (◣_◢) ∩,shredder,1575,1582,10315,8235,2080,3/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8830529631,OG,Liquid,Dire,负,0,>>>>>>>><<<<<<<<<,phantom_lancer,22,2414,yondaime,drow_ranger,3157,-743,50centaur,slardar,2188,226,8235,10315,-2080,0/0/1,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8831470213,TSpirit,OG,Radiant,胜,1,1.1,tiny,23,2385,>>>>>>>><<<<<<<<<,windrunner,2216,169,∩ (◣_◢) ∩,doom_bringer,2341,44,9476,9135,341,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8831470213,OG,TSpirit,Dire,负,0,>>>>>>>><<<<<<<<<,windrunner,20,2216,1.1,tiny,2385,-169,pn,largo,2874,-658,9135,9476,-341,0/1/1,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8831470350,Aurora,Tundra,Radiant,负,0,mode: m0NESY,windrunner,27,2502,lost in the world,ursa,3028,-526,not human (животное),largo,2373,129,8845,9926,-1081,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8831470350,Tundra,Aurora,Dire,胜,1,lost in the world,ursa,25,3028,mode: m0NESY,windrunner,2502,526,Shenorita`,shredder,1427,1601,9926,8845,1081,3/0/1,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8831571711,OG,TSpirit,Radiant,负,0,>>>>>>>><<<<<<<<<,kez,27,2345,1.1,drow_ranger,2691,-346,pos3jungler,tidehunter,2302,43,7854,9453,-1599,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8831571711,TSpirit,OG,Dire,胜,1,1.1,drow_ranger,31,2691,>>>>>>>><<<<<<<<<,kez,2345,346,∩ (◣_◢) ∩,lycan,1586,1105,9453,7854,1599,0/0/1,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8831571549,Aurora,Tundra,Radiant,胜,1,mode: m0NESY,alchemist,22,2823,E~u,dragon_knight,2405,418,not human (животное),beastmaster,2379,444,9089,9091,-2,1/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8831571549,Tundra,Aurora,Dire,负,0,E~u,dragon_knight,23,2405,mode: m0NESY,alchemist,2823,-418,Shenorita`,dawnbreaker,1850,555,9091,9089,2,0/0/1,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8831663527,TSpirit,TY,Radiant,负,0,1.1,nevermore,27,2446,arima-,templar_assassin,2164,282,bangkok,abyssal_underlord,1821,625,9167,8697,470,0/0/1,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8831663527,TY,TSpirit,Dire,胜,1,arima-,templar_assassin,17,2164,1.1,nevermore,2446,-282,pos3jungler,largo,2460,-296,8697,9167,-470,0/1/1,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8831674830,Aurora,Tundra,Radiant,胜,1,e,nevermore,37,3087,),necrolyte,3639,-552,not human (животное),brewmaster,1395,1692,9510,9123,387,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8831674830,Tundra,Aurora,Dire,负,0,),necrolyte,32,3639,e,nevermore,3087,552,P,axe,1683,1956,9123,9510,-387,3/0/1,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8831810450,TY,TSpirit,Radiant,胜,1,,lone_druid,29,2687,1.1,alchemist,2435,252,pos3jungler,pangolier,1822,865,10956,8419,2537,1/1/1,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8831810450,TSpirit,TY,Dire,负,0,1.1,alchemist,20,2435,,lone_druid,2687,-252,,axe,2866,-431,8419,10956,-2537,1/2/1,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8831817474,Liquid,Aurora,Radiant,负,0,yondaime,life_stealer,18,2158,,windrunner,2315,-157,Shenorita`,axe,2379,-221,9144,9822,-678,1/1/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8831817474,Aurora,Liquid,Dire,胜,1,,windrunner,27,2315,yondaime,life_stealer,2158,157,50centaur,dawnbreaker,2200,115,9822,9144,678,0/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8831927547,Aurora,Liquid,Radiant,胜,1,mode: m0NESY,phantom_lancer,21,2264,,drow_ranger,3080,-816,50centaur,slardar,2039,225,8240,8983,-743,1/0/0,league_roster,league_roster,league_roster
+19101,BLAST Slam VII,8831927547,Liquid,Aurora,Dire,负,0,,drow_ranger,32,3080,mode: m0NESY,phantom_lancer,2264,816,Z,axe,2158,922,8983,8240,743,2/0/0,league_roster,league_roster,league_roster

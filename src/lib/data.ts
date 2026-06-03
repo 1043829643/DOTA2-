@@ -1,5 +1,12 @@
 import Papa from "papaparse";
 
+export type GameMinute = 6 | 10;
+
+export const GAME_MINUTE_LABELS: Record<GameMinute, string> = {
+  6: "6 分钟",
+  10: "10 分钟",
+};
+
 export interface DetailRow {
   league_id: string;
   league_name: string;
@@ -12,19 +19,19 @@ export interface DetailRow {
   pos1_player: string;
   pos1_hero: string;
   pos1_lh_5m: number;
-  pos1_networth_10m: number;
+  pos1_networth: number;
   enemy_pos1_player: string;
   enemy_pos1_hero: string;
-  enemy_pos1_networth_10m: number;
-  pos1_vs_enemy_pos1_diff_10m: number;
+  enemy_pos1_networth: number;
+  pos1_vs_enemy_pos1_diff: number;
   enemy_pos3_player: string;
   enemy_pos3_hero: string;
-  enemy_pos3_networth_10m: number;
-  pos1_vs_enemy_pos3_diff_10m: number;
-  team_networth_10m: number;
-  enemy_team_networth_10m: number;
-  team_networth_diff_10m: number;
-  pos1_kda_10m: string;
+  enemy_pos3_networth: number;
+  pos1_vs_enemy_pos3_diff: number;
+  team_networth: number;
+  enemy_team_networth: number;
+  team_networth_diff: number;
+  pos1_kda: string;
 }
 
 export interface SummaryRow {
@@ -45,9 +52,9 @@ export const INDICATOR_LABELS: Record<EconomyIndicator, string> = {
 };
 
 export const INDICATOR_FIELD: Record<EconomyIndicator, keyof DetailRow> = {
-  pos1_vs_pos1: "pos1_vs_enemy_pos1_diff_10m",
-  pos1_vs_pos3: "pos1_vs_enemy_pos3_diff_10m",
-  team_total: "team_networth_diff_10m",
+  pos1_vs_pos1: "pos1_vs_enemy_pos1_diff",
+  pos1_vs_pos3: "pos1_vs_enemy_pos3_diff",
+  team_total: "team_networth_diff",
 };
 
 export interface LeagueOption {
@@ -55,19 +62,33 @@ export interface LeagueOption {
   name: string;
 }
 
+export const DETAIL_CSV_BY_MINUTE: Record<GameMinute, string> = {
+  6: "/data/detail-6m.csv",
+  10: "/data/detail-10m.csv",
+};
+
 function toNumber(val: unknown): number {
   const n = Number(val);
   return Number.isNaN(n) ? 0 : n;
 }
 
+function minuteSuffix(minute: GameMinute): "6m" | "10m" {
+  return minute === 6 ? "6m" : "10m";
+}
+
+function detectMinuteFromHeaders(fields: string[]): GameMinute {
+  return fields.some((f) => f.includes("_6m")) ? 6 : 10;
+}
+
+export function detectGameMinuteFromCsv(text: string): GameMinute {
+  const header = text.split(/\r?\n/)[0] ?? "";
+  return header.includes("_6m") ? 6 : 10;
+}
+
 /**
- * Parse a CSV string (from uploaded file) into DetailRow[].
- * Uses papaparse for robust CSV handling (BOM, quoted fields, etc.)
- * Supports both:
- *  - CSV with league_id,league_name columns
- *  - CSV without league columns (will default league_id="0", league_name="自定义")
+ * Parse detail CSV into normalized DetailRow[] (_6m / _10m columns → canonical fields).
  */
-export function parseDetailCsv(text: string): DetailRow[] {
+export function parseDetailCsv(text: string, minute?: GameMinute): DetailRow[] {
   const result = Papa.parse<Record<string, string>>(text, {
     header: true,
     skipEmptyLines: true,
@@ -77,6 +98,10 @@ export function parseDetailCsv(text: string): DetailRow[] {
   if (result.errors.length > 0) {
     console.warn("CSV parse warnings:", result.errors.slice(0, 5));
   }
+
+  const fields = result.meta.fields ?? [];
+  const resolvedMinute = minute ?? detectMinuteFromHeaders(fields);
+  const s = minuteSuffix(resolvedMinute);
 
   return result.data.map((row) => ({
     league_id: row.league_id || "0",
@@ -90,31 +115,34 @@ export function parseDetailCsv(text: string): DetailRow[] {
     pos1_player: row.pos1_player || "",
     pos1_hero: row.pos1_hero || "",
     pos1_lh_5m: toNumber(row.pos1_lh_5m),
-    pos1_networth_10m: toNumber(row.pos1_networth_10m),
+    pos1_networth: toNumber(row[`pos1_networth_${s}`]),
     enemy_pos1_player: row.enemy_pos1_player || "",
     enemy_pos1_hero: row.enemy_pos1_hero || "",
-    enemy_pos1_networth_10m: toNumber(row.enemy_pos1_networth_10m),
-    pos1_vs_enemy_pos1_diff_10m: toNumber(row.pos1_vs_enemy_pos1_diff_10m),
+    enemy_pos1_networth: toNumber(row[`enemy_pos1_networth_${s}`]),
+    pos1_vs_enemy_pos1_diff: toNumber(row[`pos1_vs_enemy_pos1_diff_${s}`]),
     enemy_pos3_player: row.enemy_pos3_player || "",
     enemy_pos3_hero: row.enemy_pos3_hero || "",
-    enemy_pos3_networth_10m: toNumber(row.enemy_pos3_networth_10m),
-    pos1_vs_enemy_pos3_diff_10m: toNumber(row.pos1_vs_enemy_pos3_diff_10m),
-    team_networth_10m: toNumber(row.team_networth_10m),
-    enemy_team_networth_10m: toNumber(row.enemy_team_networth_10m),
-    team_networth_diff_10m: toNumber(row.team_networth_diff_10m),
-    pos1_kda_10m: row.pos1_kda_10m || "",
+    enemy_pos3_networth: toNumber(row[`enemy_pos3_networth_${s}`]),
+    pos1_vs_enemy_pos3_diff: toNumber(row[`pos1_vs_enemy_pos3_diff_${s}`]),
+    team_networth: toNumber(row[`team_networth_${s}`]),
+    enemy_team_networth: toNumber(row[`enemy_team_networth_${s}`]),
+    team_networth_diff: toNumber(row[`team_networth_diff_${s}`]),
+    pos1_kda: row[`pos1_kda_${s}`] || "",
   }));
 }
 
-/** 内置明细表路径（对应 public/data/detail.csv） */
-export const DEFAULT_DETAIL_CSV_PATH = "/data/detail.csv";
-
-export async function fetchDefaultDetailCsv(): Promise<string> {
-  const res = await fetch(DEFAULT_DETAIL_CSV_PATH);
+export async function fetchDetailCsv(minute: GameMinute): Promise<string> {
+  const path = DETAIL_CSV_BY_MINUTE[minute];
+  const res = await fetch(path);
   if (!res.ok) {
-    throw new Error(`无法加载默认数据 (${res.status})`);
+    throw new Error(`无法加载 ${GAME_MINUTE_LABELS[minute]} 数据 (${res.status})`);
   }
   return res.text();
+}
+
+/** @deprecated use fetchDetailCsv(10) */
+export async function fetchDefaultDetailCsv(): Promise<string> {
+  return fetchDetailCsv(10);
 }
 
 export function getLeagues(rows: DetailRow[]): LeagueOption[] {

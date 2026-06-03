@@ -7,7 +7,13 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { type EconomyIndicator, INDICATOR_LABELS, type LeagueOption } from "@/lib/data";
+import {
+  type EconomyIndicator,
+  type GameMinute,
+  GAME_MINUTE_LABELS,
+  INDICATOR_LABELS,
+  type LeagueOption,
+} from "@/lib/data";
 import { type FilterState } from "@/lib/dashboard";
 
 interface FilterBarProps {
@@ -42,6 +48,26 @@ export function FilterBar({ filter, onFilterChange, teams, heroes, leagues }: Fi
 
   return (
     <div className="flex flex-wrap gap-3 items-center">
+      <Select
+        value={String(filter.gameMinute)}
+        onValueChange={(v) => update({ gameMinute: Number(v) as GameMinute })}
+      >
+        <SelectTrigger className="w-[110px] bg-[#1a1d28] border-[#2a2d3a] text-[#e2e8f0] text-sm">
+          <SelectValue placeholder="时间点" />
+        </SelectTrigger>
+        <SelectContent className="bg-[#1a1d28] border-[#2a2d3a]">
+          {([6, 10] as const).map((m) => (
+            <SelectItem
+              key={m}
+              value={String(m)}
+              className="text-[#e2e8f0] focus:bg-[#2a2d3a] focus:text-[#22d3ee]"
+            >
+              {GAME_MINUTE_LABELS[m]}
+            </SelectItem>
+          ))}
+        </SelectContent>
+      </Select>
+
       {/* League checkboxes */}
       <div className="flex items-center gap-2 bg-[#1a1d28] border border-[#2a2d3a] rounded-md px-3 py-1.5">
         <span className="text-xs text-[#94a3b8] shrink-0">联赛</span>

@@ -9,14 +9,21 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { type DetailRow, type EconomyIndicator, INDICATOR_FIELD, INDICATOR_LABELS } from "@/lib/data";
+import {
+  type DetailRow,
+  type EconomyIndicator,
+  type GameMinute,
+  INDICATOR_FIELD,
+  INDICATOR_LABELS,
+} from "@/lib/data";
 
 interface DetailTableProps {
   data: DetailRow[];
   indicator: EconomyIndicator;
+  gameMinute: GameMinute;
 }
 
-type SortField = "team" | "pos1_hero" | "side" | "result" | "economyDiff" | "pos1_networth_10m" | "pos1_lh_5m";
+type SortField = "team" | "pos1_hero" | "side" | "result" | "economyDiff" | "pos1_networth" | "pos1_lh_5m";
 type SortDir = "asc" | "desc";
 
 function SortIcon({ active, dir }: { active: boolean; dir: SortDir }) {
@@ -27,7 +34,7 @@ function SortIcon({ active, dir }: { active: boolean; dir: SortDir }) {
   );
 }
 
-export function DetailTable({ data, indicator }: DetailTableProps) {
+export function DetailTable({ data, indicator, gameMinute }: DetailTableProps) {
   const [sortField, setSortField] = useState<SortField>("economyDiff");
   const [sortDir, setSortDir] = useState<SortDir>("desc");
 
@@ -81,8 +88,8 @@ export function DetailTable({ data, indicator }: DetailTableProps) {
             <TableHead className="text-[#94a3b8] cursor-pointer select-none text-right font-mono" onClick={() => toggleSort("economyDiff")}>
               {INDICATOR_LABELS[indicator]} <SortIcon active={sortField === "economyDiff"} dir={sortDir} />
             </TableHead>
-            <TableHead className="text-[#94a3b8] cursor-pointer select-none text-right font-mono" onClick={() => toggleSort("pos1_networth_10m")}>
-              10分钟经济 <SortIcon active={sortField === "pos1_networth_10m"} dir={sortDir} />
+            <TableHead className="text-[#94a3b8] cursor-pointer select-none text-right font-mono" onClick={() => toggleSort("pos1_networth")}>
+              {gameMinute}分钟经济 <SortIcon active={sortField === "pos1_networth"} dir={sortDir} />
             </TableHead>
             <TableHead className="text-[#94a3b8] cursor-pointer select-none text-right font-mono" onClick={() => toggleSort("pos1_lh_5m")}>
               5分钟补刀 <SortIcon active={sortField === "pos1_lh_5m"} dir={sortDir} />
@@ -107,12 +114,12 @@ export function DetailTable({ data, indicator }: DetailTableProps) {
                   {diff > 0 ? "+" : ""}{diff}
                 </TableCell>
                 <TableCell className="text-right font-mono tabular-nums text-[#e2e8f0]">
-                  {row.pos1_networth_10m}
+                  {row.pos1_networth}
                 </TableCell>
                 <TableCell className="text-right font-mono tabular-nums text-[#e2e8f0]">
                   {row.pos1_lh_5m}
                 </TableCell>
-                <TableCell className="text-right font-mono tabular-nums text-[#94a3b8]">{row.pos1_kda_10m}</TableCell>
+                <TableCell className="text-right font-mono tabular-nums text-[#94a3b8]">{row.pos1_kda}</TableCell>
               </TableRow>
             );
           })}

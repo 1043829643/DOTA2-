@@ -4,9 +4,12 @@ import { useState, useMemo, useCallback, useEffect } from "react";
 import {
   type DetailRow,
   type LeagueOption,
+  type GameMinute,
+  GAME_MINUTE_LABELS,
   INDICATOR_FIELD,
   parseDetailCsv,
-  fetchDefaultDetailCsv,
+  fetchDetailCsv,
+  detectGameMinuteFromCsv,
 } from "@/lib/data";
 import {
   type FilterState,
@@ -15,6 +18,7 @@ import {
   computeSummaryFromDetail,
   computeTeamWinRate,
   filterAfterUpload,
+  filterAfterMinuteSwitch,
   getUniqueTeams,
   getUniqueHeroes,
 } from "@/lib/dashboard";
@@ -24,33 +28,50 @@ import { WinRateBarChart } from "@/components/dashboard/WinRateBarChart";
 import { EconomyScatterChart } from "@/components/dashboard/EconomyScatterChart";
 import { DetailTable } from "@/components/dashboard/DetailTable";
 
+const GAME_MINUTES: GameMinute[] = [6, 10];
+
 export default function DashboardPage() {
-  const [rows, setRows] = useState<DetailRow[]>([]);
+  const [datasets, setDatasets] = useState<Partial<Record<GameMinute, DetailRow[]>>>({});
   const [filter, setFilter] = useState<FilterState>(DEFAULT_FILTER);
   const [fileName, setFileName] = useState<string>("");
   const [parseError, setParseError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
 
-  const applyParsedRows = useCallback((parsed: DetailRow[], name: string) => {
-    if (parsed.length === 0) {
-      setParseError("CSV 解析结果为空，请检查文件格式");
-      return;
-    }
-    setParseError(null);
-    setRows(parsed);
-    setFileName(name);
-    const leagueIds = [...new Set(parsed.map((r) => r.league_id))];
-    setFilter(filterAfterUpload(leagueIds));
-  }, []);
+  const rows = datasets[filter.gameMinute] ?? [];
+
+  const applyParsedRows = useCallback(
+    (parsed: DetailRow[], name: string, minute: GameMinute) => {
+      if (parsed.length === 0) {
+        setParseError("CSV 解析结果为空，请检查文件格式");
+        return;
+      }
+      setParseError(null);
+      setDatasets((prev) => ({ ...prev, [minute]: parsed }));
+      setFileName(name);
+      const leagueIds = [...new Set(parsed.map((r) => r.league_id))];
+      setFilter(filterAfterUpload(leagueIds, minute));
+    },
+    []
+  );
 
   useEffect(() => {
     let cancelled = false;
     (async () => {
       setLoading(true);
       try {
-        const text = await fetchDefaultDetailCsv();
+        const loaded: Partial<Record<GameMinute, DetailRow[]>> = {};
+        for (const minute of GAME_MINUTES) {
+          const text = await fetchDetailCsv(minute);
+          if (cancelled) return;
+          loaded[minute] = parseDetailCsv(text, minute);
+        }
         if (cancelled) return;
-        applyParsedRows(parseDetailCsv(text), "DreamLeague S29 默认数据");
+        setDatasets(loaded);
+        const defaultRows = loaded[10] ?? loaded[6] ?? [];
+        const leagueIds = [...new Set(defaultRows.map((r) => r.league_id))];
+        setFilter(filterAfterUpload(leagueIds, 10));
+        setFileName("内置默认数据");
+        setParseError(null);
       } catch (err) {
         if (!cancelled) {
           setParseError(
@@ -64,7 +85,20 @@ export default function DashboardPage() {
     return () => {
       cancelled = true;
     };
-  }, [applyParsedRows]);
+  }, []);
+
+  const handleFilterChange = useCallback(
+    (next: FilterState) => {
+      if (next.gameMinute !== filter.gameMinute) {
+        const newRows = datasets[next.gameMinute] ?? [];
+        const leagueIds = [...new Set(newRows.map((r) => r.league_id))];
+        setFilter(filterAfterMinuteSwitch(leagueIds, next.gameMinute, next));
+        return;
+      }
+      setFilter(next);
+    },
+    [filter.gameMinute, datasets]
+  );
 
   const handleFileUpload = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -76,7 +110,9 @@ export default function DashboardPage() {
         const text = evt.target?.result;
         if (typeof text === "string") {
           try {
-            applyParsedRows(parseDetailCsv(text), file.name);
+            const minute = detectGameMinuteFromCsv(text);
+            const parsed = parseDetailCsv(text, minute);
+            applyParsedRows(parsed, file.name, minute);
           } catch (err) {
             setParseError(`解析失败: ${err instanceof Error ? err.message : String(err)}`);
           }
@@ -85,10 +121,11 @@ export default function DashboardPage() {
       reader.onerror = () => setParseError("文件读取失败");
       reader.readAsText(file, "utf-8");
     },
-    [applyParsedRows]
+    [applyParsedRows, filter.gameMinute]
   );
 
-  // Derived data
+  const gameMinute = filter.gameMinute;
+
   const leagues = useMemo<LeagueOption[]>(
     () =>
       [
@@ -118,7 +155,6 @@ export default function DashboardPage() {
     [filtered, filter.indicator, filter.bucketSize]
   );
 
-  // Stats
   const totalRows = filtered.length;
   const uniqueMatches = useMemo(
     () => new Set(filtered.map((r) => `${r.league_id}-${r.match_id}`)).size,
@@ -154,6 +190,8 @@ export default function DashboardPage() {
     .map((l) => l.name)
     .join(" + ");
 
+  const titleMinute = `${gameMinute}min`;
+
   if (loading) {
     return (
       <div className="min-h-screen bg-[#0f1117] flex items-center justify-center p-4">
@@ -168,7 +206,7 @@ export default function DashboardPage() {
         <div className="max-w-lg w-full">
           <div className="text-center mb-8">
             <h1 className="text-2xl font-bold text-[#e2e8f0] mb-2">
-              10min Economy vs Win Rate
+              {titleMinute} Economy vs Win Rate
             </h1>
             <p className="text-[#94a3b8] text-sm">
               1号位经济差与胜率关系分析
@@ -193,7 +231,7 @@ export default function DashboardPage() {
                 <span className="font-semibold text-[#22d3ee]">点击上传</span> CSV 文件
               </p>
               <p className="text-xs text-[#4a5568]">
-                默认数据加载失败时可手动上传明细 CSV
+                默认数据加载失败时可手动上传明细 CSV（支持 6/10 分钟列名）
               </p>
               {fileName && (
                 <p className="mt-2 text-xs text-[#10b981]">
@@ -213,11 +251,6 @@ export default function DashboardPage() {
               onChange={handleFileUpload}
             />
           </label>
-          <div className="mt-4 p-3 rounded-lg bg-[#1a1d28] border border-[#2a2d3a]">
-            <p className="text-xs text-[#94a3b8] leading-relaxed">
-              CSV 需包含以下列: league_id, league_name, match_id, team, opponent, side, result, win, pos1_player, pos1_hero, pos1_lh_5m, pos1_networth_10m, enemy_pos1_player, enemy_pos1_hero, enemy_pos1_networth_10m, pos1_vs_enemy_pos1_diff_10m, enemy_pos3_player, enemy_pos3_hero, enemy_pos3_networth_10m, pos1_vs_enemy_pos3_diff_10m, team_networth_10m, enemy_team_networth_10m, team_networth_diff_10m, pos1_kda_10m
-            </p>
-          </div>
         </div>
       </div>
     );
@@ -225,16 +258,15 @@ export default function DashboardPage() {
 
   return (
     <div className="min-h-screen bg-[#0f1117] p-4 md:p-6">
-      {/* Header */}
       <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
         <div>
           <h1 className="text-xl font-bold text-[#e2e8f0]">
             {leagueNames
-              ? `${leagueNames} 10min Economy vs Win Rate`
-              : "10min Economy vs Win Rate"}
+              ? `${leagueNames} ${titleMinute} Economy vs Win Rate`
+              : `${titleMinute} Economy vs Win Rate`}
           </h1>
           <p className="text-sm text-[#94a3b8]">
-            1号位经济差与胜率关系分析
+            1号位 {GAME_MINUTE_LABELS[gameMinute]} 经济差与胜率关系分析
           </p>
         </div>
         <label className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-[#2a2d3a] hover:border-[#22d3ee] cursor-pointer transition-colors text-xs text-[#94a3b8] hover:text-[#22d3ee]">
@@ -251,16 +283,14 @@ export default function DashboardPage() {
         </label>
       </div>
 
-      {/* Filter */}
       <FilterBar
         filter={filter}
-        onFilterChange={setFilter}
+        onFilterChange={handleFilterChange}
         leagues={leagues}
         teams={teams}
         heroes={heroes}
       />
 
-      {/* Stats Cards */}
       <StatsCards
         totalMatches={uniqueMatches}
         totalRows={totalRows}
@@ -279,14 +309,12 @@ export default function DashboardPage() {
         }
       />
 
-      {/* Charts */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
         <WinRateBarChart data={summaryData} />
         <EconomyScatterChart data={filtered} indicator={filter.indicator} />
       </div>
 
-      {/* Detail Table */}
-      <DetailTable data={filtered} indicator={filter.indicator} />
+      <DetailTable data={filtered} indicator={filter.indicator} gameMinute={gameMinute} />
     </div>
   );
 }
