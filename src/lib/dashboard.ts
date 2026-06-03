@@ -25,17 +25,21 @@ export const DEFAULT_FILTER: FilterState = {
   bucketSize: 300,
 };
 
+/** 筛选时可跳过某一维，用于下拉选项（避免选中队伍后列表只剩当前队伍） */
+export type FilterSkip = "team" | "hero";
+
 /* ------------------------------------------------------------------ */
 /*  Derived: filter detail rows                                        */
 /* ------------------------------------------------------------------ */
 export function filterDetailRows(
   rows: DetailRow[],
-  filter: FilterState
+  filter: FilterState,
+  skip: FilterSkip[] = []
 ): DetailRow[] {
   return rows.filter((r) => {
     if (filter.leagues.length > 0 && !filter.leagues.includes(String(r.league_id))) return false;
-    if (filter.team !== "all" && r.team !== filter.team) return false;
-    if (filter.hero !== "all" && r.pos1_hero !== filter.hero) return false;
+    if (!skip.includes("team") && filter.team !== "all" && r.team !== filter.team) return false;
+    if (!skip.includes("hero") && filter.hero !== "all" && r.pos1_hero !== filter.hero) return false;
     if (filter.side !== "all" && r.side !== filter.side) return false;
     return true;
   });

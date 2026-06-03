@@ -76,8 +76,14 @@ export default function DashboardPage() {
     [rows, filter]
   );
 
-  const teams = useMemo(() => getUniqueTeams(filtered), [filtered]);
-  const heroes = useMemo(() => getUniqueHeroes(filtered), [filtered]);
+  const teams = useMemo(
+    () => getUniqueTeams(filterDetailRows(rows, filter, ["team"])),
+    [rows, filter]
+  );
+  const heroes = useMemo(
+    () => getUniqueHeroes(filterDetailRows(rows, filter, ["hero"])),
+    [rows, filter]
+  );
 
   const summaryData = useMemo(
     () => computeSummaryFromDetail(filtered, filter.indicator, filter.bucketSize),
