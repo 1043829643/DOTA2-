@@ -1,10 +1,18 @@
 import Papa from "papaparse";
 
 export type GameMinute = 6 | 10;
+export type PickOrder = "first" | "second" | "unknown";
+export type PickOrderFilter = "all" | "first" | "second";
 
 export const GAME_MINUTE_LABELS: Record<GameMinute, string> = {
   6: "6 分钟",
   10: "10 分钟",
+};
+
+export const PICK_ORDER_LABELS: Record<PickOrderFilter, string> = {
+  all: "全部选序",
+  first: "先选",
+  second: "后选",
 };
 
 export interface DetailRow {
@@ -32,6 +40,16 @@ export interface DetailRow {
   enemy_team_networth: number;
   team_networth_diff: number;
   pos1_kda: string;
+  pickOrder: PickOrder;
+}
+
+export interface BpFirstPickRow {
+  league_id: string;
+  league_name: string;
+  match_id: string;
+  radiant_team: string;
+  dire_team: string;
+  first_pick_team: string;
 }
 
 export interface SummaryRow {
@@ -66,6 +84,8 @@ export const DETAIL_CSV_BY_MINUTE: Record<GameMinute, string> = {
   6: "/data/detail-6m.csv",
   10: "/data/detail-10m.csv",
 };
+
+export const BP_FIRST_PICK_CSV_PATH = "/data/bp-first-pick.csv";
 
 function toNumber(val: unknown): number {
   const n = Number(val);
@@ -128,7 +148,50 @@ export function parseDetailCsv(text: string, minute?: GameMinute): DetailRow[] {
     enemy_team_networth: toNumber(row[`enemy_team_networth_${s}`]),
     team_networth_diff: toNumber(row[`team_networth_diff_${s}`]),
     pos1_kda: row[`pos1_kda_${s}`] || "",
+    pickOrder: "unknown",
   }));
+}
+
+export function parseBpFirstPickCsv(text: string): BpFirstPickRow[] {
+  const result = Papa.parse<Record<string, string>>(text, {
+    header: true,
+    skipEmptyLines: true,
+    transformHeader: (h: string) => h.replace(/^\uFEFF/, "").trim(),
+  });
+
+  if (result.errors.length > 0) {
+    console.warn("BP CSV parse warnings:", result.errors.slice(0, 5));
+  }
+
+  return result.data.map((row) => ({
+    league_id: row.league_id || "0",
+    league_name: row.league_name || "",
+    match_id: row.match_id || "",
+    radiant_team: row.radiant_team || "",
+    dire_team: row.dire_team || "",
+    first_pick_team: row.first_pick_team || "",
+  }));
+}
+
+export function applyPickOrder(
+  rows: DetailRow[],
+  bpRows: BpFirstPickRow[]
+): DetailRow[] {
+  const firstPickByMatch = new Map<string, string>();
+  for (const row of bpRows) {
+    firstPickByMatch.set(`${row.league_id}-${row.match_id}`, row.first_pick_team);
+  }
+
+  return rows.map((row) => {
+    const firstPickTeam = firstPickByMatch.get(`${row.league_id}-${row.match_id}`);
+    if (!firstPickTeam) {
+      return { ...row, pickOrder: "unknown" };
+    }
+    return {
+      ...row,
+      pickOrder: row.team === firstPickTeam ? "first" : "second",
+    };
+  });
 }
 
 export async function fetchDetailCsv(minute: GameMinute): Promise<string> {
@@ -136,6 +199,14 @@ export async function fetchDetailCsv(minute: GameMinute): Promise<string> {
   const res = await fetch(path);
   if (!res.ok) {
     throw new Error(`无法加载 ${GAME_MINUTE_LABELS[minute]} 数据 (${res.status})`);
+  }
+  return res.text();
+}
+
+export async function fetchBpFirstPickCsv(): Promise<string> {
+  const res = await fetch(BP_FIRST_PICK_CSV_PATH);
+  if (!res.ok) {
+    throw new Error(`无法加载 BP 先选数据 (${res.status})`);
   }
   return res.text();
 }

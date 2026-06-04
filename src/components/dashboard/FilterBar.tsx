@@ -12,6 +12,7 @@ import {
   type GameMinute,
   GAME_MINUTE_LABELS,
   INDICATOR_LABELS,
+  PICK_ORDER_LABELS,
   type LeagueOption,
 } from "@/lib/data";
 import { type FilterState } from "@/lib/dashboard";
@@ -152,6 +153,23 @@ export function FilterBar({ filter, onFilterChange, teams, heroes, leagues }: Fi
           <SelectItem value="all" className="text-[#e2e8f0] focus:bg-[#2a2d3a] focus:text-[#22d3ee]">全部</SelectItem>
           <SelectItem value="Radiant" className="text-[#e2e8f0] focus:bg-[#2a2d3a] focus:text-[#22d3ee]">天辉</SelectItem>
           <SelectItem value="Dire" className="text-[#e2e8f0] focus:bg-[#2a2d3a] focus:text-[#22d3ee]">夜魇</SelectItem>
+        </SelectContent>
+      </Select>
+
+      <Select value={filter.pickOrder} onValueChange={(v) => update({ pickOrder: v as typeof filter.pickOrder })}>
+        <SelectTrigger className="w-[120px] bg-[#1a1d28] border-[#2a2d3a] text-[#e2e8f0] text-sm">
+          <SelectValue placeholder="选序" />
+        </SelectTrigger>
+        <SelectContent className="bg-[#1a1d28] border-[#2a2d3a]">
+          {(["all", "first", "second"] as const).map((key) => (
+            <SelectItem
+              key={key}
+              value={key}
+              className="text-[#e2e8f0] focus:bg-[#2a2d3a] focus:text-[#22d3ee]"
+            >
+              {PICK_ORDER_LABELS[key]}
+            </SelectItem>
+          ))}
         </SelectContent>
       </Select>
 

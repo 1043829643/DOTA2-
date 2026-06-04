@@ -15,6 +15,7 @@ import {
   type GameMinute,
   INDICATOR_FIELD,
   INDICATOR_LABELS,
+  PICK_ORDER_LABELS,
 } from "@/lib/data";
 
 interface DetailTableProps {
@@ -23,7 +24,7 @@ interface DetailTableProps {
   gameMinute: GameMinute;
 }
 
-type SortField = "team" | "pos1_hero" | "side" | "result" | "economyDiff" | "pos1_networth" | "pos1_lh_5m";
+type SortField = "team" | "pos1_hero" | "side" | "result" | "pickOrder" | "economyDiff" | "pos1_networth" | "pos1_lh_5m";
 type SortDir = "asc" | "desc";
 
 function SortIcon({ active, dir }: { active: boolean; dir: SortDir }) {
@@ -85,6 +86,9 @@ export function DetailTable({ data, indicator, gameMinute }: DetailTableProps) {
             <TableHead className="text-[#94a3b8] cursor-pointer select-none" onClick={() => toggleSort("result")}>
               结果 <SortIcon active={sortField === "result"} dir={sortDir} />
             </TableHead>
+            <TableHead className="text-[#94a3b8] cursor-pointer select-none" onClick={() => toggleSort("pickOrder")}>
+              BP顺序 <SortIcon active={sortField === "pickOrder"} dir={sortDir} />
+            </TableHead>
             <TableHead className="text-[#94a3b8] cursor-pointer select-none text-right font-mono" onClick={() => toggleSort("economyDiff")}>
               {INDICATOR_LABELS[indicator]} <SortIcon active={sortField === "economyDiff"} dir={sortDir} />
             </TableHead>
@@ -109,6 +113,9 @@ export function DetailTable({ data, indicator, gameMinute }: DetailTableProps) {
                   <span className={row.result === "胜" ? "text-[#10b981] font-medium" : "text-[#f43f5e] font-medium"}>
                     {row.result}
                   </span>
+                </TableCell>
+                <TableCell className="text-[#94a3b8]">
+                  {row.pickOrder === "unknown" ? "-" : PICK_ORDER_LABELS[row.pickOrder]}
                 </TableCell>
                 <TableCell className={`text-right font-mono tabular-nums ${diff >= 0 ? "text-[#10b981]" : "text-[#f43f5e]"}`}>
                   {diff > 0 ? "+" : ""}{diff}

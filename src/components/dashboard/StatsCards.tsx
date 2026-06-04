@@ -13,10 +13,10 @@ interface StatsCardsProps {
   winRateWhenAhead: number;
   winRateWhenBehind: number;
   economyThreshold: number;
+  aheadWins: number;
+  behindWins: number;
   aheadCount: number;
   behindCount: number;
-  aheadMatches: number;
-  behindMatches: number;
   onEconomyThresholdChange: (v: number) => void;
 }
 
@@ -29,10 +29,10 @@ export function StatsCards({
   winRateWhenAhead,
   winRateWhenBehind,
   economyThreshold,
+  aheadWins,
+  behindWins,
   aheadCount,
   behindCount,
-  aheadMatches,
-  behindMatches,
   onEconomyThresholdChange,
 }: StatsCardsProps) {
   const diffDisplay = avgEconomyDiff > 0 ? `+${avgEconomyDiff.toFixed(0)}` : avgEconomyDiff.toFixed(0);
@@ -96,7 +96,7 @@ export function StatsCards({
           <div className="flex items-center justify-between mb-1">
             <p className="text-xs text-[#64748b]">
               领先时胜率
-              <span className="text-[#4a5568] ml-1">({aheadMatches}场)</span>
+              <span className="text-[#4a5568] ml-1">({aheadWins}场胜利 / {aheadCount}场领先)</span>
             </p>
           </div>
           <p className="text-xl font-semibold font-mono tabular-nums text-[#10b981]">
@@ -122,7 +122,7 @@ export function StatsCards({
           <div className="flex items-center justify-between mb-1">
             <p className="text-xs text-[#64748b]">
               落后时胜率
-              <span className="text-[#4a5568] ml-1">({behindMatches}场)</span>
+              <span className="text-[#4a5568] ml-1">({behindWins}场胜利 / {behindCount}场落后)</span>
             </p>
           </div>
           <p className="text-xl font-semibold font-mono tabular-nums text-[#f43f5e]">

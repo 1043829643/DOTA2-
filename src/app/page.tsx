@@ -2,14 +2,18 @@
 
 import { useState, useMemo, useCallback, useEffect } from "react";
 import {
+  type BpFirstPickRow,
   type DetailRow,
   type LeagueOption,
   type GameMinute,
   GAME_MINUTE_LABELS,
   INDICATOR_FIELD,
+  applyPickOrder,
   parseDetailCsv,
   fetchDetailCsv,
+  fetchBpFirstPickCsv,
   detectGameMinuteFromCsv,
+  parseBpFirstPickCsv,
 } from "@/lib/data";
 import {
   type FilterState,
@@ -32,6 +36,7 @@ const GAME_MINUTES: GameMinute[] = [6, 10];
 
 export default function DashboardPage() {
   const [datasets, setDatasets] = useState<Partial<Record<GameMinute, DetailRow[]>>>({});
+  const [bpRows, setBpRows] = useState<BpFirstPickRow[]>([]);
   const [filter, setFilter] = useState<FilterState>(DEFAULT_FILTER);
   const [fileName, setFileName] = useState<string>("");
   const [parseError, setParseError] = useState<string | null>(null);
@@ -41,17 +46,18 @@ export default function DashboardPage() {
 
   const applyParsedRows = useCallback(
     (parsed: DetailRow[], name: string, minute: GameMinute) => {
-      if (parsed.length === 0) {
+      const rowsWithPickOrder = applyPickOrder(parsed, bpRows);
+      if (rowsWithPickOrder.length === 0) {
         setParseError("CSV 解析结果为空，请检查文件格式");
         return;
       }
       setParseError(null);
-      setDatasets((prev) => ({ ...prev, [minute]: parsed }));
+      setDatasets((prev) => ({ ...prev, [minute]: rowsWithPickOrder }));
       setFileName(name);
-      const leagueIds = [...new Set(parsed.map((r) => r.league_id))];
+      const leagueIds = [...new Set(rowsWithPickOrder.map((r) => r.league_id))];
       setFilter(filterAfterUpload(leagueIds, minute));
     },
-    []
+    [bpRows]
   );
 
   useEffect(() => {
@@ -59,11 +65,16 @@ export default function DashboardPage() {
     (async () => {
       setLoading(true);
       try {
+        const bpText = await fetchBpFirstPickCsv();
+        if (cancelled) return;
+        const loadedBpRows = parseBpFirstPickCsv(bpText);
+        setBpRows(loadedBpRows);
+
         const loaded: Partial<Record<GameMinute, DetailRow[]>> = {};
         for (const minute of GAME_MINUTES) {
           const text = await fetchDetailCsv(minute);
           if (cancelled) return;
-          loaded[minute] = parseDetailCsv(text, minute);
+          loaded[minute] = applyPickOrder(parseDetailCsv(text, minute), loadedBpRows);
         }
         if (cancelled) return;
         setDatasets(loaded);
@@ -182,8 +193,6 @@ export default function DashboardPage() {
   );
   const aheadWins = ahead.filter((r) => r.win === 1).length;
   const behindWins = behind.filter((r) => r.win === 1).length;
-  const aheadMatches = new Set(ahead.map((r) => `${r.league_id}-${r.match_id}`)).size;
-  const behindMatches = new Set(behind.map((r) => `${r.league_id}-${r.match_id}`)).size;
 
   const leagueNames = leagues
     .filter((l) => filter.leagues.includes(l.id))
@@ -300,10 +309,10 @@ export default function DashboardPage() {
         winRateWhenAhead={ahead.length > 0 ? aheadWins / ahead.length : 0}
         winRateWhenBehind={behind.length > 0 ? behindWins / behind.length : 0}
         economyThreshold={threshold}
+        aheadWins={aheadWins}
+        behindWins={behindWins}
         aheadCount={ahead.length}
         behindCount={behind.length}
-        aheadMatches={aheadMatches}
-        behindMatches={behindMatches}
         onEconomyThresholdChange={(v: number) =>
           setFilter((prev: FilterState) => ({ ...prev, economyThreshold: v }))
         }

@@ -5,6 +5,7 @@ import {
   type SummaryRow,
   type EconomyIndicator,
   type GameMinute,
+  type PickOrderFilter,
   INDICATOR_FIELD,
 } from "@/lib/data";
 
@@ -17,6 +18,7 @@ export interface FilterState {
   team: string;
   hero: string;
   side: string;
+  pickOrder: PickOrderFilter;
   indicator: EconomyIndicator;
   economyThreshold: number;   // single threshold: ahead = diff > X, behind = diff < -X
   bucketSize: number;         // economy diff bucket size in gold (e.g. 300, 500, 1000)
@@ -28,6 +30,7 @@ export const DEFAULT_FILTER: FilterState = {
   team: "all",
   hero: "all",
   side: "all",
+  pickOrder: "all",
   indicator: "pos1_vs_pos1",
   economyThreshold: 0,
   bucketSize: 300,
@@ -49,6 +52,7 @@ export function filterDetailRows(
     if (!skip.includes("team") && filter.team !== "all" && r.team !== filter.team) return false;
     if (!skip.includes("hero") && filter.hero !== "all" && r.pos1_hero !== filter.hero) return false;
     if (filter.side !== "all" && r.side !== filter.side) return false;
+    if (filter.pickOrder !== "all" && r.pickOrder !== filter.pickOrder) return false;
     return true;
   });
 }
