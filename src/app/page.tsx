@@ -29,6 +29,7 @@ import {
 import { FilterBar } from "@/components/dashboard/FilterBar";
 import { StatsCards } from "@/components/dashboard/StatsCards";
 import { WinRateBarChart } from "@/components/dashboard/WinRateBarChart";
+import { WinRateCurveChart } from "@/components/dashboard/WinRateCurveChart";
 import { EconomyScatterChart } from "@/components/dashboard/EconomyScatterChart";
 import { DetailTable } from "@/components/dashboard/DetailTable";
 
@@ -317,6 +318,14 @@ export default function DashboardPage() {
           setFilter((prev: FilterState) => ({ ...prev, economyThreshold: v }))
         }
       />
+
+      <div className="mb-4">
+        <WinRateCurveChart
+          summaryData={summaryData}
+          detailData={filtered}
+          indicator={filter.indicator}
+        />
+      </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
         <WinRateBarChart data={summaryData} />
