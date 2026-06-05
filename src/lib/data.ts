@@ -87,6 +87,19 @@ export const DETAIL_CSV_BY_MINUTE: Record<GameMinute, string> = {
 
 export const BP_FIRST_PICK_CSV_PATH = "/data/bp-first-pick.csv";
 
+const TEAM_DISPLAY_ALIASES: Record<string, string> = {
+  BB: "BB/BetBoom",
+  BetBoom: "BB/BetBoom",
+  "EX-HERO": "EX-HERO/EX-ROIC/LGD",
+  "EX-ROIC": "EX-HERO/EX-ROIC/LGD",
+  LGD: "EX-HERO/EX-ROIC/LGD",
+};
+
+export function normalizeTeamName(team: string): string {
+  const trimmed = team.trim();
+  return TEAM_DISPLAY_ALIASES[trimmed] ?? trimmed;
+}
+
 function toNumber(val: unknown): number {
   const n = Number(val);
   return Number.isNaN(n) ? 0 : n;
@@ -127,8 +140,8 @@ export function parseDetailCsv(text: string, minute?: GameMinute): DetailRow[] {
     league_id: row.league_id || "0",
     league_name: row.league_name || "自定义联赛",
     match_id: row.match_id || "",
-    team: row.team || "",
-    opponent: row.opponent || "",
+    team: normalizeTeamName(row.team || ""),
+    opponent: normalizeTeamName(row.opponent || ""),
     side: row.side || "",
     result: row.result || "",
     win: toNumber(row.win),
@@ -167,9 +180,9 @@ export function parseBpFirstPickCsv(text: string): BpFirstPickRow[] {
     league_id: row.league_id || "0",
     league_name: row.league_name || "",
     match_id: row.match_id || "",
-    radiant_team: row.radiant_team || "",
-    dire_team: row.dire_team || "",
-    first_pick_team: row.first_pick_team || "",
+    radiant_team: normalizeTeamName(row.radiant_team || ""),
+    dire_team: normalizeTeamName(row.dire_team || ""),
+    first_pick_team: normalizeTeamName(row.first_pick_team || ""),
   }));
 }
 

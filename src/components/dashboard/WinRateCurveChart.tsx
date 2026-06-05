@@ -225,10 +225,10 @@ export function WinRateCurveChart({ summaryData, detailData, indicator }: WinRat
     if (cx === undefined || cy === undefined || !payload) return <g />;
     const hitRates = thresholdByBucket.get(payload.bucket);
     if (!hitRates) {
-      return <circle cx={cx} cy={cy} r={2.5} fill="#22d3ee" />;
+      return <circle key={`logistic-dot-${payload.bucket}`} cx={cx} cy={cy} r={2.5} fill="#22d3ee" />;
     }
     return (
-      <g>
+      <g key={`logistic-threshold-dot-${payload.bucket}`}>
         <circle cx={cx} cy={cy} r={5} fill="#ef4444" stroke="#0f1117" strokeWidth={2} />
         <text x={cx} y={cy - 9} fill="#ef4444" fontSize={10} textAnchor="middle">
           {hitRates.join("/")}%
