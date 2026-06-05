@@ -22,10 +22,15 @@ interface FilterBarProps {
   onFilterChange: (filter: FilterState) => void;
   teams: string[];
   heroes: string[];
+}
+
+interface LeagueSelectorProps {
+  filter: FilterState;
+  onFilterChange: (filter: FilterState) => void;
   leagues: LeagueOption[];
 }
 
-export function FilterBar({ filter, onFilterChange, teams, heroes, leagues }: FilterBarProps) {
+export function LeagueSelector({ filter, onFilterChange, leagues }: LeagueSelectorProps) {
   const update = (partial: Partial<FilterState>) => {
     onFilterChange({ ...filter, ...partial });
   };
@@ -45,6 +50,48 @@ export function FilterBar({ filter, onFilterChange, teams, heroes, leagues }: Fi
 
   const clearAllLeagues = () => {
     update({ leagues: [] });
+  };
+
+  return (
+    <div className="flex max-w-full items-start gap-2 rounded-md border border-[#2a2d3a] bg-[#1a1d28] px-3 py-1.5">
+      <span className="shrink-0 pt-0.5 text-xs text-[#94a3b8]">联赛</span>
+      <div className="flex flex-1 flex-wrap items-center gap-x-3 gap-y-1">
+        {leagues.map((league) => (
+          <label
+            key={league.id}
+            className="flex cursor-pointer select-none items-center gap-1.5 group"
+          >
+            <input
+              type="checkbox"
+              checked={filter.leagues.includes(league.id)}
+              onChange={() => toggleLeague(league.id)}
+              className="h-3.5 w-3.5 cursor-pointer rounded border-[#4a5568] bg-[#0f1117] text-[#22d3ee] accent-[#22d3ee]"
+            />
+            <span
+              className={`whitespace-nowrap text-xs ${
+                filter.leagues.includes(league.id)
+                  ? "text-[#22d3ee]"
+                  : "text-[#94a3b8] group-hover:text-[#e2e8f0]"
+              }`}
+            >
+              {league.name}
+            </span>
+          </label>
+        ))}
+        <button
+          onClick={filter.leagues.length === leagues.length ? clearAllLeagues : selectAllLeagues}
+          className="text-[10px] text-[#4a5568] transition-colors hover:text-[#22d3ee]"
+        >
+          {filter.leagues.length === leagues.length ? "清除" : "全选"}
+        </button>
+      </div>
+    </div>
+  );
+}
+
+export function FilterBar({ filter, onFilterChange, teams, heroes }: FilterBarProps) {
+  const update = (partial: Partial<FilterState>) => {
+    onFilterChange({ ...filter, ...partial });
   };
 
   return (
@@ -68,41 +115,6 @@ export function FilterBar({ filter, onFilterChange, teams, heroes, leagues }: Fi
           ))}
         </SelectContent>
       </Select>
-
-      {/* League checkboxes */}
-      <div className="flex items-center gap-2 bg-[#1a1d28] border border-[#2a2d3a] rounded-md px-3 py-1.5">
-        <span className="text-xs text-[#94a3b8] shrink-0">联赛</span>
-        <div className="flex items-center gap-2">
-          {leagues.map((league) => (
-            <label
-              key={league.id}
-              className="flex items-center gap-1.5 cursor-pointer select-none group"
-            >
-              <input
-                type="checkbox"
-                checked={filter.leagues.includes(league.id)}
-                onChange={() => toggleLeague(league.id)}
-                className="w-3.5 h-3.5 rounded border-[#4a5568] bg-[#0f1117] text-[#22d3ee] accent-[#22d3ee] cursor-pointer"
-              />
-              <span
-                className={`text-xs whitespace-nowrap ${
-                  filter.leagues.includes(league.id)
-                    ? "text-[#22d3ee]"
-                    : "text-[#94a3b8] group-hover:text-[#e2e8f0]"
-                }`}
-              >
-                {league.name}
-              </span>
-            </label>
-          ))}
-          <button
-            onClick={filter.leagues.length === leagues.length ? clearAllLeagues : selectAllLeagues}
-            className="text-[10px] text-[#4a5568] hover:text-[#22d3ee] ml-1 transition-colors"
-          >
-            {filter.leagues.length === leagues.length ? "清除" : "全选"}
-          </button>
-        </div>
-      </div>
 
       <Select value={filter.indicator} onValueChange={(v) => update({ indicator: v as EconomyIndicator })}>
         <SelectTrigger className="w-[220px] bg-[#1a1d28] border-[#2a2d3a] text-[#e2e8f0] text-sm">

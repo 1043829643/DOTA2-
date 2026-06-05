@@ -26,7 +26,7 @@ import {
   getUniqueTeams,
   getUniqueHeroes,
 } from "@/lib/dashboard";
-import { FilterBar } from "@/components/dashboard/FilterBar";
+import { FilterBar, LeagueSelector } from "@/components/dashboard/FilterBar";
 import { StatsCards } from "@/components/dashboard/StatsCards";
 import { WinRateBarChart } from "@/components/dashboard/WinRateBarChart";
 import { WinRateCurveChart } from "@/components/dashboard/WinRateCurveChart";
@@ -195,10 +195,7 @@ export default function DashboardPage() {
   const aheadWins = ahead.filter((r) => r.win === 1).length;
   const behindWins = behind.filter((r) => r.win === 1).length;
 
-  const leagueNames = leagues
-    .filter((l) => filter.leagues.includes(l.id))
-    .map((l) => l.name)
-    .join(" + ");
+  const selectedLeagueCount = filter.leagues.length;
 
   const titleMinute = `${gameMinute}min`;
 
@@ -268,35 +265,41 @@ export default function DashboardPage() {
 
   return (
     <div className="min-h-screen bg-[#0f1117] p-4 md:p-6">
-      <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
-        <div>
+      <div className="flex items-start justify-between mb-4 gap-3">
+        <div className="w-[360px] shrink-0">
           <h1 className="text-xl font-bold text-[#e2e8f0]">
-            {leagueNames
-              ? `${leagueNames} ${titleMinute} Economy vs Win Rate`
-              : `${titleMinute} Economy vs Win Rate`}
+            Dota 2 {titleMinute} Economy vs Win Rate
           </h1>
           <p className="text-sm text-[#94a3b8]">
-            1号位 {GAME_MINUTE_LABELS[gameMinute]} 经济差与胜率关系分析
+            1号位 {GAME_MINUTE_LABELS[gameMinute]} 经济差与胜率关系分析 · 已选 {selectedLeagueCount}/{leagues.length} 个联赛
           </p>
         </div>
-        <label className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-[#2a2d3a] hover:border-[#22d3ee] cursor-pointer transition-colors text-xs text-[#94a3b8] hover:text-[#22d3ee]">
-          <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
-          </svg>
-          换文件
-          <input
-            type="file"
-            accept=".csv"
-            className="hidden"
-            onChange={handleFileUpload}
-          />
-        </label>
+        <div className="flex min-w-0 flex-1 items-start justify-end gap-2">
+          <div className="min-w-0 flex-1">
+            <LeagueSelector
+              filter={filter}
+              onFilterChange={handleFilterChange}
+              leagues={leagues}
+            />
+          </div>
+          <label className="flex shrink-0 items-center gap-2 px-3 py-1.5 rounded-lg border border-[#2a2d3a] hover:border-[#22d3ee] cursor-pointer transition-colors text-xs text-[#94a3b8] hover:text-[#22d3ee]">
+            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+            </svg>
+            换文件
+            <input
+              type="file"
+              accept=".csv"
+              className="hidden"
+              onChange={handleFileUpload}
+            />
+          </label>
+        </div>
       </div>
 
       <FilterBar
         filter={filter}
         onFilterChange={handleFilterChange}
-        leagues={leagues}
         teams={teams}
         heroes={heroes}
       />

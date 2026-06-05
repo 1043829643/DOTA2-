@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import {
   Table,
   TableBody,
@@ -26,6 +26,7 @@ interface DetailTableProps {
 
 type SortField = "team" | "pos1_hero" | "side" | "result" | "pickOrder" | "economyDiff" | "pos1_networth" | "pos1_lh_5m";
 type SortDir = "asc" | "desc";
+const PAGE_SIZE = 100;
 
 function SortIcon({ active, dir }: { active: boolean; dir: SortDir }) {
   return (
@@ -38,6 +39,7 @@ function SortIcon({ active, dir }: { active: boolean; dir: SortDir }) {
 export function DetailTable({ data, indicator, gameMinute }: DetailTableProps) {
   const [sortField, setSortField] = useState<SortField>("economyDiff");
   const [sortDir, setSortDir] = useState<SortDir>("desc");
+  const [page, setPage] = useState(1);
 
   const field = INDICATOR_FIELD[indicator];
 
@@ -60,6 +62,15 @@ export function DetailTable({ data, indicator, gameMinute }: DetailTableProps) {
     });
   }, [data, sortField, sortDir, field]);
 
+  const totalPages = Math.max(1, Math.ceil(sorted.length / PAGE_SIZE));
+  const currentPage = Math.min(page, totalPages);
+  const pageStart = (currentPage - 1) * PAGE_SIZE;
+  const pageRows = sorted.slice(pageStart, pageStart + PAGE_SIZE);
+
+  useEffect(() => {
+    setPage(1);
+  }, [data, sortField, sortDir, indicator, gameMinute]);
+
   function toggleSort(f: SortField) {
     if (sortField === f) {
       setSortDir((d) => (d === "asc" ? "desc" : "asc"));
@@ -70,10 +81,11 @@ export function DetailTable({ data, indicator, gameMinute }: DetailTableProps) {
   }
 
   return (
-    <div className="overflow-auto max-h-[420px] rounded-lg border border-[#2a2d3a]">
-      <Table>
-        <TableHeader>
-          <TableRow className="hover:bg-transparent border-[#2a2d3a]">
+    <div className="rounded-lg border border-[#2a2d3a]">
+      <div className="overflow-auto max-h-[420px]">
+        <Table>
+          <TableHeader>
+            <TableRow className="hover:bg-transparent border-[#2a2d3a]">
             <TableHead className="text-[#94a3b8] cursor-pointer select-none" onClick={() => toggleSort("team")}>
               队伍 <SortIcon active={sortField === "team"} dir={sortDir} />
             </TableHead>
@@ -99,10 +111,10 @@ export function DetailTable({ data, indicator, gameMinute }: DetailTableProps) {
               5分钟补刀 <SortIcon active={sortField === "pos1_lh_5m"} dir={sortDir} />
             </TableHead>
             <TableHead className="text-[#94a3b8] text-right">KDA</TableHead>
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          {sorted.map((row, i) => {
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {pageRows.map((row) => {
             const diff = row[field] as number;
             return (
               <TableRow key={`${row.league_id}-${row.match_id}-${row.team}`} className="border-[#2a2d3a] hover:bg-[#1e2230]">
@@ -110,7 +122,7 @@ export function DetailTable({ data, indicator, gameMinute }: DetailTableProps) {
                 <TableCell className="text-[#94a3b8]">{row.pos1_hero}</TableCell>
                 <TableCell className="text-[#94a3b8]">{row.side}</TableCell>
                 <TableCell>
-                  <span className={row.result === "胜" ? "text-[#10b981] font-medium" : "text-[#f43f5e] font-medium"}>
+                  <span className={row.win === 1 ? "text-[#10b981] font-medium" : "text-[#f43f5e] font-medium"}>
                     {row.result}
                   </span>
                 </TableCell>
@@ -130,8 +142,32 @@ export function DetailTable({ data, indicator, gameMinute }: DetailTableProps) {
               </TableRow>
             );
           })}
-        </TableBody>
-      </Table>
+          </TableBody>
+        </Table>
+      </div>
+      <div className="flex flex-wrap items-center justify-between gap-2 border-t border-[#2a2d3a] px-3 py-2 text-xs text-[#64748b]">
+        <span>
+          共 {sorted.length} 条记录 · 每页 {PAGE_SIZE} 条 · 第 {currentPage} / {totalPages} 页
+        </span>
+        <div className="flex items-center gap-2">
+          <button
+            type="button"
+            onClick={() => setPage((p) => Math.max(1, p - 1))}
+            disabled={currentPage <= 1}
+            className="rounded-md border border-[#2a2d3a] px-2 py-1 text-[#94a3b8] transition-colors hover:border-[#22d3ee] hover:text-[#22d3ee] disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:border-[#2a2d3a] disabled:hover:text-[#94a3b8]"
+          >
+            上一页
+          </button>
+          <button
+            type="button"
+            onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
+            disabled={currentPage >= totalPages}
+            className="rounded-md border border-[#2a2d3a] px-2 py-1 text-[#94a3b8] transition-colors hover:border-[#22d3ee] hover:text-[#22d3ee] disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:border-[#2a2d3a] disabled:hover:text-[#94a3b8]"
+          >
+            下一页
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
