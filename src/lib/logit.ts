@@ -104,15 +104,23 @@ export function normalTwoSidedP(z: number): number {
 }
 
 function erfc(x: number): number {
-  // Abramowitz & Stegun 7.1.26 approximation
-  const t = 1 / (1 + 0.3275911 * Math.abs(x));
-  const y =
-    t *
-    (0.254829592 +
-      t * (-0.284496736 + t * (1.421413741 + t * (-1.453152027 + t * 1.061405429))));
-  const erf = 1 - y * Math.exp(-x * x);
-  const signed = x >= 0 ? erf : -erf;
-  return 1 - signed;
+  // Numerical Recipes erfcc: fractional error < 1.2e-7 across the whole range,
+  // so tiny tail probabilities (e.g. 1e-40) are represented correctly.
+  const z = Math.abs(x);
+  const t = 1 / (1 + 0.5 * z);
+  const poly =
+    -1.26551223 +
+    t * (1.00002368 +
+    t * (0.37409196 +
+    t * (0.09678418 +
+    t * (-0.18628806 +
+    t * (0.27886807 +
+    t * (-1.13520398 +
+    t * (1.48851587 +
+    t * (-0.82215223 +
+    t * 0.17087277))))))));
+  const ans = t * Math.exp(-z * z + poly);
+  return x >= 0 ? ans : 2 - ans;
 }
 
 export interface FitOptions {

@@ -305,12 +305,19 @@ function CoefRow({
   const p = Number.isFinite(z) ? normalTwoSidedP(z) : Number.NaN;
   const scaled = estimate * scale;
   const oddsRatio = perThousand ? Math.exp(Math.max(-700, Math.min(700, scaled))) : Number.NaN;
+  const pDisplay = !Number.isFinite(p)
+    ? "-"
+    : p >= 1e-4
+      ? p.toFixed(4)
+      : p > 0
+        ? p.toExponential(2)
+        : "<1e-300";
   return (
     <tr className="border-b border-[#2a2d3a] last:border-0 text-[#e2e8f0]">
       <td className="px-3 py-1.5 text-left">{name}</td>
       <td className="px-3 py-1.5 text-right font-mono tabular-nums">{scaled.toFixed(3)}</td>
       <td className="px-3 py-1.5 text-right font-mono tabular-nums">
-        {Number.isFinite(p) ? p.toFixed(4) : "-"}
+        {pDisplay}
         <span className="ml-1 text-[#22d3ee]">{significance(p)}</span>
       </td>
       <td className="px-3 py-1.5 text-right font-mono tabular-nums">
