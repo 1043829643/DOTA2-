@@ -26,18 +26,27 @@ import {
   getUniqueTeams,
   getUniqueHeroes,
 } from "@/lib/dashboard";
+import {
+  type MatchPlayersRow,
+  buildRadiantWinMap,
+  fetchMatchPlayersCsv,
+  joinWin,
+  parseMatchPlayersCsv,
+} from "@/lib/matchPlayers";
 import { FilterBar, LeagueSelector } from "@/components/dashboard/FilterBar";
 import { StatsCards } from "@/components/dashboard/StatsCards";
 import { WinRateBarChart } from "@/components/dashboard/WinRateBarChart";
 import { WinRateCurveChart } from "@/components/dashboard/WinRateCurveChart";
 import { EconomyScatterChart } from "@/components/dashboard/EconomyScatterChart";
 import { DetailTable } from "@/components/dashboard/DetailTable";
+import { PositionEconomySection } from "@/components/dashboard/PositionEconomySection";
 
 const GAME_MINUTES: GameMinute[] = [6, 10];
 
 export default function DashboardPage() {
   const [datasets, setDatasets] = useState<Partial<Record<GameMinute, DetailRow[]>>>({});
   const [bpRows, setBpRows] = useState<BpFirstPickRow[]>([]);
+  const [matchPlayers, setMatchPlayers] = useState<MatchPlayersRow[]>([]);
   const [filter, setFilter] = useState<FilterState>(DEFAULT_FILTER);
   const [fileName, setFileName] = useState<string>("");
   const [parseError, setParseError] = useState<string | null>(null);
@@ -84,6 +93,15 @@ export default function DashboardPage() {
         setFilter(filterAfterUpload(leagueIds, 10));
         setFileName("内置默认数据");
         setParseError(null);
+
+        try {
+          const mpText = await fetchMatchPlayersCsv();
+          if (cancelled) return;
+          const winMap = buildRadiantWinMap(loaded[10] ?? loaded[6] ?? []);
+          setMatchPlayers(joinWin(parseMatchPlayersCsv(mpText), winMap));
+        } catch {
+          if (!cancelled) setMatchPlayers([]);
+        }
       } catch (err) {
         if (!cancelled) {
           setParseError(
@@ -336,6 +354,8 @@ export default function DashboardPage() {
       </div>
 
       <DetailTable data={filtered} indicator={filter.indicator} gameMinute={gameMinute} />
+
+      <PositionEconomySection rows={matchPlayers} />
     </div>
   );
 }

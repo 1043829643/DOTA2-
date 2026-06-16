@@ -122,7 +122,7 @@ export function filterAfterMinuteSwitch(
 }
 
 /** Assign a value to a bucket label and sort key based on bucket size */
-function getEconomyBucketLabel(value: number, bucketSize: number): { label: string; sortKey: number } {
+export function getEconomyBucketLabel(value: number, bucketSize: number): { label: string; sortKey: number } {
   const half = Math.floor(bucketSize / 2);
   // Center-aligned buckets: [-bucketSize, 0), [0, bucketSize)
   // e.g. bucketSize=300 → [-300,0), [0,300), [300,600), [-600,-300)
