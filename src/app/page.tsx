@@ -37,6 +37,7 @@ import { WinRateBarChart } from "@/components/dashboard/WinRateBarChart";
 import { WinRateCurveChart } from "@/components/dashboard/WinRateCurveChart";
 import { EconomyScatterChart } from "@/components/dashboard/EconomyScatterChart";
 import { DetailTable } from "@/components/dashboard/DetailTable";
+import { WinRatePredictor } from "@/components/dashboard/WinRatePredictor";
 
 const GAME_MINUTES: GameMinute[] = [6, 10];
 
@@ -350,6 +351,8 @@ export default function DashboardPage() {
       </div>
 
       <DetailTable data={filtered} economy={filter.economy} gameMinute={gameMinute} />
+
+      <WinRatePredictor rows={filtered} gameMinute={gameMinute} />
     </div>
   );
 }
