@@ -1,13 +1,6 @@
 "use client";
 
 import { useMemo, useRef, useState } from "react";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { type DetailRow, type GameMinute, type Position } from "@/lib/data";
 import { fitLogistic, normalTwoSidedP, predictProbability } from "@/lib/logit";
 
@@ -18,20 +11,21 @@ interface WinRatePredictorProps {
 
 interface Matchup {
   id: number;
-  ownPos: Position;
-  enemyPos: Position;
+  ownPositions: Position[];
+  enemyPositions: Position[];
 }
 
 const POSITIONS: Position[] = [1, 2, 3, 4, 5];
 const MAX_VARIABLES = 6;
 const SLIDER_STEP = 50;
 
-const selectTriggerCls = "w-[92px] bg-[#1a1d28] border-[#2a2d3a] text-[#e2e8f0] text-sm";
-const selectContentCls = "bg-[#1a1d28] border-[#2a2d3a]";
-const selectItemCls = "text-[#e2e8f0] focus:bg-[#2a2d3a] focus:text-[#22d3ee]";
+function groupLabel(positions: Position[]): string {
+  if (positions.length === 0) return "—";
+  return `${[...positions].sort((a, b) => a - b).join("+")}号位`;
+}
 
 function matchupLabel(m: Matchup): string {
-  return `本方${m.ownPos}号位 - 对方${m.enemyPos}号位`;
+  return `本方${groupLabel(m.ownPositions)} - 对方${groupLabel(m.enemyPositions)}`;
 }
 
 function significance(p: number): string {
@@ -42,15 +36,53 @@ function significance(p: number): string {
   return "";
 }
 
+function togglePosition(positions: Position[], pos: Position): Position[] {
+  return positions.includes(pos)
+    ? positions.filter((p) => p !== pos)
+    : [...positions, pos].sort((a, b) => a - b);
+}
+
 function featureOf(row: DetailRow, m: Matchup): number {
-  return row.ownNetworth[m.ownPos - 1] - row.enemyNetworth[m.enemyPos - 1];
+  const own = m.ownPositions.reduce((sum, p) => sum + (row.ownNetworth[p - 1] ?? 0), 0);
+  const enemy = m.enemyPositions.reduce((sum, p) => sum + (row.enemyNetworth[p - 1] ?? 0), 0);
+  return own - enemy;
+}
+
+function PositionToggles({
+  selected,
+  onToggle,
+}: {
+  selected: Position[];
+  onToggle: (pos: Position) => void;
+}) {
+  return (
+    <div className="flex items-center gap-1">
+      {POSITIONS.map((pos) => {
+        const active = selected.includes(pos);
+        return (
+          <button
+            key={pos}
+            type="button"
+            onClick={() => onToggle(pos)}
+            className={`rounded px-1.5 py-0.5 text-xs transition-colors ${
+              active
+                ? "bg-[#22d3ee]/15 text-[#22d3ee]"
+                : "text-[#94a3b8] hover:text-[#e2e8f0]"
+            }`}
+          >
+            {pos}
+          </button>
+        );
+      })}
+    </div>
+  );
 }
 
 export function WinRatePredictor({ rows, gameMinute }: WinRatePredictorProps) {
   const idRef = useRef(3);
   const [matchups, setMatchups] = useState<Matchup[]>([
-    { id: 1, ownPos: 1, enemyPos: 3 },
-    { id: 2, ownPos: 2, enemyPos: 2 },
+    { id: 1, ownPositions: [1], enemyPositions: [3] },
+    { id: 2, ownPositions: [2], enemyPositions: [2] },
   ]);
   const [values, setValues] = useState<Record<number, number>>({ 1: 0, 2: 0 });
 
@@ -59,42 +91,54 @@ export function WinRatePredictor({ rows, gameMinute }: WinRatePredictorProps) {
     [rows]
   );
 
+  // only variables that select at least one position on either side are estimable
+  const activeMatchups = useMemo(
+    () => matchups.filter((m) => m.ownPositions.length > 0 || m.enemyPositions.length > 0),
+    [matchups]
+  );
+
   const { fit, bounds } = useMemo(() => {
-    if (usableRows.length === 0 || matchups.length === 0) {
+    if (usableRows.length === 0 || activeMatchups.length === 0) {
       return { fit: null, bounds: [] as number[] };
     }
     const x: number[][] = [];
     const y: number[] = [];
-    const maxAbs = new Array<number>(matchups.length).fill(0);
+    const maxAbs = new Array<number>(activeMatchups.length).fill(0);
     for (const row of usableRows) {
-      const features = matchups.map((m) => featureOf(row, m));
+      const features = activeMatchups.map((m) => featureOf(row, m));
       features.forEach((value, index) => {
         maxAbs[index] = Math.max(maxAbs[index], Math.abs(value));
       });
       x.push(features);
       y.push(row.win === 1 ? 1 : 0);
     }
-    const computedBounds = maxAbs.map((value) =>
-      Math.max(1000, Math.ceil(value / 500) * 500)
-    );
+    const computedBounds = maxAbs.map((value) => Math.max(1000, Math.ceil(value / 500) * 500));
     return { fit: fitLogistic(x, y), bounds: computedBounds };
-  }, [usableRows, matchups]);
+  }, [usableRows, activeMatchups]);
 
   const predicted = useMemo(() => {
     if (!fit) return null;
-    const inputs = matchups.map((m) => values[m.id] ?? 0);
+    const inputs = activeMatchups.map((m) => values[m.id] ?? 0);
     return predictProbability(fit.beta, inputs);
-  }, [fit, matchups, values]);
+  }, [fit, activeMatchups, values]);
 
-  function updateMatchup(id: number, partial: Partial<Matchup>) {
-    setMatchups((prev) => prev.map((m) => (m.id === id ? { ...m, ...partial } : m)));
+  function toggleOwn(id: number, pos: Position) {
+    setMatchups((prev) =>
+      prev.map((m) => (m.id === id ? { ...m, ownPositions: togglePosition(m.ownPositions, pos) } : m))
+    );
+  }
+
+  function toggleEnemy(id: number, pos: Position) {
+    setMatchups((prev) =>
+      prev.map((m) => (m.id === id ? { ...m, enemyPositions: togglePosition(m.enemyPositions, pos) } : m))
+    );
   }
 
   function addMatchup() {
     if (matchups.length >= MAX_VARIABLES) return;
     const id = idRef.current;
     idRef.current += 1;
-    setMatchups((prev) => [...prev, { id, ownPos: 1, enemyPos: 1 }]);
+    setMatchups((prev) => [...prev, { id, ownPositions: [1], enemyPositions: [1] }]);
     setValues((prev) => ({ ...prev, [id]: 0 }));
   }
 
@@ -103,10 +147,9 @@ export function WinRatePredictor({ rows, gameMinute }: WinRatePredictorProps) {
   }
 
   function resetValues() {
-    setValues((prev) => {
+    setValues(() => {
       const next: Record<number, number> = {};
       for (const m of matchups) next[m.id] = 0;
-      void prev;
       return next;
     });
   }
@@ -116,45 +159,23 @@ export function WinRatePredictor({ rows, gameMinute }: WinRatePredictorProps) {
       <div className="mb-3">
         <h2 className="text-lg font-bold text-[#e2e8f0]">胜率预测器（自选对位 Logistic 回归）</h2>
         <p className="text-xs text-[#94a3b8]">
-          选择若干对位经济差作为自变量，模型基于当前筛选的 {gameMinute} 分钟数据实时拟合；拖动滑块即可预测胜率
+          每个变量可选多个位置相加再相减（本方位置之和 − 对方位置之和）；模型基于当前筛选的 {gameMinute} 分钟数据实时拟合，拖动滑块即可预测胜率
         </p>
       </div>
 
       {/* Variable selectors */}
       <div className="mb-3 space-y-2">
         {matchups.map((m) => (
-          <div key={m.id} className="flex flex-wrap items-center gap-2">
-            <Select
-              value={String(m.ownPos)}
-              onValueChange={(v) => updateMatchup(m.id, { ownPos: Number(v) as Position })}
-            >
-              <SelectTrigger className={selectTriggerCls}>
-                <SelectValue />
-              </SelectTrigger>
-              <SelectContent className={selectContentCls}>
-                {POSITIONS.map((p) => (
-                  <SelectItem key={p} value={String(p)} className={selectItemCls}>
-                    本方{p}号位
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-            <span className="text-sm text-[#64748b]">减</span>
-            <Select
-              value={String(m.enemyPos)}
-              onValueChange={(v) => updateMatchup(m.id, { enemyPos: Number(v) as Position })}
-            >
-              <SelectTrigger className={selectTriggerCls}>
-                <SelectValue />
-              </SelectTrigger>
-              <SelectContent className={selectContentCls}>
-                {POSITIONS.map((p) => (
-                  <SelectItem key={p} value={String(p)} className={selectItemCls}>
-                    对方{p}号位
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+          <div
+            key={m.id}
+            className="flex flex-wrap items-center gap-2 rounded-md border border-[#2a2d3a] bg-[#0f1117] px-2 py-1.5"
+          >
+            <span className="text-xs text-[#94a3b8]">本方</span>
+            <PositionToggles selected={m.ownPositions} onToggle={(pos) => toggleOwn(m.id, pos)} />
+            <span className="px-1 text-sm text-[#64748b]">减</span>
+            <span className="text-xs text-[#94a3b8]">对方</span>
+            <PositionToggles selected={m.enemyPositions} onToggle={(pos) => toggleEnemy(m.id, pos)} />
+            <span className="ml-auto text-xs text-[#64748b]">{matchupLabel(m)}</span>
             <button
               type="button"
               onClick={() => removeMatchup(m.id)}
@@ -179,7 +200,7 @@ export function WinRatePredictor({ rows, gameMinute }: WinRatePredictorProps) {
         <div className="rounded-md border border-[#2a2d3a] bg-[#0f1117] px-3 py-4 text-center text-sm text-[#64748b]">
           {usableRows.length === 0
             ? "当前数据缺少位置经济，无法拟合（请使用内置默认数据）。"
-            : "当前筛选样本不足或因变量单一，无法拟合模型，请放宽筛选或更换变量。"}
+            : "当前筛选样本不足、因变量单一或未选择任何位置，无法拟合模型。"}
         </div>
       ) : (
         <>
@@ -208,7 +229,7 @@ export function WinRatePredictor({ rows, gameMinute }: WinRatePredictorProps) {
                   standardError={fit.standardErrors[0]}
                   perThousand={false}
                 />
-                {matchups.map((m, index) => (
+                {activeMatchups.map((m, index) => (
                   <CoefRow
                     key={m.id}
                     name={matchupLabel(m)}
@@ -235,7 +256,7 @@ export function WinRatePredictor({ rows, gameMinute }: WinRatePredictorProps) {
             </div>
 
             <div className="space-y-3">
-              {matchups.map((m, index) => {
+              {activeMatchups.map((m, index) => {
                 const bound = bounds[index] ?? 5000;
                 const value = values[m.id] ?? 0;
                 return (
