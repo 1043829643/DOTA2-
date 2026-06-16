@@ -8,14 +8,62 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import {
-  type EconomyIndicator,
+  type EconomySelection,
   type GameMinute,
+  type Position,
   GAME_MINUTE_LABELS,
-  INDICATOR_LABELS,
   PICK_ORDER_LABELS,
   type LeagueOption,
 } from "@/lib/data";
 import { type FilterState } from "@/lib/dashboard";
+
+const POSITIONS: Position[] = [1, 2, 3, 4, 5];
+
+function togglePosition(
+  economy: EconomySelection,
+  group: "own" | "enemy",
+  pos: Position
+): EconomySelection {
+  const key = group === "own" ? "ownPositions" : "enemyPositions";
+  const current = economy[key];
+  const next = current.includes(pos)
+    ? current.filter((p) => p !== pos)
+    : [...current, pos].sort((a, b) => a - b);
+  return { ...economy, [key]: next };
+}
+
+function PositionToggleGroup({
+  label,
+  selected,
+  onToggle,
+}: {
+  label: string;
+  selected: Position[];
+  onToggle: (pos: Position) => void;
+}) {
+  return (
+    <div className="flex items-center gap-1.5 rounded-md border border-[#2a2d3a] bg-[#1a1d28] px-2 py-1">
+      <span className="text-xs text-[#94a3b8]">{label}</span>
+      {POSITIONS.map((pos) => {
+        const active = selected.includes(pos);
+        return (
+          <button
+            key={pos}
+            type="button"
+            onClick={() => onToggle(pos)}
+            className={`rounded px-1.5 py-0.5 text-xs transition-colors ${
+              active
+                ? "bg-[#22d3ee]/15 text-[#22d3ee]"
+                : "text-[#94a3b8] hover:text-[#e2e8f0]"
+            }`}
+          >
+            {pos}
+          </button>
+        );
+      })}
+    </div>
+  );
+}
 
 interface FilterBarProps {
   filter: FilterState;
@@ -116,18 +164,35 @@ export function FilterBar({ filter, onFilterChange, teams, heroes }: FilterBarPr
         </SelectContent>
       </Select>
 
-      <Select value={filter.indicator} onValueChange={(v) => update({ indicator: v as EconomyIndicator })}>
-        <SelectTrigger className="w-[220px] bg-[#1a1d28] border-[#2a2d3a] text-[#e2e8f0] text-sm">
+      <Select
+        value={filter.economy.mode}
+        onValueChange={(v) =>
+          update({ economy: { ...filter.economy, mode: v as EconomySelection["mode"] } })
+        }
+      >
+        <SelectTrigger className="w-[140px] bg-[#1a1d28] border-[#2a2d3a] text-[#e2e8f0] text-sm">
           <SelectValue placeholder="经济差指标" />
         </SelectTrigger>
         <SelectContent className="bg-[#1a1d28] border-[#2a2d3a]">
-          {(Object.entries(INDICATOR_LABELS) as [EconomyIndicator, string][]).map(([key, label]) => (
-            <SelectItem key={key} value={key} className="text-[#e2e8f0] focus:bg-[#2a2d3a] focus:text-[#22d3ee]">
-              {label}
-            </SelectItem>
-          ))}
+          <SelectItem value="position" className="text-[#e2e8f0] focus:bg-[#2a2d3a] focus:text-[#22d3ee]">位置经济差</SelectItem>
+          <SelectItem value="team" className="text-[#e2e8f0] focus:bg-[#2a2d3a] focus:text-[#22d3ee]">团队总经济差</SelectItem>
         </SelectContent>
       </Select>
+
+      {filter.economy.mode === "position" && (
+        <>
+          <PositionToggleGroup
+            label="本方"
+            selected={filter.economy.ownPositions}
+            onToggle={(pos) => update({ economy: togglePosition(filter.economy, "own", pos) })}
+          />
+          <PositionToggleGroup
+            label="对方"
+            selected={filter.economy.enemyPositions}
+            onToggle={(pos) => update({ economy: togglePosition(filter.economy, "enemy", pos) })}
+          />
+        </>
+      )}
 
       <Select value={filter.team} onValueChange={(v) => update({ team: v })}>
         <SelectTrigger className="w-[140px] bg-[#1a1d28] border-[#2a2d3a] text-[#e2e8f0] text-sm">

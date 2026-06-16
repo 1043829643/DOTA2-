@@ -41,6 +41,10 @@ export interface DetailRow {
   team_networth_diff: number;
   pos1_kda: string;
   pickOrder: PickOrder;
+  /** index 0..4 = own pos1..pos5 networth at this dataset's minute (from match-players) */
+  ownNetworth: number[];
+  /** index 0..4 = enemy pos1..pos5 networth at this dataset's minute */
+  enemyNetworth: number[];
 }
 
 export interface BpFirstPickRow {
@@ -53,7 +57,7 @@ export interface BpFirstPickRow {
 }
 
 export interface SummaryRow {
-  indicator: EconomyIndicator;
+  indicator: string;
   bucket: string;
   sampleCount: number;
   wins: number;
@@ -61,19 +65,33 @@ export interface SummaryRow {
   avgDiff: number;
 }
 
-export type EconomyIndicator = "pos1_vs_pos1" | "pos1_vs_pos3" | "team_total";
+export type Position = 1 | 2 | 3 | 4 | 5;
 
-export const INDICATOR_LABELS: Record<EconomyIndicator, string> = {
-  pos1_vs_pos1: "1号位-对方1号位经济差",
-  pos1_vs_pos3: "1号位-对方3号位经济差",
-  team_total: "团队总经济差",
-};
+/** Economy diff selection: position group vs position group, or team total. */
+export interface EconomySelection {
+  mode: "position" | "team";
+  ownPositions: Position[];
+  enemyPositions: Position[];
+}
 
-export const INDICATOR_FIELD: Record<EconomyIndicator, keyof DetailRow> = {
-  pos1_vs_pos1: "pos1_vs_enemy_pos1_diff",
-  pos1_vs_pos3: "pos1_vs_enemy_pos3_diff",
-  team_total: "team_networth_diff",
-};
+/** Compute the selected economy diff for a row (positions resolved from attached networth). */
+export function getEconomyDiff(row: DetailRow, sel: EconomySelection): number {
+  if (sel.mode === "team") return row.team_networth_diff;
+  const own = sel.ownPositions.reduce((s, p) => s + (row.ownNetworth[p - 1] ?? 0), 0);
+  const enemy = sel.enemyPositions.reduce((s, p) => s + (row.enemyNetworth[p - 1] ?? 0), 0);
+  return own - enemy;
+}
+
+function positionsLabel(positions: Position[]): string {
+  if (positions.length === 0) return "无";
+  return `${[...positions].sort((a, b) => a - b).join("+")}号位`;
+}
+
+/** Human-readable label for the current economy selection. */
+export function economyLabel(sel: EconomySelection): string {
+  if (sel.mode === "team") return "团队总经济差";
+  return `本方${positionsLabel(sel.ownPositions)} − 对方${positionsLabel(sel.enemyPositions)}经济差`;
+}
 
 export interface LeagueOption {
   id: string;
@@ -162,6 +180,8 @@ export function parseDetailCsv(text: string, minute?: GameMinute): DetailRow[] {
     team_networth_diff: toNumber(row[`team_networth_diff_${s}`]),
     pos1_kda: row[`pos1_kda_${s}`] || "",
     pickOrder: "unknown",
+    ownNetworth: [],
+    enemyNetworth: [],
   }));
 }
 

@@ -3,10 +3,10 @@
 import {
   type DetailRow,
   type SummaryRow,
-  type EconomyIndicator,
+  type EconomySelection,
   type GameMinute,
   type PickOrderFilter,
-  INDICATOR_FIELD,
+  getEconomyDiff,
 } from "@/lib/data";
 
 /* ------------------------------------------------------------------ */
@@ -19,7 +19,7 @@ export interface FilterState {
   hero: string;
   side: string;
   pickOrder: PickOrderFilter;
-  indicator: EconomyIndicator;
+  economy: EconomySelection;
   economyThreshold: number;   // single threshold: ahead = diff > X, behind = diff < -X
   bucketSize: number;         // economy diff bucket size in gold (e.g. 300, 500, 1000)
 }
@@ -31,7 +31,7 @@ export const DEFAULT_FILTER: FilterState = {
   hero: "all",
   side: "all",
   pickOrder: "all",
-  indicator: "pos1_vs_pos1",
+  economy: { mode: "position", ownPositions: [1], enemyPositions: [1] },
   economyThreshold: 0,
   bucketSize: 300,
 };
@@ -62,14 +62,13 @@ export function filterDetailRows(
 /* ------------------------------------------------------------------ */
 export function computeSummaryFromDetail(
   rows: DetailRow[],
-  indicator: EconomyIndicator,
+  economy: EconomySelection,
   bucketSize: number = 300
 ): SummaryRow[] {
-  const field = INDICATOR_FIELD[indicator];
   const bucketMap = new Map<string, { total: number; wins: number; diffSum: number; sortKey: number }>();
 
   for (const row of rows) {
-    const val = row[field] as number;
+    const val = getEconomyDiff(row, economy);
     const { label, sortKey } = getEconomyBucketLabel(val, bucketSize);
     const existing = bucketMap.get(label);
     if (existing) {
@@ -85,7 +84,7 @@ export function computeSummaryFromDetail(
   const sorted = [...bucketMap.entries()].sort((a, b) => a[1].sortKey - b[1].sortKey);
 
   return sorted.map(([bucket, data]) => ({
-    indicator,
+    indicator: economy.mode,
     bucket,
     sampleCount: data.total,
     wins: data.wins,

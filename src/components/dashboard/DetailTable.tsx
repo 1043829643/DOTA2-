@@ -11,16 +11,16 @@ import {
 } from "@/components/ui/table";
 import {
   type DetailRow,
-  type EconomyIndicator,
+  type EconomySelection,
   type GameMinute,
-  INDICATOR_FIELD,
-  INDICATOR_LABELS,
+  economyLabel,
+  getEconomyDiff,
   PICK_ORDER_LABELS,
 } from "@/lib/data";
 
 interface DetailTableProps {
   data: DetailRow[];
-  indicator: EconomyIndicator;
+  economy: EconomySelection;
   gameMinute: GameMinute;
 }
 
@@ -36,20 +36,18 @@ function SortIcon({ active, dir }: { active: boolean; dir: SortDir }) {
   );
 }
 
-export function DetailTable({ data, indicator, gameMinute }: DetailTableProps) {
+export function DetailTable({ data, economy, gameMinute }: DetailTableProps) {
   const [sortField, setSortField] = useState<SortField>("economyDiff");
   const [sortDir, setSortDir] = useState<SortDir>("desc");
   const [page, setPage] = useState(1);
-
-  const field = INDICATOR_FIELD[indicator];
 
   const sorted = useMemo(() => {
     return [...data].sort((a, b) => {
       let va: string | number;
       let vb: string | number;
       if (sortField === "economyDiff") {
-        va = a[field] as number;
-        vb = b[field] as number;
+        va = getEconomyDiff(a, economy);
+        vb = getEconomyDiff(b, economy);
       } else {
         va = a[sortField] as string;
         vb = b[sortField] as string;
@@ -60,7 +58,7 @@ export function DetailTable({ data, indicator, gameMinute }: DetailTableProps) {
       const cmp = String(va).localeCompare(String(vb));
       return sortDir === "asc" ? cmp : -cmp;
     });
-  }, [data, sortField, sortDir, field]);
+  }, [data, sortField, sortDir, economy]);
 
   const totalPages = Math.max(1, Math.ceil(sorted.length / PAGE_SIZE));
   const currentPage = Math.min(page, totalPages);
@@ -69,7 +67,7 @@ export function DetailTable({ data, indicator, gameMinute }: DetailTableProps) {
 
   useEffect(() => {
     setPage(1);
-  }, [data, sortField, sortDir, indicator, gameMinute]);
+  }, [data, sortField, sortDir, economy, gameMinute]);
 
   function toggleSort(f: SortField) {
     if (sortField === f) {
@@ -102,7 +100,7 @@ export function DetailTable({ data, indicator, gameMinute }: DetailTableProps) {
               BP顺序 <SortIcon active={sortField === "pickOrder"} dir={sortDir} />
             </TableHead>
             <TableHead className="text-[#94a3b8] cursor-pointer select-none text-right font-mono" onClick={() => toggleSort("economyDiff")}>
-              {INDICATOR_LABELS[indicator]} <SortIcon active={sortField === "economyDiff"} dir={sortDir} />
+              {economyLabel(economy)} <SortIcon active={sortField === "economyDiff"} dir={sortDir} />
             </TableHead>
             <TableHead className="text-[#94a3b8] cursor-pointer select-none text-right font-mono" onClick={() => toggleSort("pos1_networth")}>
               {gameMinute}分钟经济 <SortIcon active={sortField === "pos1_networth"} dir={sortDir} />
@@ -115,7 +113,7 @@ export function DetailTable({ data, indicator, gameMinute }: DetailTableProps) {
           </TableHeader>
           <TableBody>
             {pageRows.map((row) => {
-            const diff = row[field] as number;
+            const diff = getEconomyDiff(row, economy);
             return (
               <TableRow key={`${row.league_id}-${row.match_id}-${row.team}`} className="border-[#2a2d3a] hover:bg-[#1e2230]">
                 <TableCell className="font-medium text-[#e2e8f0]">{row.team}</TableCell>

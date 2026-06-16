@@ -7,7 +7,7 @@ import {
   type LeagueOption,
   type GameMinute,
   GAME_MINUTE_LABELS,
-  INDICATOR_FIELD,
+  getEconomyDiff,
   applyPickOrder,
   parseDetailCsv,
   fetchDetailCsv,
@@ -27,10 +27,8 @@ import {
   getUniqueHeroes,
 } from "@/lib/dashboard";
 import {
-  type MatchPlayersRow,
-  buildRadiantWinMap,
+  attachPositionNetworth,
   fetchMatchPlayersCsv,
-  joinWin,
   parseMatchPlayersCsv,
 } from "@/lib/matchPlayers";
 import { FilterBar, LeagueSelector } from "@/components/dashboard/FilterBar";
@@ -39,14 +37,12 @@ import { WinRateBarChart } from "@/components/dashboard/WinRateBarChart";
 import { WinRateCurveChart } from "@/components/dashboard/WinRateCurveChart";
 import { EconomyScatterChart } from "@/components/dashboard/EconomyScatterChart";
 import { DetailTable } from "@/components/dashboard/DetailTable";
-import { PositionEconomySection } from "@/components/dashboard/PositionEconomySection";
 
 const GAME_MINUTES: GameMinute[] = [6, 10];
 
 export default function DashboardPage() {
   const [datasets, setDatasets] = useState<Partial<Record<GameMinute, DetailRow[]>>>({});
   const [bpRows, setBpRows] = useState<BpFirstPickRow[]>([]);
-  const [matchPlayers, setMatchPlayers] = useState<MatchPlayersRow[]>([]);
   const [filter, setFilter] = useState<FilterState>(DEFAULT_FILTER);
   const [fileName, setFileName] = useState<string>("");
   const [parseError, setParseError] = useState<string | null>(null);
@@ -80,11 +76,21 @@ export default function DashboardPage() {
         const loadedBpRows = parseBpFirstPickCsv(bpText);
         setBpRows(loadedBpRows);
 
+        let matchPlayersRows: ReturnType<typeof parseMatchPlayersCsv> = [];
+        try {
+          const mpText = await fetchMatchPlayersCsv();
+          if (cancelled) return;
+          matchPlayersRows = parseMatchPlayersCsv(mpText);
+        } catch {
+          matchPlayersRows = [];
+        }
+
         const loaded: Partial<Record<GameMinute, DetailRow[]>> = {};
         for (const minute of GAME_MINUTES) {
           const text = await fetchDetailCsv(minute);
           if (cancelled) return;
-          loaded[minute] = applyPickOrder(parseDetailCsv(text, minute), loadedBpRows);
+          const parsed = applyPickOrder(parseDetailCsv(text, minute), loadedBpRows);
+          loaded[minute] = attachPositionNetworth(parsed, matchPlayersRows, minute);
         }
         if (cancelled) return;
         setDatasets(loaded);
@@ -93,15 +99,6 @@ export default function DashboardPage() {
         setFilter(filterAfterUpload(leagueIds, 10));
         setFileName("内置默认数据");
         setParseError(null);
-
-        try {
-          const mpText = await fetchMatchPlayersCsv();
-          if (cancelled) return;
-          const winMap = buildRadiantWinMap(loaded[10] ?? loaded[6] ?? []);
-          setMatchPlayers(joinWin(parseMatchPlayersCsv(mpText), winMap));
-        } catch {
-          if (!cancelled) setMatchPlayers([]);
-        }
       } catch (err) {
         if (!cancelled) {
           setParseError(
@@ -181,8 +178,8 @@ export default function DashboardPage() {
   );
 
   const summaryData = useMemo(
-    () => computeSummaryFromDetail(filtered, filter.indicator, filter.bucketSize),
-    [filtered, filter.indicator, filter.bucketSize]
+    () => computeSummaryFromDetail(filtered, filter.economy, filter.bucketSize),
+    [filtered, filter.economy, filter.bucketSize]
   );
 
   const totalRows = filtered.length;
@@ -192,12 +189,11 @@ export default function DashboardPage() {
   );
   const teamWinRate = computeTeamWinRate(filtered, filter.team);
 
-  const economyDiffField = INDICATOR_FIELD[filter.indicator];
   const avgEconomyDiff =
     totalRows > 0
       ? Math.round(
           filtered.reduce(
-            (s, r) => s + (r[economyDiffField] as number),
+            (s, r) => s + getEconomyDiff(r, filter.economy),
             0
           ) / totalRows
         )
@@ -205,10 +201,10 @@ export default function DashboardPage() {
 
   const threshold = filter.economyThreshold;
   const ahead = filtered.filter(
-    (r) => (r[economyDiffField] as number) > threshold
+    (r) => getEconomyDiff(r, filter.economy) > threshold
   );
   const behind = filtered.filter(
-    (r) => (r[economyDiffField] as number) < -threshold
+    (r) => getEconomyDiff(r, filter.economy) < -threshold
   );
   const aheadWins = ahead.filter((r) => r.win === 1).length;
   const behindWins = behind.filter((r) => r.win === 1).length;
@@ -344,18 +340,16 @@ export default function DashboardPage() {
         <WinRateCurveChart
           summaryData={summaryData}
           detailData={filtered}
-          indicator={filter.indicator}
+          economy={filter.economy}
         />
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
         <WinRateBarChart data={summaryData} />
-        <EconomyScatterChart data={filtered} indicator={filter.indicator} />
+        <EconomyScatterChart data={filtered} economy={filter.economy} />
       </div>
 
-      <DetailTable data={filtered} indicator={filter.indicator} gameMinute={gameMinute} />
-
-      <PositionEconomySection rows={matchPlayers} />
+      <DetailTable data={filtered} economy={filter.economy} gameMinute={gameMinute} />
     </div>
   );
 }

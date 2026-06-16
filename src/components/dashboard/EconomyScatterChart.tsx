@@ -1,10 +1,10 @@
 "use client";
 
-import { type DetailRow, type EconomyIndicator, INDICATOR_FIELD, INDICATOR_LABELS } from "@/lib/data";
+import { type DetailRow, type EconomySelection, economyLabel, getEconomyDiff } from "@/lib/data";
 
 interface EconomyScatterChartProps {
   data: DetailRow[];
-  indicator: EconomyIndicator;
+  economy: EconomySelection;
 }
 
 interface BoxStats {
@@ -86,9 +86,8 @@ function formatSigned(value: number): string {
   return rounded > 0 ? `+${rounded}` : String(rounded);
 }
 
-export function EconomyScatterChart({ data, indicator }: EconomyScatterChartProps) {
-  const field = INDICATOR_FIELD[indicator];
-  const label = INDICATOR_LABELS[indicator];
+export function EconomyScatterChart({ data, economy }: EconomyScatterChartProps) {
+  const label = economyLabel(economy);
 
   if (data.length === 0) {
     return (
@@ -101,7 +100,7 @@ export function EconomyScatterChart({ data, indicator }: EconomyScatterChartProp
   const winValues: number[] = [];
   const lossValues: number[] = [];
   for (const row of data) {
-    const value = row[field] as number;
+    const value = getEconomyDiff(row, economy);
     if (row.win === 1) {
       winValues.push(value);
     } else {

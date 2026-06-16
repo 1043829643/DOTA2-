@@ -1,16 +1,14 @@
 import Papa from "papaparse";
-import { type DetailRow, type GameMinute, type SummaryRow, normalizeTeamName } from "@/lib/data";
-import { getEconomyBucketLabel } from "@/lib/dashboard";
+import {
+  type DetailRow,
+  type GameMinute,
+  type Position,
+  normalizeTeamName,
+} from "@/lib/data";
 
 export type Side = "radiant" | "dire";
-export type Position = 1 | 2 | 3 | 4 | 5;
 
-export const SIDE_LABELS: Record<Side, string> = {
-  radiant: "天辉",
-  dire: "夜魇",
-};
-
-export const POSITIONS: Position[] = [1, 2, 3, 4, 5];
+const POSITIONS: Position[] = [1, 2, 3, 4, 5];
 
 export interface PlayerSlot {
   player: string;
@@ -46,6 +44,19 @@ function readSlots(row: Record<string, string>, side: Side): PlayerSlot[] {
   }));
 }
 
+/** Resolve radiantWin (0/1) from a winner team name; null when unresolved. */
+function winnerToRadiantWin(
+  winner: string | undefined,
+  radiantTeam: string | undefined,
+  direTeam: string | undefined
+): number | null {
+  if (!winner) return null;
+  const w = normalizeTeamName(winner);
+  if (radiantTeam && w === radiantTeam) return 1;
+  if (direTeam && w === direTeam) return 0;
+  return null;
+}
+
 /**
  * Parse the per-match table (one row per match, both teams' 10 players by position).
  */
@@ -73,19 +84,6 @@ export function parseMatchPlayersCsv(text: string): MatchPlayersRow[] {
       radiantWin: winnerToRadiantWin(row.winner, radiant_team, dire_team),
     };
   });
-}
-
-/** Resolve radiantWin (0/1) from a winner team name; null when unresolved. */
-function winnerToRadiantWin(
-  winner: string | undefined,
-  radiantTeam: string | undefined,
-  direTeam: string | undefined
-): number | null {
-  if (!winner) return null;
-  const w = normalizeTeamName(winner);
-  if (radiantTeam && w === radiantTeam) return 1;
-  if (direTeam && w === direTeam) return 0;
-  return null;
 }
 
 /** Build a match_id -> radiantWin(0/1) map from the existing detail rows. */
@@ -120,134 +118,30 @@ export async function fetchMatchPlayersCsv(): Promise<string> {
   return res.text();
 }
 
-/* ------------------------------------------------------------------ */
-/*  Position-based filters                                             */
-/* ------------------------------------------------------------------ */
-export type SlotField = "hero" | "player";
-
-export interface PositionCondition {
-  id: string;
-  side: Side;
-  pos: Position;
-  field: SlotField;
-  value: string;
-}
-
-function slotOf(row: MatchPlayersRow, side: Side, pos: Position): PlayerSlot {
-  return (side === "radiant" ? row.radiant : row.dire)[pos - 1];
-}
-
-/** Unique non-empty hero/player options for a given side+position. */
-export function getSlotOptions(
-  rows: MatchPlayersRow[],
-  side: Side,
-  pos: Position,
-  field: SlotField
-): string[] {
-  const set = new Set<string>();
-  for (const row of rows) {
-    const v = slotOf(row, side, pos)[field];
-    if (v) set.add(v);
-  }
-  return [...set].sort((a, b) => a.localeCompare(b));
-}
-
-/** Apply position conditions as AND filters. */
-export function applyConditions(
-  rows: MatchPlayersRow[],
-  conditions: PositionCondition[]
-): MatchPlayersRow[] {
-  if (conditions.length === 0) return rows;
-  return rows.filter((row) =>
-    conditions.every((c) => slotOf(row, c.side, c.pos)[c.field] === c.value)
-  );
-}
-
-/* ------------------------------------------------------------------ */
-/*  Economy diff builder                                               */
-/* ------------------------------------------------------------------ */
-function networthAt(slot: PlayerSlot, minute: GameMinute): number {
+function slotNetworth(slot: PlayerSlot, minute: GameMinute): number {
   return minute === 6 ? slot.networth6m : slot.networth10m;
 }
 
-/** Sum networth for a side over the selected positions at a given minute. */
-export function sumGroup(
-  row: MatchPlayersRow,
-  minute: GameMinute,
-  side: Side,
-  positions: Position[]
-): number {
-  return positions.reduce((sum, pos) => sum + networthAt(slotOf(row, side, pos), minute), 0);
-}
-
-export interface DiffGroup {
-  side: Side;
-  positions: Position[];
-}
-
-export interface MatchDiffResult {
-  row: MatchPlayersRow;
-  leftSum: number;
-  rightSum: number;
-  diff: number;
-  /** win from the left group's side perspective (0/1), null when unknown */
-  win: number | null;
-}
-
 /**
- * Compute Σleft - Σright per match. win is from the left group's side perspective.
+ * Attach per-position networth (own/enemy, minute-resolved) onto each DetailRow
+ * by joining match-players on match_id + side.
  */
-export function computeDiffs(
-  rows: MatchPlayersRow[],
-  minute: GameMinute,
-  left: DiffGroup,
-  right: DiffGroup
-): MatchDiffResult[] {
-  return rows.map((row) => {
-    const leftSum = sumGroup(row, minute, left.side, left.positions);
-    const rightSum = sumGroup(row, minute, right.side, right.positions);
-    let win: number | null = null;
-    if (row.radiantWin !== null) {
-      win = left.side === "radiant" ? row.radiantWin : 1 - row.radiantWin;
-    }
-    return { row, leftSum, rightSum, diff: leftSum - rightSum, win };
+export function attachPositionNetworth(
+  detailRows: DetailRow[],
+  matchPlayersRows: MatchPlayersRow[],
+  minute: GameMinute
+): DetailRow[] {
+  const byMatch = new Map(matchPlayersRows.map((m) => [m.match_id, m]));
+  return detailRows.map((row) => {
+    const match = byMatch.get(row.match_id);
+    if (!match) return row;
+    const isRadiant = row.side === "Radiant";
+    const ownSlots = isRadiant ? match.radiant : match.dire;
+    const enemySlots = isRadiant ? match.dire : match.radiant;
+    return {
+      ...row,
+      ownNetworth: ownSlots.map((s) => slotNetworth(s, minute)),
+      enemyNetworth: enemySlots.map((s) => slotNetworth(s, minute)),
+    };
   });
-}
-
-/**
- * Bucket diff values by size and produce SummaryRow[] for WinRateBarChart.
- * Only results with a known win are counted toward win rate.
- */
-export function buildDiffSummary(
-  results: MatchDiffResult[],
-  bucketSize: number
-): SummaryRow[] {
-  const bucketMap = new Map<
-    string,
-    { total: number; wins: number; diffSum: number; sortKey: number }
-  >();
-
-  for (const r of results) {
-    if (r.win === null) continue;
-    const { label, sortKey } = getEconomyBucketLabel(r.diff, bucketSize);
-    const existing = bucketMap.get(label);
-    if (existing) {
-      existing.total += 1;
-      existing.wins += r.win;
-      existing.diffSum += r.diff;
-    } else {
-      bucketMap.set(label, { total: 1, wins: r.win, diffSum: r.diff, sortKey });
-    }
-  }
-
-  return [...bucketMap.entries()]
-    .sort((a, b) => a[1].sortKey - b[1].sortKey)
-    .map(([bucket, data]) => ({
-      indicator: "team_total" as const,
-      bucket,
-      sampleCount: data.total,
-      wins: data.wins,
-      winRate: data.total > 0 ? Number((data.wins / data.total).toFixed(3)) : 0,
-      avgDiff: data.total > 0 ? Number((data.diffSum / data.total).toFixed(1)) : 0,
-    }));
 }

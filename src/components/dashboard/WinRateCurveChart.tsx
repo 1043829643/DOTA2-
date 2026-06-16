@@ -13,15 +13,15 @@ import {
 import { type ChartConfig, ChartContainer } from "@/components/ui/chart";
 import {
   type DetailRow,
-  type EconomyIndicator,
+  type EconomySelection,
   type SummaryRow,
-  INDICATOR_FIELD,
+  getEconomyDiff,
 } from "@/lib/data";
 
 interface WinRateCurveChartProps {
   summaryData: SummaryRow[];
   detailData: DetailRow[];
-  indicator: EconomyIndicator;
+  economy: EconomySelection;
 }
 
 interface CurveDatum {
@@ -86,12 +86,11 @@ function buildBaseData(data: SummaryRow[]): CurveDatum[] {
 
 function fitLogisticFromPoints(
   rows: DetailRow[],
-  indicator: EconomyIndicator
+  economy: EconomySelection
 ): LogisticModel | null {
-  const field = INDICATOR_FIELD[indicator];
   const usableRows = rows
     .map((row) => ({
-      x: (row[field] as number) / 1000,
+      x: getEconomyDiff(row, economy) / 1000,
       y: row.win,
     }))
     .filter((row) => Number.isFinite(row.x) && (row.y === 0 || row.y === 1));
@@ -202,7 +201,7 @@ function CurveTooltip({
   );
 }
 
-export function WinRateCurveChart({ summaryData, detailData, indicator }: WinRateCurveChartProps) {
+export function WinRateCurveChart({ summaryData, detailData, economy }: WinRateCurveChartProps) {
   if (summaryData.length === 0 || detailData.length === 0) {
     return (
       <div className="flex min-h-[230px] w-full items-center justify-center rounded-lg border border-[#2a2d3a] bg-[#1a1d28] text-sm text-[#64748b]">
@@ -212,7 +211,7 @@ export function WinRateCurveChart({ summaryData, detailData, indicator }: WinRat
   }
 
   const baseData = buildBaseData(summaryData);
-  const logisticModel = fitLogisticFromPoints(detailData, indicator);
+  const logisticModel = fitLogisticFromPoints(detailData, economy);
   const chartData = applyLogisticPrediction(baseData, logisticModel);
   const thresholdHits = findThresholdHits(chartData, logisticModel);
   const thresholdByBucket = new Map<string, number[]>();
